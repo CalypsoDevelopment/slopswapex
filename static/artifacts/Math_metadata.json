@@ -1,0 +1,37 @@
+{
+	"compiler": {
+		"version": "0.5.16+commit.9c3226ce"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/SlopSwapPair.sol": "Math"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/SlopSwapPair.sol": {
+			"keccak256": "0x54d6d1493cc54fcd0bdb72db7e09bb163f013a1fd7cf64b019a9fd5cc42e19fa",
+			"urls": [
+				"bzz-raw://5604d7300efbe48a6c4ac39b8fe02c07001fe78c624bdfa77127eeefe74ea0b1",
+				"dweb:/ipfs/QmbUcbtmmwrVAgoMJdHJHMj7RBiXHQqrE51qpn6CDC1eCu"
+			]
+		}
+	},
+	"version": 1
+}

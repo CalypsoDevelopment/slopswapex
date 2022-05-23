@@ -1,0 +1,41 @@
+[
+  { "ChainID": 56, "TokenName": "BNB", "TokenSymbol": "WBNB", "TokenContract": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c", "TokenDecimal": 18, "TokenType": "BEP-20" },
+
+  { "ChainID": 56, "TokenName": "Ethereum Token", "TokenSymbol": "WETH", "TokenContract": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "PancakeSwap Token (Cake)", "TokenSymbol": "Cake", "TokenContract": "0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  {"ChainID": 56, "TokenName": "SHIBA INU Token", "TokenSymbol": "SHIB", "TokenContract": "0x2859e4544C4bB03966803b044A93563Bd2D0DD4D", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "Dogecoin Token", "TokenSymbol": "DOGE", "TokenContract": "0xbA2aE424d960c26247Dd6c32edC70B295c744C43", "TokenDecimal": 8, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "Avalanche Token", "TokenSymbol": "AVAX", "TokenContract": "0x1CE0c2827e2eF14D5C4f29a091d735A204794041", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "Dai Token", "TokenSymbol": "DAI", "TokenContract": "0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "BUSD Token", "TokenSymbol": "BUSD", "TokenContract": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "Akashic Protocol Project", "TokenSymbol": "AKPP", "TokenContract": "0xF2eBD0bBFcfD4ea65eCed347Cb022932CA5c372e", "TokenDecimal": 9, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "USDC Coin", "TokenSymbol": "USDC", "TokenContract": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "XRP Token", "TokenSymbol": "XRP", "TokenContract": "0x1D2F0da169ceB9fC7B3144628dB156f3F6c60dBE", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "Cardano Token", "TokenSymbol": "ADA", "TokenContract": "0x3ee2200efb3400fabb9aacf31297cbdd1d435d47", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "Polkadot Token", "TokenSymbol": "DOT", "TokenContract": "0x7083609fce4d1d8dc0c979aab8c869ea2c873402", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "Litecoin Token", "TokenSymbol": "LTC", "TokenContract": "0x4338665CBB7B2485A8855A139b75D5e34AB0DB94", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "NEAR Protocol", "TokenSymbol": "NEAR", "TokenContract": "0x1Fa4a73a3F0133f0025378af00236f3aBDEE5D63", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "Bitcoin Cash Token", "TokenSymbol": "BCH", "TokenContract": "0x8ff795a6f4d97e7887c79bea79aba5cc76444adf", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "Uniswap", "TokenSymbol": "UNI", "TokenContract": "0xbf5140a22578168fd562dccf235e5d43a02ce9b1", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "ChainLink Token", "TokenSymbol": "LINK", "TokenContract": "0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "BTCB Token", "TokenSymbol": "BTCB", "TokenContract": "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c", "TokenDecimal": 18, "TokenType": "ERC20" },
+
+  { "ChainID": 56, "TokenName": "FLOW", "TokenSymbol": "FLOW", "TokenContract": "0xc943c5320b9c18c153d1e2d12cc3074bebfb31a2", "TokenDecimal": 18, "TokenType": "ERC20" }
+]

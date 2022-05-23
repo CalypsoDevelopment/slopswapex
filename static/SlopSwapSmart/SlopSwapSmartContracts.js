@@ -1,0 +1,17 @@
+export const networks = [56, 97, 1337]
+
+export const ChainId = {
+  MAINNET: 56,
+  TESTNET: 97,
+  GANACHE: 1337
+}
+
+// SlopSwap LP Token Address 0xD1eAbB3Bce6E50F000463589d137c182B39B179D
+// SlopSwap Factory 0x0533B75362E3Be13E78f245e50674c9a6dd9c17A
+// SlopSwap Router 0x42A77DEdD13520141aaF1720EF88086B5Cae95f5
+// PancakeSwap Factory 0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73
+// Pancake Router 0x10ED43C718714eb63d5aA57B78B54704E256024E
+export const routerAddress = new Map()
+routerAddress.set(ChainId.MAINNET, '0x42A77DEdD13520141aaF1720EF88086B5Cae95f5')
+routerAddress.set(ChainId.TESTNET, '0x5496Fd6D23F326ACFb2d0C19908EFd7D6523Cbf2')
+routerAddress.set(ChainId.GANACHE, '0x5496Fd6D23F326ACFb2d0C19908EFd7D6523Cbf2')
