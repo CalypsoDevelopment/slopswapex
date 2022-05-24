@@ -21,7 +21,7 @@
       <b-col cols="12">
         <div>
           <h1 class="main-title">
-            <span class="blue-gray">Slop</span>Swap
+            <span class="blue-gray">Slop</span>Swap <span class="blue-gray">Trading</span>
           </h1>
         </div>
       </b-col>
