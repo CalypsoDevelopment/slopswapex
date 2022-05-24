@@ -5,13 +5,13 @@
         <div>
           <b-nav>
             <b-nav-item active>
-              <i class="fa-solid fa-gears" />
+              <i class="fa-solid fa-gears" style="color: #6c757d;" />
             </b-nav-item>
             <b-nav-item>
-              <i class="fa-solid fa-clock-rotate-left" />
+              <i class="fa-solid fa-clock-rotate-left" style="color: #6c757d;" />
             </b-nav-item>
             <b-nav-item>
-              <i class="fa-solid fa-chart-area" />
+              <i class="fa-solid fa-chart-area" style="color: #6c757d;" />
             </b-nav-item>
             <!--<b-nav-item>
             </b-nav-item>-->

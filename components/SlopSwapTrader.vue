@@ -3,15 +3,20 @@
     <b-row class="trade-container">
       <b-col cols="12">
         <div>
+          <b-img src="~/assets/img/SlopSwap-Rise-Of-The-Pigs.png" fluid alt="SlopSwap Crypto Currency Exchange & Blockchain Community Resource" class="slopswap-logo" />
+        </div>
+      </b-col>
+      <b-col cols="12">
+        <div>
           <b-nav>
             <b-nav-item active>
-              <i class="fa-solid fa-gears" />
+              <i class="fa-solid fa-gears" style="color: #6c757d;" />
             </b-nav-item>
             <b-nav-item>
-              <i class="fa-solid fa-clock-rotate-left" />
+              <i class="fa-solid fa-clock-rotate-left" style="color: #6c757d;" />
             </b-nav-item>
             <b-nav-item>
-              <i class="fa-solid fa-chart-area" />
+              <i class="fa-solid fa-chart-area" style="color: #6c757d;" />
             </b-nav-item>
             <!--<b-nav-item>
             </b-nav-item>-->
@@ -43,7 +48,7 @@
       </b-col>
       <b-col cols="2" class="text-center">
         <div class="align-middle trade-symbol-container">
-          <i class="fa-solid fa-repeat fa-4x animate__animated animate__rotatIn" style="color: #FFFFFF" />
+          <i class="fa-solid fa-repeat fa-4x animate__animated animate__rotatIn" style="color: #17a2b8" />
           <b-form-select v-model="SlippageSelected" class="slippage-selector mt-2" :options="SlippageOptions" />
         </div>
       </b-col>
@@ -545,6 +550,9 @@ export default {
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+.slopswap-logo {
+  max-height: 140px;
+}
 .label-title {
   font-variant-caps: all-small-caps;
   font-size: 1.3rem;
