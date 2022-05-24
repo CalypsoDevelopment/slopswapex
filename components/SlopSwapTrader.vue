@@ -588,7 +588,7 @@ export default {
   border-radius: 4rem;
 }
 .trade-container {
-  margin-top: 8rem;
+  margin-top: 3rem;
   margin-bottom: auto;
   vertical-align: middle;
 }
