@@ -1,6 +1,6 @@
 <template>
-  <b-container fluid class="bg">
-    <TopNavigationBarSimple />
+  <b-container fluid class="bg px-0">
+    <TopNavbarComplex />
     <b-container>
       <b-row>
         <b-col cols="12" class="text-center">
@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import TopNavigationBarSimple from '~/components/TopNavigationBarSimple.vue'
+import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
 import SlopSwapTrader from '~/components/SlopSwapTrader.vue'
 
 export default {
   name: 'IndexPage',
-  components: { SlopSwapTrader, TopNavigationBarSimple }
+  components: { SlopSwapTrader, TopNavbarComplex }
 }
 </script>
 <style scoped>
@@ -30,5 +30,4 @@ export default {
 .app-container {
   min-height: 600px;
 }
-
 </style>

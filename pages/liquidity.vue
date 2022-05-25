@@ -1,6 +1,6 @@
 <template>
   <b-container fluid class="bg">
-    <TopNavigationBarSimple />
+    <TopNavbarComplex />
     <b-container>
       <b-row>
         <b-col cols="12" class="text-center">
@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import TopNavigationBarSimple from '~/components/TopNavigationBarSimple.vue'
+import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
 import SlopSwapLiquidity from '~/components/SlopSwapLiquidity.vue'
 
 export default {
   name: 'LiquidityPage',
-  components: { SlopSwapLiquidity, TopNavigationBarSimple }
+  components: { SlopSwapLiquidity, TopNavbarComplex }
 }
 </script>
 <style scoped>
