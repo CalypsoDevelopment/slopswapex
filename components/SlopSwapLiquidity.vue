@@ -69,15 +69,6 @@
                 variant="primary"
                 pill
                 block
-                class="mt-2 button-text"
-                @click="CheckForLiquidityTokens()"
-              >
-                <i class="fa-solid fa-coins" /> Check Liquidity
-              </b-button>
-              <b-button
-                variant="primary"
-                pill
-                block
                 class="my-2 button-text"
                 @click="quoteRemoveLiquidity()"
               >
@@ -122,9 +113,10 @@
           <div v-else>
             <div class="lp-pair-container">
               <h2 class="secondary-title">
-                Your Liquidity Pair
+                <span class="lp-balance">Balance:</span> {{ LiquidityPoolBalance }}
               </h2>
               <b-link :href="`https://bscscan.com/token/${PairCheckResp}`" target="_blank">
+                <span class="small-pair-balance">Pooled Balance: {{ HRLPReserveB }}</span>
                 <b-img
                   :src="require(`@/assets/img/tokens/${TokenA.TokenContract}.png`)"
                   fluid
@@ -133,6 +125,7 @@
                 />
                 <span class="small-pair-symbols">{{ TokenA.TokenSymbol }}</span>
 
+                <i class="fa-solid fa-pipe" style="color: #17a2b8" />
                 <span class="small-pair-symbols">{{ TokenB.TokenSymbol }}</span>
                 <b-img
                   :src="require(`@/assets/img/tokens/${TokenB.TokenContract}.png`)"
@@ -140,6 +133,11 @@
                   alt="Selected token that user wants to receive"
                   class="small-pair-token-img"
                 />
+                <span class="small-pair-balance">Pooled Balance: {{ HRLPReserveA }}</span>
+                <br>
+                <span class="small-pair-symbols blue-gray">Pair Contract Address</span>
+                <br>
+                <span class="lp-address">{{ LPAddress }}</span>
               </b-link>
             </div>
           </div>
@@ -154,6 +152,7 @@ import SlopSwapLiquidityMakerTokenSelect from '~/components/SlopSwapLiquidityMak
 import SlopSwapLiquidityTakerTokenSelect from '~/components/SlopSwapLiquidityTakerTokenSelect.vue'
 const ethers = require('ethers')
 const qs = require('qs')
+const Console = require('Console')
 const BEP20 = require('~/static/artifacts/IERC20.json')
 const PAIR = require('~/static/artifacts/SlopSwapPair.json')
 const ROUTER = require('~/static/artifacts/SlopSwapRouter.json')
@@ -327,10 +326,14 @@ export default {
       TokenBUserBalance: null,
       UserAccount: null,
       LiquidityBalance: null,
+      LiquidityPoolBalance: null,
+      LPAddress: null,
       liquidity: null,
       Aout: null,
       Bout: null,
-      LPTokenCon: { ChainID: 56, TokenName: 'SlopSwap LPs', TokenSymbol: 'SLOP-LP', TokenDecimal: 18, TokenType: 'ERC20', BrandPrimary: '#f0b90b' }
+      HRLPReserveA: null,
+      HRLPReserveB: null,
+      LPTokenCon: { ChainID: 56, TokenName: 'SlopSwap LPs', TokenSymbol: 'SLOP-LPs', TokenDecimal: 18, TokenType: 'ERC20', BrandPrimary: '#f0b90b' }
     }
   },
   watch: {
@@ -350,6 +353,7 @@ export default {
   beforeMount () {
     this.CheckTradingPair()
     this.RetrieveUserBalances()
+    this.CheckForLiquidityTokens()
   },
   methods: {
     async CheckForLiquidityTokens () {
@@ -377,8 +381,8 @@ export default {
 
       const factory = new ethers.Contract(String(this.MainnetFactory), FACTORY.abi, signer)
       // const router = new ethers.Contract(String(this.MainnetRouter), this.MainnetRouterABI, this.signer)
-      const pairAddress = await factory.getPair(address1, address2)
-
+      const pairAddress = await factory.getPair(String(address1), String(address2))
+      this.LPAddress = pairAddress
       const BEP20LiquidityToken = new ethers.Contract(
         String(pairAddress), [
           'function name() view returns (string)',
@@ -390,10 +394,58 @@ export default {
 
       const LPTokenBbalance = await BEP20LiquidityToken.balanceOf(String(account))
       // alert(TokenBbalance)
-      const ReturnTokenBbalance = ethers.utils.formatUnits(String(LPTokenBbalance), this.LPTokenCon.TokenDecimal)
-      this.TokenBUserBalance = ReturnTokenBbalance.substring(0, 8) + ' ' + this.LPTokenCon.TokenSymbol
+      const ReturnTokenLPbalance = ethers.utils.formatUnits(String(LPTokenBbalance), this.LPTokenCon.TokenDecimal)
+      this.LiquidityPoolBalance = ReturnTokenLPbalance.substring(0, 8) + ' ' + this.LPTokenCon.TokenSymbol
 
-      alert('LP Token Balance: ' + this.TokenBUserBalance)
+      Console.log('Pair Address: ' + pairAddress)
+      const pair = new ethers.Contract(this.MainnetPair, PAIR.abi, signer)
+      // alert('After Creating Pair Contract Instance')
+
+      // alert('Before reserves Raw request')
+      const reservesRaw = await pair.getReserves() // Returns the reserves already formated as ethers
+      const reserveA = reservesRaw[0]
+      const reserveB = reservesRaw[1]
+      Console.log('Reserves Raw Token A: ' + reservesRaw[0] + ' ' + 'Reserves Raw Token B: ' + reservesRaw[1])
+
+      // const HumanReadableReserveA = ethers.utils.parseUnits(String(reservesRaw[0]), this.TokenA.TokenDecimal)
+      this.HRLPReserveA = Number(ethers.utils.formatEther(reservesRaw[0]))
+
+      // const HumanReadableReserveB = ethers.utils.parseUnits(String(reservesRaw[1]), this.TokenB.TokenDecimal)
+      this.HRLPReserveB = Number(ethers.utils.formatEther(reservesRaw[1]))
+
+      const feeToAddress = await factory.feeToSetter()
+      Console.log('Fee to this Dev Address: ' + feeToAddress)
+
+      const feeOn =
+        (await factory.feeTo()) !== 0x0000000000000000000000000000000000000000
+
+      const _kLast = await pair.kLast()
+      // alert('kLast: ' + _kLast)
+      const kLast = Number(ethers.utils.formatEther(_kLast))
+
+      const _totalSupply = await pair.totalSupply()
+      Console.log('Total Supply: ' + _totalSupply)
+      let totalSupply = Number(ethers.utils.formatEther(_totalSupply))
+
+      if (feeOn && kLast > 0) {
+        const feeLiquidity =
+          (totalSupply * (Math.sqrt(reserveA * reserveB) - Math.sqrt(kLast))) /
+          (5 * Math.sqrt(reserveA * reserveB) + Math.sqrt(kLast))
+        totalSupply = totalSupply + feeLiquidity
+      }
+
+      const liquidity = this.LiquidityPoolBalance
+      alert('Liquidity: ' + liquidity)
+      const Aout = (reserveA * liquidity) / totalSupply
+      const Bout = (reserveB * liquidity) / totalSupply
+
+      alert('Aout: ' + Aout + ' ' + 'Bout: ' + Bout + ' ' + 'Liquidity: ' + liquidity)
+      // return [liquidity, Aout, Bout]
+      this.liquidity = liquidity
+      this.Aout = Aout
+      this.Bout = Bout
+
+      // alert('LP Token Balance: ' + this.LiquidityBalance)
       /*
       alert('Pair Address: ' + pairAddress)
       const LPTokenContract = new ethers.Contract(String(this.MainnetPair), PAIR.abi, provider)
@@ -461,6 +513,9 @@ export default {
       const reserveA = reservesRaw[0]
       const reserveB = reservesRaw[1]
       alert('Reserves Raw Token A: ' + reservesRaw[0] + ' ' + 'Reserves Raw Token B: ' + reservesRaw[1])
+
+      const feeToAddress = await factory.feeToSetter()
+      alert('Fee to this Dev Address: ' + feeToAddress)
 
       const feeOn =
         (await factory.feeTo()) !== 0x0000000000000000000000000000000000000000
@@ -545,12 +600,12 @@ export default {
 
       const SubtractorA = amount1 * this.SlippageSelected
       const SubtractorANum = amount1 - SubtractorA
-      const MinA = ethers.utils.parseUnits(String(SubtractorANum), this.TokenA.TokenADecimals)
+      const MinA = ethers.utils.parseUnits(String(SubtractorANum), this.TokenA.TokenDecimal)
       // alert(MinA)
 
       const SubtractorB = amount2 * this.SlippageSelected
       const SubtractorBNum = amount2 - SubtractorB
-      const MinB = ethers.utils.parseUnits(String(SubtractorBNum), this.TokenA.TokenADecimals)
+      const MinB = ethers.utils.parseUnits(String(SubtractorBNum), this.TokenA.TokenDecimal)
       // alert(MinB)
 
       const amount1Min = ethers.utils.parseUnits(String(MinA), token1Decimals)
@@ -754,19 +809,29 @@ export default {
         const ReturnTokenAbalance = ethers.utils.formatUnits(String(TokenAbalance), this.TokenA.TokenDecimal)
         this.TokenAUserBalance = ReturnTokenAbalance.substring(0, 8) + ' ' + this.TokenA.TokenSymbol
       }
-      const BEP20TokenB = new ethers.Contract(
-        this.TokenB.TokenContract, [
-          'function name() view returns (string)',
-          'function symbol() view returns (string)',
-          'function balanceOf(address) view returns (uint)'
-        ],
-        provider
-      )
 
-      const TokenBbalance = await BEP20TokenB.balanceOf(String(account))
-      // alert(TokenBbalance)
-      const ReturnTokenBbalance = ethers.utils.formatUnits(String(TokenBbalance), this.TokenB.TokenDecimal)
-      this.TokenBUserBalance = ReturnTokenBbalance.substring(0, 8) + ' ' + this.TokenB.TokenSymbol
+      if (this.TokenB.TokenSymbol === 'WBNB') {
+        // Get Token Balance through Metamask
+        const TokenBBalance = await provider.getBalance(String(account))
+        // alert(TokenABalance)
+        const ReturnTokenBBalance = ethers.utils.formatEther(String(TokenBBalance))
+        // alert('User TokenA Balance: ' + ConvertWeiToEther + ' WBNB')
+
+        this.TokenAUserBalance = ReturnTokenBBalance.substring(0, 6) + ' ' + this.TokenB.TokenSymbol
+      } else {
+        const BEP20TokenB = new ethers.Contract(
+          this.TokenB.TokenContract, [
+            'function name() view returns (string)',
+            'function symbol() view returns (string)',
+            'function balanceOf(address) view returns (uint)'
+          ],
+          provider
+        )
+        const TokenBbalance = await BEP20TokenB.balanceOf(String(account))
+        // alert(TokenAbalance)
+        const ReturnTokenBbalance = ethers.utils.formatUnits(String(TokenBbalance), this.TokenB.TokenDecimal)
+        this.TokenBUserBalance = ReturnTokenBbalance.substring(0, 8) + ' ' + this.TokenB.TokenSymbol
+      }
     },
     // Function used to add Liquidity to any pair of tokens or token-AUT
     // To work correctly, there needs to be 9 arguments:
@@ -1056,9 +1121,25 @@ export default {
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+.small-pair-balance {
+  font-variant-caps: all-small-caps;
+  font-family: 'Fredoka One', cursive;
+  color: #17a2b8;
+}
+.lp-balance {
+  font-variant-caps: all-small-caps;
+  font-family: 'Fredoka One', cursive;
+  color: #505960;
+}
+.lp-address {
+  font-variant-caps: all-small-caps;
+  font-family: 'Fredoka One', cursive;
+  color: #505960;
+  font-size: 1.3rem;
+}
 .label-title {
   font-variant-caps: all-small-caps;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-family: 'Fredoka One', cursive;
   color: #505960;
 }
@@ -1083,12 +1164,12 @@ export default {
 }
 .lp-pair-container {
   background-color: #FFFFFF;
-  border-radius: 4rem;
+  border-radius: 8rem;
   padding: 2rem;
 }
 .lp-pair-container a:hover {
   text-decoration: none;
-  background-color: #17a2b8;
+  /* background-color: #17a2b8; */
   padding: 0.5rem;
   border-radius: 4rem;
 }
