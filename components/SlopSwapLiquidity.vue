@@ -101,21 +101,37 @@
         </div>
       </b-col>
       <b-col cols="12">
-        <div @change="CheckTradingPair()">
-          <div v-if="PairCheckResp === '0x0000000000000000000000000000000000000000'">
-            <div class="no-exist my-1">
-              <i class="fa-solid fa-square-x" /> Pair Does Not Exist Yet!
+        <div v-if="loggedIn" @change="CheckTradingPair()">
+          <div class="lp-pair-container my-2">
+            <h2 class="secondary-title">
+              <div id="pair-spec-popover" class="help-section">
+                <i class="fa-solid fa-circle-info pair-icon-size" />
+                <span class="grey-text">Liquidity Action Notifications</span>
+              </div>
+            </h2>
+            <div v-if="PairCheckResp === '0x0000000000000000000000000000000000000000'" class="no-exist my-1 mx-1">
+              <i class="fa-solid fa-circle-info" /> This Liquidity does not exist on SlopSwap yet, would you like to be the first to create this Liquidity Pool?<br>
+              <b-button pill variant="primary" class="ml-1 mr-1 button-text" @click="CreateTradingPair()">
+                Create Pair
+              </b-button>
             </div>
-            <b-button v-if="PairCheckResp === '0x0000000000000000000000000000000000000000'" pill variant="primary" class="ml-1 mr-1 button-text" @click="CreateTradingPair()">
-              Create Pair
-            </b-button>
+            <div v-else class="no-exist">
+              <i class="fa-solid fa-circle-info" /> This Liquidity Pair already exists, would you like to add some liquidity to it?<br>
+              <b-button pill variant="primary" class="ml-1 mr-1 button-text" @click="addLiquidity()">
+                Add Liquidity
+              </b-button>
+            </div>
           </div>
-          <div v-else>
+          <div>
             <div class="lp-pair-container">
               <h2 class="secondary-title">
-                <span class="lp-balance">Balance:</span> {{ LiquidityPoolBalance }}
+                <div id="pair-spec-popover" class="help-section">
+                  <i class="fa-solid fa-circle-info pair-icon-size" />
+                  <span class="grey-text">Liquidity Pair Specifications</span>
+                </div>
               </h2>
-              <b-link :href="`https://bscscan.com/token/${PairCheckResp}`" target="_blank">
+              <span class="lp-balance">Balance: {{ LiquidityPoolBalance }}</span><br>
+              <b-link :href="`https://bscscan.com/token/${PairCheckResp}`" :title="`${TokenA.TokenSymbol} | ${TokenB.TokenSymbol} SlopSwap Liquidity Pool Pair Address is ${PairCheckResp} can be explored further on the official BSC Scan website.`" target="_blank">
                 <span class="small-pair-balance">Pooled Balance: {{ HRLPReserveB }}</span>
                 <b-img
                   :src="require(`@/assets/img/tokens/${TokenA.TokenContract}.png`)"
@@ -124,8 +140,9 @@
                   class="small-pair-token-img"
                 />
                 <span class="small-pair-symbols">{{ TokenA.TokenSymbol }}</span>
-
-                <i class="fa-solid fa-pipe" style="color: #17a2b8" />
+              </b-link>
+              <i class="fa-solid fa-pipe" style="color: #17a2b8" />
+              <b-link :href="`https://bscscan.com/token/${PairCheckResp}`" :title="`${TokenA.TokenSymbol} | ${TokenB.TokenSymbol} SlopSwap Liquidity Pool Pair Address is ${PairCheckResp} can be explored further on the official BSC Scan website.`" target="_blank">
                 <span class="small-pair-symbols">{{ TokenB.TokenSymbol }}</span>
                 <b-img
                   :src="require(`@/assets/img/tokens/${TokenB.TokenContract}.png`)"
@@ -135,12 +152,35 @@
                 />
                 <span class="small-pair-balance">Pooled Balance: {{ HRLPReserveA }}</span>
                 <br>
-                <span class="small-pair-symbols blue-gray">Pair Contract Address</span>
-                <br>
-                <span class="lp-address">{{ LPAddress }}</span>
               </b-link>
+              <span class="small-pair-symbols blue-gray">Pair Contract Address</span>
+              <br>
+              <b-link :href="`https://bscscan.com/token/${PairCheckResp}`" :title="`${TokenA.TokenSymbol} | ${TokenB.TokenSymbol} SlopSwap Liquidity Pool Pair Address is ${PairCheckResp} can be explored further on the official BSC Scan website.`" target="_blank">
+                <span class="lp-address">
+                  {{ LPAddress }}
+                </span>
+              </b-link>
+              <b-popover target="pair-spec-popover" triggers="hover" placement="top">
+                <template #title>
+                  Liquidity Pair
+                </template>
+                A liquidity pool is a vault into which participants deposit their assets in order to form a market (trading pair) and make it liquid for those wishing to trade in that pair.
+              </b-popover>
             </div>
           </div>
+        </div>
+        <div v-else class="block-inlline-notification my-4">
+          <p class="notification-text pt-4">
+            <i class="fa-solid fa-circle-info" /> Please connect your wallet to SlopSwap to enable blockchain interaction. Once your wallet is connected, you'll receive helpful onsite notifications associated with our exchange.<br>
+          </p>
+          <b-button pill class="my-2 mx-1 button-text">
+            <i class="fa-solid fa-plug" /> Web3 Wallet Connect
+          </b-button>
+        </div>
+        <div class="block-inlline-notification">
+          <p class="funfact-text">
+            <strong>Fun Fact:</strong> When you connect your wallet, you establish an anonymous Web3 Profile on our exchange. Here at SlopSwap, we value individuality as much as everyone's right to remain anonymous.<br>
+          </p>
         </div>
       </b-col>
     </b-row>
@@ -319,9 +359,10 @@ export default {
         GAS_LIMIT: 450000,
         BSC_NODE: 'https://bsc-dataseed.binance.org/'
       },
-      PairCheckResp: '0x0000000000000000000000000000000000000000',
+      PairCheckResp: null,
       signer: null,
       account: null,
+      loggedIn: false,
       TokenAUserBalance: null,
       TokenBUserBalance: null,
       UserAccount: null,
@@ -354,8 +395,29 @@ export default {
     this.CheckTradingPair()
     this.RetrieveUserBalances()
     this.CheckForLiquidityTokens()
+    this.WalletStatusCheck()
   },
   methods: {
+    async WalletStatusCheck () {
+      // Establish the connection to the User wallet & query Token A (Primary Liquidity Token) balance within the wallet
+      // A Web3Provider wraps a standard Web3 provider, which is
+      // what MetaMask injects as window.ethereum into each page
+      const provider = new ethers.providers.Web3Provider(window.ethereum)
+
+      // MetaMask requires requesting permission to connect users accounts
+      await provider.send('eth_requestAccounts', [])
+
+      // The MetaMask plugin also allows signing transactions to
+      // send ether and pay to change state within the blockchain.
+      // For this, you need the account signer...
+      const signer = provider.getSigner()
+      Console.log('Signer: ' + signer)
+
+      // alert('Before Account Request')
+      const accounts = await provider.send('eth_requestAccounts', [])
+      this.account = accounts[0]
+      this.loggedIn = true
+    },
     async CheckForLiquidityTokens () {
       // Establish the connection to the User wallet & query Token A (Primary Liquidity Token) balance within the wallet
       // A Web3Provider wraps a standard Web3 provider, which is
@@ -1126,6 +1188,19 @@ export default {
   font-family: 'Fredoka One', cursive;
   color: #17a2b8;
 }
+.notification-text {
+  font-variant-caps: all-small-caps;
+  font-style: oblique;
+}
+.funfact-text {
+  font-variant-caps: all-small-caps;
+}
+.block-inlline-notification {
+  background-color: #FFFFFF;
+  border-radius: 8rem;
+  padding: 2rem;
+  text-decoration: none;
+}
 .lp-balance {
   font-variant-caps: all-small-caps;
   font-family: 'Fredoka One', cursive;
@@ -1143,6 +1218,9 @@ export default {
   font-family: 'Fredoka One', cursive;
   color: #505960;
 }
+.grey-text {
+  color: #505960;
+}
 .secondary-title {
   font-variant-caps: all-small-caps;
   font-size: 1.8rem;
@@ -1158,6 +1236,12 @@ export default {
   font-family: 'Fredoka One', cursive;
   color: #505960;
 }
+.pair-icon-size {
+  font-size: 1.3rem;
+}
+.help-section {
+  cursor: help;
+}
 .btn {
   background-color: #17a2b8;
   border: 1px solid #FFFFFF;
@@ -1166,12 +1250,12 @@ export default {
   background-color: #FFFFFF;
   border-radius: 8rem;
   padding: 2rem;
+  text-decoration: none;
 }
 .lp-pair-container a:hover {
   text-decoration: none;
-  /* background-color: #17a2b8; */
-  padding: 0.5rem;
-  border-radius: 4rem;
+  padding: 2rem;
+  border-radius: 8rem;
 }
 .link-color {
   font-variant-caps: all-small-caps;
@@ -1224,7 +1308,7 @@ export default {
   border-radius: 4rem;
 }
 .trade-container {
-  margin-top: 8rem;
+  margin-top: 2rem;
   margin-bottom: auto;
   vertical-align: middle;
 }

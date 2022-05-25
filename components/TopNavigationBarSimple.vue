@@ -14,6 +14,11 @@
           Liquidity
         </NuxtLink>
       </b-nav-item>
+      <b-nav-item class="pt-1">
+        <NuxtLink to="/liquiditypairs">
+          Pairs
+        </NuxtLink>
+      </b-nav-item>
     </b-nav>
   </div>
 </template>
