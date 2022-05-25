@@ -100,7 +100,7 @@
           <span class="label-title"><strong>Wallet Balance:</strong> {{ TokenBUserBalance }}</span>
         </div>
       </b-col>
-      <b-col cols="12">
+      <b-col cols="12" @change="WalletStatusCheck()">
         <div v-if="loggedIn" @change="CheckTradingPair()">
           <div class="lp-pair-container my-2">
             <h2 class="secondary-title">
@@ -173,11 +173,11 @@
           <p class="notification-text pt-4">
             <i class="fa-solid fa-circle-info" /> Please connect your wallet to SlopSwap to enable blockchain interaction. Once your wallet is connected, you'll receive helpful onsite notifications associated with our exchange.<br>
           </p>
-          <b-button pill class="my-2 mx-1 button-text">
+          <b-button pill class="my-2 px-2 button-text">
             <i class="fa-solid fa-plug" /> Web3 Wallet Connect
           </b-button>
         </div>
-        <div class="block-inlline-notification">
+        <div class="block-inlline-notification my-2">
           <p class="funfact-text">
             <strong>Fun Fact:</strong> When you connect your wallet, you establish an anonymous Web3 Profile on our exchange. Here at SlopSwap, we value individuality as much as everyone's right to remain anonymous.<br>
           </p>
