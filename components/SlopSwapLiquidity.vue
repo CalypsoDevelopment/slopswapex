@@ -72,7 +72,7 @@
                 class="my-2 button-text"
                 v-b-toggle.notification-sidebar
               >
-                <i class="fa-solid fa-minus" /> Liquidity Review
+                <i class="fa-solid fa-minus" /> Remove/Review LP
               </b-button>
               <!--<b-button
                 variant="primary"
@@ -462,6 +462,11 @@ export default {
       Console.log('Pair Address: ' + pairAddress)
       const pair = new ethers.Contract(this.MainnetPair, PAIR.abi, signer)
       // alert('After Creating Pair Contract Instance')
+
+      const TokZero = await pair.token0()
+      Console.log(TokZero)
+      const TokOne = await pair.token1()
+      Console.log(TokOne)
 
       // alert('Before reserves Raw request')
       const reservesRaw = await pair.getReserves() // Returns the reserves already formated as ethers
@@ -1011,12 +1016,16 @@ export default {
       this.TokenA = LiquidityMakerToken
       // alert('Liquidity Token A has been changed to \nChainID: ' + this.TokenA.ChainID + '\nLiquidity Token Name:  ' + this.TokenA.TokenName + ' \nLiquidity Token Symbol: ' + this.TokenA.TokenSymbol + '\nLiquidity Token Contract: ' + this.TokenA.TokenContract + '\nLiquidity Token Decimal: ' + this.TokenA.TokenDecimal + '\nLiquidity Token Type: ' + this.TokenA.TokenType)
       this.CheckTradingPair()
+      this.WalletStatusCheck()
+      this.CheckForLiquidityTokens()
       this.$bvModal.hide('TokenA')
     },
     ChangePairTokenB (LiquidityTakerToken) {
       this.TokenB = LiquidityTakerToken
       // alert('Liquidity Token B has been changed to \nChainID: ' + this.TokenB.ChainID + '\nLiquidity Token Name:  ' + this.TokenB.TokenName + ' \nLiquidity Token Symbol: ' + this.TokenB.TokenSymbol + '\nLiquidity Token Contract: ' + this.TokenB.TokenContract + '\nLiquidity Token Decimal: ' + this.TokenB.TokenDecimal + '\nLiquidity Token Type: ' + this.TokenB.TokenType)
       this.CheckTradingPair()
+      this.WalletStatusCheck()
+      this.CheckForLiquidityTokens()
       this.$bvModal.hide('TokenB')
     },
     async CheckTradingPair () {

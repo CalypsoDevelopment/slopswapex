@@ -61,21 +61,20 @@
                   </b-link>
                 </span>
               </b-list-group-item>
-              <b-list-group-item>
-              </b-list-group-item>
+              <b-list-group-item />
               <!--<b-list-group-item></b-list-group-item>
               <b-list-group-item></b-list-group-item>-->
             </b-list-group>
           </div>
           <div v-else>
-            <b-img src="~/assets/img/page-graphics/no-connecty-no-looky.png" fluid alt="Responsive image"></b-img>
+            <b-img src="~/assets/img/page-graphics/no-connecty-no-looky.png" fluid alt="Responsive image" />
           </div>
         </div>
       </b-sidebar>
     </div>
     <TopNavbarComplex />
     <div class="farm-bg">
-      <b-nav tabs align="right">
+      <!-- <b-nav tabs align="right">
         <b-nav-item active>
           <i class="fa-solid fa-circle-plus" /> Add Liquidity
         </b-nav-item>
@@ -88,17 +87,14 @@
         <b-nav-item>
           <i class="fa-solid fa-message" /> Community
         </b-nav-item>
-        <!-- <b-nav-item disabled>
-          Disabled
-        </b-nav-item> -->
-      </b-nav>
+      </b-nav>-->
     </div>
     <b-container>
       <b-row>
         <b-col cols="12" class="text-center">
           <div class="app-container">
             <SlopSwapLiquidity @emitLP="CaptureLPData($event)" />
-          </div>
+          </div> <!-- END OF .APP_CONTAINER -->
         </b-col>
       </b-row>
     </b-container>
@@ -152,6 +148,17 @@ export default {
   background-color: #e0e0e0;
   min-height: 100vh;
 }
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  font-variant-caps: all-small-caps;
+  font-family: 'Fredoka One', sans-serif;
+  color: #17a2b8;
+  font-size: 1.4rem;
+}
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: #17a2b8;
+    border-radius: 8rem;
+}
 .liquidity-spec-list {
   font-variant-caps: all-small-caps;
   font-family: 'Nunito', sans-serif;
@@ -178,7 +185,7 @@ export default {
 .app-container {
   min-height: 600px;
 }
-.nav-tabs {
+.farm-bg {
   /*border-bottom: 1px solid #e0e0e0;*/
   background-color: #FFFFFF;
   padding-top: 1rem;
@@ -197,8 +204,8 @@ a {
     text-decoration: none;
     background-color: transparent;
 }
-a.nav-link:hover {
-  color: #495057;
+a.nav-link:hover, a.nav-link.active:hover {
+  color: #FFFFFF;
 }
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
     color: #495057;
