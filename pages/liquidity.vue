@@ -182,7 +182,7 @@ export default {
   /*border-bottom: 1px solid #e0e0e0;*/
   background-color: #FFFFFF;
   padding-top: 1rem;
-  min-height: 200px;
+  min-height: 240px;
   font-variant-caps: all-small-caps;
   font-family: 'Fredoka One', sans-serif;
   color: #17a2b8;
