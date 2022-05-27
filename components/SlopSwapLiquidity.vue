@@ -70,11 +70,11 @@
                 pill
                 block
                 class="my-2 button-text"
-                @click="quoteRemoveLiquidity()"
+                v-b-toggle.notification-sidebar
               >
                 <i class="fa-solid fa-minus" /> Liquidity Review
               </b-button>
-              <b-button
+              <!--<b-button
                 variant="primary"
                 pill
                 block
@@ -82,7 +82,7 @@
                 @click="RemoveLiquidity(LiquidityBalance)"
               >
                 <i class="fa-solid fa-minus" /> Remove Liquidity
-              </b-button>
+              </b-button>-->
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@
         </div>
       </b-col>
       <b-col cols="12" @change="WalletStatusCheck()">
-        <div v-if="loggedIn" @change="CheckTradingPair()">
+        <!--<div v-if="loggedIn" @change="CheckTradingPair()">
           <div class="lp-pair-container my-2">
             <h2 class="secondary-title">
               <div id="pair-spec-popover" class="help-section">
@@ -121,52 +121,51 @@
                 Add Liquidity
               </b-button>
             </div>
-          </div>
-          <div>
-            <div class="lp-pair-container">
-              <h2 class="secondary-title">
-                <div id="pair-spec-popover" class="help-section">
-                  <i class="fa-solid fa-circle-info pair-icon-size" />
-                  <span class="grey-text">Liquidity Pair Specifications</span>
-                </div>
-              </h2>
-              <span class="lp-balance">Balance: {{ LiquidityPoolBalance }}</span><br>
-              <b-link :href="`https://bscscan.com/token/${PairCheckResp}`" :title="`${TokenA.TokenSymbol} | ${TokenB.TokenSymbol} SlopSwap Liquidity Pool Pair Address is ${PairCheckResp} can be explored further on the official BSC Scan website.`" target="_blank">
-                <span class="small-pair-balance">Pooled Balance: {{ HRLPReserveB }}</span>
-                <b-img
-                  :src="require(`@/assets/img/tokens/${TokenA.TokenContract}.png`)"
-                  fluid
-                  alt="Selected token that user wants to receive"
-                  class="small-pair-token-img"
-                />
-                <span class="small-pair-symbols">{{ TokenA.TokenSymbol }}</span>
-              </b-link>
-              <i class="fa-solid fa-pipe" style="color: #17a2b8" />
-              <b-link :href="`https://bscscan.com/token/${PairCheckResp}`" :title="`${TokenA.TokenSymbol} | ${TokenB.TokenSymbol} SlopSwap Liquidity Pool Pair Address is ${PairCheckResp} can be explored further on the official BSC Scan website.`" target="_blank">
-                <span class="small-pair-symbols">{{ TokenB.TokenSymbol }}</span>
-                <b-img
-                  :src="require(`@/assets/img/tokens/${TokenB.TokenContract}.png`)"
-                  fluid
-                  alt="Selected token that user wants to receive"
-                  class="small-pair-token-img"
-                />
-                <span class="small-pair-balance">Pooled Balance: {{ HRLPReserveA }}</span>
-                <br>
-              </b-link>
-              <span class="small-pair-symbols blue-gray">Pair Contract Address</span>
+          </div>-->
+        <!--<div>
+          <div class="lp-pair-container">
+            <h2 class="secondary-title">
+              <div id="pair-spec-popover" class="help-section">
+                <i class="fa-solid fa-circle-info pair-icon-size" />
+                <span class="grey-text">Liquidity Pair Specifications</span>
+              </div>
+            </h2>
+            <span class="lp-balance">Balance: {{ LiquidityPoolBalance }}</span><br>
+            <b-link :href="`https://bscscan.com/token/${PairCheckResp}`" :title="`${TokenA.TokenSymbol} | ${TokenB.TokenSymbol} SlopSwap Liquidity Pool Pair Address is ${PairCheckResp} can be explored further on the official BSC Scan website.`" target="_blank">
+              <span class="small-pair-balance">Pooled Balance: {{ HRLPReserveB }}</span>
+              <b-img
+                :src="require(`@/assets/img/tokens/${TokenA.TokenContract}.png`)"
+                fluid
+                alt="Selected token that user wants to receive"
+                class="small-pair-token-img"
+              />
+              <span class="small-pair-symbols">{{ TokenA.TokenSymbol }}</span>
+            </b-link>
+            <i class="fa-solid fa-pipe" style="color: #17a2b8" />
+            <b-link :href="`https://bscscan.com/token/${PairCheckResp}`" :title="`${TokenA.TokenSymbol} | ${TokenB.TokenSymbol} SlopSwap Liquidity Pool Pair Address is ${PairCheckResp} can be explored further on the official BSC Scan website.`" target="_blank">
+              <span class="small-pair-symbols">{{ TokenB.TokenSymbol }}</span>
+              <b-img
+                :src="require(`@/assets/img/tokens/${TokenB.TokenContract}.png`)"
+                fluid
+                alt="Selected token that user wants to receive"
+                class="small-pair-token-img"
+              />
+              <span class="small-pair-balance">Pooled Balance: {{ HRLPReserveA }}</span>
               <br>
-              <b-link :href="`https://bscscan.com/token/${PairCheckResp}`" :title="`${TokenA.TokenSymbol} | ${TokenB.TokenSymbol} SlopSwap Liquidity Pool Pair Address is ${PairCheckResp} can be explored further on the official BSC Scan website.`" target="_blank">
-                <span class="lp-address">
-                  {{ LPAddress }}
-                </span>
-              </b-link>
-              <b-popover target="pair-spec-popover" triggers="hover" placement="top">
-                <template #title>
-                  Liquidity Pair
-                </template>
-                A liquidity pool is a vault into which participants deposit their assets in order to form a market (trading pair) and make it liquid for those wishing to trade in that pair.
-              </b-popover>
-            </div>
+            </b-link>
+            <span class="small-pair-symbols blue-gray">Pair Contract Address</span>
+            <br>
+            <b-link :href="`https://bscscan.com/token/${PairCheckResp}`" :title="`${TokenA.TokenSymbol} | ${TokenB.TokenSymbol} SlopSwap Liquidity Pool Pair Address is ${PairCheckResp} can be explored further on the official BSC Scan website.`" target="_blank">
+              <span class="lp-address">
+                {{ LPAddress }}
+              </span>
+            </b-link>
+            <b-popover target="pair-spec-popover" triggers="hover" placement="top">
+              <template #title>
+                Liquidity Pair
+              </template>
+              A liquidity pool is a vault into which participants deposit their assets in order to form a market (trading pair) and make it liquid for those wishing to trade in that pair.
+            </b-popover>
           </div>
         </div>
         <div v-else class="block-inlline-notification my-4">
@@ -177,11 +176,11 @@
             <i class="fa-solid fa-plug" /> Web3 Wallet Connect
           </b-button>
         </div>
-        <div class="block-inlline-notification my-2">
+        <div class="block-inline-notification my-2">
           <p class="funfact-text">
             <strong>Fun Fact:</strong> When you connect your wallet, you establish an anonymous Web3 Profile on our exchange. Here at SlopSwap, we value individuality as much as everyone's right to remain anonymous.<br>
           </p>
-        </div>
+        </div>-->
       </b-col>
     </b-row>
   </b-container>
@@ -374,7 +373,8 @@ export default {
       Bout: null,
       HRLPReserveA: null,
       HRLPReserveB: null,
-      LPTokenCon: { ChainID: 56, TokenName: 'SlopSwap LPs', TokenSymbol: 'SLOP-LPs', TokenDecimal: 18, TokenType: 'ERC20', BrandPrimary: '#f0b90b' }
+      LPTokenCon: { ChainID: 56, TokenName: 'SlopSwap LPs', TokenSymbol: 'SLOP-LPs', TokenDecimal: 18, TokenType: 'ERC20', BrandPrimary: '#f0b90b' },
+      LiquidityPoolPairObj: Object
     }
   },
   watch: {
@@ -497,39 +497,26 @@ export default {
       }
 
       const liquidity = this.LiquidityPoolBalance
-      alert('Liquidity: ' + liquidity)
+      Console.log('Liquidity: ' + liquidity)
       const Aout = (reserveA * liquidity) / totalSupply
       const Bout = (reserveB * liquidity) / totalSupply
 
-      alert('Aout: ' + Aout + ' ' + 'Bout: ' + Bout + ' ' + 'Liquidity: ' + liquidity)
+      Console.log('Aout: ' + Aout + ' ' + 'Bout: ' + Bout + ' ' + 'Liquidity: ' + liquidity)
       // return [liquidity, Aout, Bout]
       this.liquidity = liquidity
       this.Aout = Aout
       this.Bout = Bout
-
-      // alert('LP Token Balance: ' + this.LiquidityBalance)
-      /*
-      alert('Pair Address: ' + pairAddress)
-      const LPTokenContract = new ethers.Contract(String(this.MainnetPair), PAIR.abi, provider)
-      // alert('After Creation of LP Token Contract Instance')
-
-      alert('Line 324')
-      const RetrieveReserves = await LPTokenContract.getReserves()
-      alert('Reserves Request Return ' + RetrieveReserves)
-
-      const BEP20TokenContract = new ethers.Contract(pairAddress, BEP20.abi, provider)
-      alert('Line 325')
-      const LPTokenBalance = await BEP20TokenContract.balanceOf(String(pairAddress))
-      alert('Line 327')
-      this.LiquidityBalance = ethers.utils.formatEther(String(LPTokenBalance))
-      alert('Liquidity Balance: ' + this.LiquidityBalance)
-      const LPTokenName = await LPTokenContract.name()
-      const LPTokenTotalSupply = await LPTokenContract.totalSupply()
-      alert(LPTokenName + ' Total Supply: ' + ethers.utils.formatEther(String(LPTokenTotalSupply)))
-      alert('LP Token Name: ' + LPTokenName)
-      const LPTokenFormatter = ethers.utils.formatEther(String(LPTokenBalance))
-      alert('SlopSwap LP Token Balance: ' + LPTokenFormatter + '\n' + 'LP Token Address: ' + pairAddress)
-      */
+      // Now we need to build the LiquidityPoolPairObj so that we can transfer the object to the sidebar to display the data.
+      // Displaying the data in the slide-out sidebar will make the the liquidity interface look much cleaner.
+      this.LiquidityPoolPairObj = {
+        LPTokenA: this.TokenA,
+        LPTokenAReserves: reservesRaw[0],
+        LPTokenB: this.TokenB,
+        LPTokenBReserves: reservesRaw[1],
+        LiquidityPairAddress: pairAddress,
+        LPTokenBalance: LPTokenBbalance
+      }
+      this.$emit('emitLP', this.LiquidityPoolPairObj)
     },
     async quoteRemoveLiquidity (
     ) {
@@ -566,7 +553,7 @@ export default {
       const address2 = this.TokenB.TokenContract
 
       const pairAddress = await factory.getPair(String(address1), String(address2))
-      alert('Pair Address: ' + pairAddress)
+      Console.log('Pair Address: ' + pairAddress)
       const pair = new ethers.Contract(this.MainnetPair, PAIR.abi, signer)
       // alert('After Creating Pair Contract Instance')
 
@@ -574,10 +561,10 @@ export default {
       const reservesRaw = await pair.getReserves() // Returns the reserves already formated as ethers
       const reserveA = reservesRaw[0]
       const reserveB = reservesRaw[1]
-      alert('Reserves Raw Token A: ' + reservesRaw[0] + ' ' + 'Reserves Raw Token B: ' + reservesRaw[1])
+      Console.log('Reserves Raw Token A: ' + reservesRaw[0] + ' ' + 'Reserves Raw Token B: ' + reservesRaw[1])
 
       const feeToAddress = await factory.feeToSetter()
-      alert('Fee to this Dev Address: ' + feeToAddress)
+      Console.log('Fee to this Dev Address: ' + feeToAddress)
 
       const feeOn =
         (await factory.feeTo()) !== 0x0000000000000000000000000000000000000000
@@ -587,7 +574,7 @@ export default {
       const kLast = Number(ethers.utils.formatEther(_kLast))
 
       const _totalSupply = await pair.totalSupply()
-      alert('Total Supply: ' + _totalSupply)
+      Console.log('Total Supply: ' + _totalSupply)
       let totalSupply = Number(ethers.utils.formatEther(_totalSupply))
 
       if (feeOn && kLast > 0) {
@@ -1195,7 +1182,7 @@ export default {
 .funfact-text {
   font-variant-caps: all-small-caps;
 }
-.block-inlline-notification {
+.block-inline-notification {
   background-color: #FFFFFF;
   border-radius: 8rem;
   padding: 2rem;
@@ -1247,7 +1234,7 @@ export default {
   border: 1px solid #FFFFFF;
 }
 .lp-pair-container {
-  background-color: #FFFFFF;
+  /*background-color: #ffffffaa;*/
   border-radius: 8rem;
   padding: 2rem;
   text-decoration: none;

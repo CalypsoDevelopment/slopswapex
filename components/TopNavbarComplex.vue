@@ -15,14 +15,14 @@
           <b-nav-item to="/liquidity">
             Liquidity
           </b-nav-item>
-          <b-nav-item to="/liquiditypairs">
+          <!-- <b-nav-item to="/liquiditypairs">
             Liquidity Pairs
-          </b-nav-item>
+          </b-nav-item> -->
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
-          <b-nav-form>
+          <!--<b-nav-form>
             <b-form-input size="sm" class="mr-sm-2" placeholder="Search" />
             <b-button size="sm" class="my-2 my-sm-0" type="submit">
               Search
@@ -45,7 +45,6 @@
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown right>
-            <!-- Using 'button-content' slot -->
             <template #button-content>
               <em>User</em>
             </template>
@@ -55,19 +54,62 @@
             <b-dropdown-item href="#">
               Sign Out
             </b-dropdown-item>
-          </b-nav-item-dropdown>
+          </b-nav-item-dropdown>-->
+          <b-nav-item>
+            <b-button pill variant="info" @click="ConnectWalletInit()">
+              Connect Wallet
+            </b-button>
+          </b-nav-item>
+          <b-nav-item>
+            <b-button v-b-toggle.notification-sidebar variant="info" pill>
+              <i class="fa-solid fa-sidebar" />
+            </b-button>
+          </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
   </div>
 </template>
 <script>
+// import axios from 'axios'
+// import SlopSwapLiquidityMakerTokenSelect from '~/components/SlopSwapLiquidityMakerTokenSelect.vue'
+// import SlopSwapLiquidityTakerTokenSelect from '~/components/SlopSwapLiquidityTakerTokenSelect.vue'
+const ethers = require('ethers')
+// const qs = require('qs')
+const Console = require('Console')
+// const BEP20 = require('~/static/artifacts/IERC20.json')
+// const PAIR = require('~/static/artifacts/SlopSwapPair.json')
+// const ROUTER = require('~/static/artifacts/SlopSwapRouter.json')
+// const FACTORY = require('~/static/artifacts/SlopSwapFactory.json')
+
 export default {
   name: 'TopNavbarComplex',
   components: {},
   data () {
     return {
       greeting: 'Hello World!'
+    }
+  },
+  methods: {
+    async ConnectWalletInit () {
+      // Establish the connection to the User wallet & query Token A (Primary Liquidity Token) balance within the wallet
+      // A Web3Provider wraps a standard Web3 provider, which is
+      // what MetaMask injects as window.ethereum into each page
+      const provider = new ethers.providers.Web3Provider(window.ethereum)
+
+      // MetaMask requires requesting permission to connect users accounts
+      await provider.send('eth_requestAccounts', [])
+
+      // The MetaMask plugin also allows signing transactions to
+      // send ether and pay to change state within the blockchain.
+      // For this, you need the account signer...
+      const signer = provider.getSigner()
+      Console.log('Signer: ' + signer)
+
+      // alert('Before Account Request')
+      const accounts = await provider.send('eth_requestAccounts', [])
+      this.account = accounts[0]
+      this.loggedIn = true
     }
   }
 }

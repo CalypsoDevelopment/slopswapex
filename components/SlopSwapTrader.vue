@@ -33,7 +33,7 @@
       <b-col cols="5" class="text-center">
         <SlopSwapMakerTokenSelect @changeMakerToken="ChangeSellToken($event)" @changeMakerTokenBalance="MakerReCheckBalance($event)" />
         <div>
-          <b-form-input v-model="sellAmount" class="maker-token-amount" placeholder="0.0" @change="MakerPriceCheck()" />
+          <b-form-input v-model="sellAmount" class="maker-token-amount" placeholder="0.0" @:input="MakerPriceCheck()" />
           <!--<div class="mt-2 dollar-value">
             <i class="fa-solid fa-square-dollar" style="color: #6c757d;" />
             {{ MakerDollarAmount }}
