@@ -34,7 +34,7 @@
             {{ MakerDollarAmount }}
           </div>-->
         </div>
-        <div class="text-centermt-1 mb-1">
+        <div class="text-center mt-1 mb-1">
           <span class="label-title"><strong>Wallet Balance:</strong> {{ TokenAUserBalance }}</span>
         </div>
       </b-col>
@@ -43,48 +43,6 @@
           <span class="label-title">Slippage <i class="fa-solid fa-arrow-up-arrow-down" /></span>
           <b-form-select v-model="SlippageSelected" class="slippage-selector mt-2" :options="SlippageOptions" />
           <!--<i class="fa-solid fa-repeat fa-2x animate__animated animate__rotatIn" style="color: #007bff" />-->
-          <div class="my-4">
-            <div>
-              <b-button
-                v-if="PairCheckResp === '0x0000000000000000000000000000000000000000'"
-                variant="primary"
-                pill
-                block
-                class="mt-2 button-text"
-                @click="CreateTradingPair()"
-              >
-                Create Pair
-              </b-button>
-              <b-button
-                v-if="PairCheckResp != '0x0000000000000000000000000000000000000000'"
-                variant="primary"
-                pill
-                block
-                class="mt-2 button-text"
-                @click="addLiquidity()"
-              >
-                <i class="fa-solid fa-plus" /> Add Liquidity
-              </b-button>
-              <b-button
-                variant="primary"
-                pill
-                block
-                class="my-2 button-text"
-                v-b-toggle.notification-sidebar
-              >
-                <i class="fa-solid fa-minus" /> Remove/Review LP
-              </b-button>
-              <!--<b-button
-                variant="primary"
-                pill
-                block
-                class="my-2 button-text"
-                @click="RemoveLiquidity(LiquidityBalance)"
-              >
-                <i class="fa-solid fa-minus" /> Remove Liquidity
-              </b-button>-->
-            </div>
-          </div>
         </div>
       </b-col>
       <b-col cols="5" class="text-center">
@@ -101,6 +59,45 @@
         </div>
       </b-col>
       <b-col cols="12" @change="WalletStatusCheck()">
+        <div class="my-4">
+          <div>
+            <b-button
+              v-if="PairCheckResp === '0x0000000000000000000000000000000000000000'"
+              variant="primary"
+              pill
+              class="my-2 button-text"
+              @click="CreateTradingPair()"
+            >
+              Create Pair
+            </b-button>
+            <b-button
+              v-if="PairCheckResp != '0x0000000000000000000000000000000000000000'"
+              variant="primary"
+              pill
+              class="my-2 button-text"
+              @click="addLiquidity()"
+            >
+              <i class="fa-solid fa-plus" /> Add Liquidity
+            </b-button>
+            <b-button
+              v-b-toggle.notification-sidebar
+              variant="primary"
+              pill
+              class="my-2 button-text"
+            >
+              <i class="fa-solid fa-minus" /> Remove/Review LP
+            </b-button>
+            <!--<b-button
+                variant="primary"
+                pill
+                block
+                class="my-2 button-text"
+                @click="RemoveLiquidity(LiquidityBalance)"
+              >
+                <i class="fa-solid fa-minus" /> Remove Liquidity
+              </b-button>-->
+          </div>
+        </div>
         <!--<div v-if="loggedIn" @change="CheckTradingPair()">
           <div class="lp-pair-container my-2">
             <h2 class="secondary-title">
@@ -460,7 +457,7 @@ export default {
       this.LiquidityPoolBalance = ReturnTokenLPbalance.substring(0, 8) + ' ' + this.LPTokenCon.TokenSymbol
 
       Console.log('Pair Address: ' + pairAddress)
-      const pair = new ethers.Contract(this.MainnetPair, PAIR.abi, signer)
+      const pair = new ethers.Contract(String(this.LPAddress), PAIR.abi, signer)
       // alert('After Creating Pair Contract Instance')
 
       const TokZero = await pair.token0()
@@ -468,17 +465,20 @@ export default {
       const TokOne = await pair.token1()
       Console.log(TokOne)
 
+      const token0 = await pair.token0()
+      const token1 = await pair.token1()
+
+      Console.log('Token 0: ' + token0)
+      Console.log('Token 1: ' + token1)
+
+      /* const klastReserves = await pair.kLast()
+      alert('kLast Reserves: ' + klastReserves) */
+
       // alert('Before reserves Raw request')
       const reservesRaw = await pair.getReserves() // Returns the reserves already formated as ethers
       const reserveA = reservesRaw[0]
       const reserveB = reservesRaw[1]
-      Console.log('Reserves Raw Token A: ' + reservesRaw[0] + ' ' + 'Reserves Raw Token B: ' + reservesRaw[1])
-
-      // const HumanReadableReserveA = ethers.utils.parseUnits(String(reservesRaw[0]), this.TokenA.TokenDecimal)
-      this.HRLPReserveA = Number(ethers.utils.formatEther(reservesRaw[0]))
-
-      // const HumanReadableReserveB = ethers.utils.parseUnits(String(reservesRaw[1]), this.TokenB.TokenDecimal)
-      this.HRLPReserveB = Number(ethers.utils.formatEther(reservesRaw[1]))
+      Console.log('Reserves Raw Token A: ' + this.TokenA.TokenSymbol + ' ' + reservesRaw[0] + ' ' + 'Reserves Raw Token B: ' + this.TokenB.TokenSymbol + ' ' + reservesRaw[1])
 
       const feeToAddress = await factory.feeToSetter()
       Console.log('Fee to this Dev Address: ' + feeToAddress)
@@ -1015,6 +1015,8 @@ export default {
     ChangePairTokenA (LiquidityMakerToken) {
       this.TokenA = LiquidityMakerToken
       // alert('Liquidity Token A has been changed to \nChainID: ' + this.TokenA.ChainID + '\nLiquidity Token Name:  ' + this.TokenA.TokenName + ' \nLiquidity Token Symbol: ' + this.TokenA.TokenSymbol + '\nLiquidity Token Contract: ' + this.TokenA.TokenContract + '\nLiquidity Token Decimal: ' + this.TokenA.TokenDecimal + '\nLiquidity Token Type: ' + this.TokenA.TokenType)
+      this.TokenAPairAmount = null
+      this.TokenBPairAmount = null
       this.CheckTradingPair()
       this.WalletStatusCheck()
       this.CheckForLiquidityTokens()
@@ -1023,6 +1025,8 @@ export default {
     ChangePairTokenB (LiquidityTakerToken) {
       this.TokenB = LiquidityTakerToken
       // alert('Liquidity Token B has been changed to \nChainID: ' + this.TokenB.ChainID + '\nLiquidity Token Name:  ' + this.TokenB.TokenName + ' \nLiquidity Token Symbol: ' + this.TokenB.TokenSymbol + '\nLiquidity Token Contract: ' + this.TokenB.TokenContract + '\nLiquidity Token Decimal: ' + this.TokenB.TokenDecimal + '\nLiquidity Token Type: ' + this.TokenB.TokenType)
+      this.TokenAPairAmount = null
+      this.TokenBPairAmount = null
       this.CheckTradingPair()
       this.WalletStatusCheck()
       this.CheckForLiquidityTokens()

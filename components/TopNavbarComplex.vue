@@ -1,8 +1,9 @@
 <template>
   <div>
     <b-navbar toggleable="lg" class="topbar-nav mx-0" type="light" variant="">
-      <b-navbar-brand href="#">
-        <span class="brand-main-text"><span class="blue-text">Slop</span>Swap</span>
+      <b-navbar-brand href="https://slopswap.trade">
+        <b-img src="~/assets/img/SlopSwap-Rise-Of-The-Pigs-Simple.png" fluid alt="SlopSwap Crypto Currency Exchange & Blockchain Community Resource" class="slopswap-topbar-logo" />
+        <!--<span class="brand-main-text"><span class="blue-text">Slop</span>Swap</span>-->
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse" />
@@ -15,9 +16,15 @@
           <b-nav-item to="/liquidity">
             Liquidity
           </b-nav-item>
-          <!-- <b-nav-item to="/liquiditypairs">
-            Liquidity Pairs
-          </b-nav-item> -->
+          <b-nav-item to="/">
+            Yield Farming
+          </b-nav-item>
+          <b-nav-item to="/">
+            Lottery
+          </b-nav-item>
+          <b-nav-item to="/">
+            SlopSwapX
+          </b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -116,6 +123,9 @@ export default {
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+.slopswap-topbar-logo {
+  max-height: 25px;
+}
 .topbar-nav {
   border-bottom: 1px solid #FFFFFF;
 }

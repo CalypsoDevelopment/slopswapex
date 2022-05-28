@@ -3,8 +3,8 @@
     <div>
       <b-sidebar id="notification-sidebar" width="600px" shadow>
         <div class="px-1 py-4">
-          <h1 class="sidebar-title text-center">
-            Liquidity Pair Specifications<br>
+          <h1 class="sidebar-title text-center dark-bg py-3">
+            <!--<i class="fa-solid fa-circle-info liquidity-title-info" />--> Liquidity Pair Specifications & Reserves<br>
           </h1>
           <div v-if="LiquidityPoolData">
             <b-list-group class="liquidity-spec-list text-center">
@@ -61,9 +61,35 @@
                   </b-link>
                 </span>
               </b-list-group-item>
+              <h2 class="secondary-title dark-bg py-3">
+                Remove Tokens From Liquidity Pool
+              </h2>
+              <b-row class="py-4">
+                <b-col cols="6">
+                  <b-form-input v-model="LPTokenBReserve" placeholder="0.0" />
+                  <div class="mt-2">
+                    Value: {{ text }}
+                  </div>
+                </b-col>
+                <b-col cols="6">
+                  <b-form-input v-model="LPTokenAReserve" placeholder="0.0" />
+                  <div class="mt-2">
+                    Value: {{ text }}
+                  </div>
+                </b-col>
+                <b-col cols="12">
+                  <b-button pill block class="my-4">
+                    Remove Liquidity
+                  </b-button>
+                </b-col>
+              </b-row>
               <b-list-group-item />
-              <!--<b-list-group-item></b-list-group-item>
-              <b-list-group-item></b-list-group-item>-->
+              <b-list-group-item>
+                <p class="liquidity-info">
+                  By adding liquidity you'll earn 0.17% of all trades on this pair proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.
+                </p>
+              </b-list-group-item>
+              <!--<b-list-group-item></b-list-group-item>-->
             </b-list-group>
           </div>
           <div v-else>
@@ -148,6 +174,31 @@ export default {
   background-color: #e0e0e0;
   min-height: 100vh;
 }
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 4rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.liquidity-title-info {
+  max-height: 22px;
+}
+.liquidity-info {
+  font-variant-caps: all-small-caps;
+  font-family: 'Nunito', sans-serif;
+  color: #495057;
+  font-size: 1rem;
+  font-weight: 800;
+}
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   font-variant-caps: all-small-caps;
   font-family: 'Fredoka One', sans-serif;
@@ -173,11 +224,14 @@ export default {
 .token-address {
   font-size: 1.1rem;
 }
-.sidebar-title {
+.sidebar-title, .secondary-title {
   font-variant-caps: all-small-caps;
   font-family: 'Fredoka One', sans-serif;
-  color: #17a2b8;
-  font-size: 1.4rem;
+  color: #212529;
+  font-size: 1.8rem;
+}
+.dark-bg {
+  background-color: #17a2b8;
 }
 .small-pair-token-img {
   max-height: 22px;
@@ -194,7 +248,7 @@ export default {
   font-family: 'Fredoka One', sans-serif;
   color: #17a2b8;
   font-size: 0.94rem;
-  background-image: url(~/assets/img/slopswap-crew.png);
+  background-image: url(~/assets/img/page-graphics/Wise-Old-Owl.png);
   background-size: 100%;
   background-position: bottom center;
   background-repeat: no-repeat;

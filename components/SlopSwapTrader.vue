@@ -1,11 +1,8 @@
 <template>
   <b-container fluid>
     <b-row class="trade-container">
-      <b-col cols="12">
-        <div>
-          <b-img src="~/assets/img/SlopSwap-Rise-Of-The-Pigs.png" fluid alt="SlopSwap Crypto Currency Exchange & Blockchain Community Resource" class="slopswap-logo" />
-        </div>
-      </b-col>
+      <!--<b-col cols="12">
+      </b-col>-->
       <b-col cols="12">
         <div>
           <b-nav>
@@ -69,7 +66,7 @@
         </div>
       </b-col>
       <b-col cols="12">
-        <div class="trade-btn-container mt-4">
+        <div class="trade-btn-container mt-2">
           <b-button-group size="lg">
             <b-button class="left-group-btn" @click="TokenTrade()">
               Trade Quote
@@ -588,7 +585,7 @@ export default {
   border-radius: 4rem;
 }
 .trade-container {
-  margin-top: 3rem;
+  padding: 2rem;
   margin-bottom: auto;
   vertical-align: middle;
 }
