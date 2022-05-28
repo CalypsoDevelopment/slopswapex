@@ -2,8 +2,8 @@
   <b-container fluid class="bg px-0">
     <div>
       <b-sidebar id="notification-sidebar" width="600px" shadow>
-        <div class="px-1 py-4">
-          <h1 class="sidebar-title text-center dark-bg py-3">
+        <div class="px-1 py-2">
+          <h1 class="sidebar-title text-center dark-bg py-2">
             <!--<i class="fa-solid fa-circle-info liquidity-title-info" />--> Liquidity Pair Specifications & Reserves<br>
           </h1>
           <div v-if="LiquidityPoolData">
@@ -61,7 +61,7 @@
                   </b-link>
                 </span>
               </b-list-group-item>
-              <h2 class="secondary-title dark-bg py-3">
+              <h2 class="secondary-title dark-bg py-2">
                 Remove Tokens From Liquidity Pool
               </h2>
               <b-row class="py-4">
@@ -78,12 +78,11 @@
                   </div>
                 </b-col>
                 <b-col cols="12">
-                  <b-button pill block class="my-4">
+                  <b-button pill block class="my-2">
                     Remove Liquidity
                   </b-button>
                 </b-col>
               </b-row>
-              <b-list-group-item />
               <b-list-group-item>
                 <p class="liquidity-info">
                   By adding liquidity you'll earn 0.17% of all trades on this pair proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.

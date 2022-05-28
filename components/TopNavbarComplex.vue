@@ -64,6 +64,8 @@
           </b-nav-item-dropdown>-->
           <b-nav-item>
             <b-button pill variant="info" @click="ConnectWalletInit()">
+              <i v-if="loggedIn" class="fa-solid fa-signal" />
+              <i v-else class="fa-solid fa-signal" />
               Connect Wallet
             </b-button>
           </b-nav-item>
@@ -94,7 +96,7 @@ export default {
   components: {},
   data () {
     return {
-      greeting: 'Hello World!'
+      loggedIn: false
     }
   },
   methods: {
