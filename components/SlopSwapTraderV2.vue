@@ -50,7 +50,7 @@
           <b-form-select v-model="SlippageSelected" class="slippage-selector mt-2" :options="SlippageOptions" />
         </div>
       </b-col>
-      <b-col sm="12" medium="12" lg="12" class="text-center">
+      <b-col sm="12" medium="12" lg="5" class="text-center">
         <SlopSwapTakerTokenSelect @changeTakerToken="ChangeBuyToken($event)" @changeTakerTokenBalance="TakerReCheckBalance($event)" />
         <div>
           <b-form-input v-model="BuyTokenAmount" class="taker-token-amount" placeholder="0.0" />
