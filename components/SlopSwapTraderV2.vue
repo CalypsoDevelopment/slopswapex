@@ -67,16 +67,14 @@
         </div>
       </b-col>
       <b-col sm="12" medium="12" lg="12">
-        <div class="trade-btn-container mt-2">
-          <b-button-group size="lg">
-            <b-button class="left-group-btn my-3 px-3 py-3" @click="TokenTrade()">
+        <div class="trade-btn-container mt-1">
+          <!--<b-button class="left-group-btn my-2 px-3 py-3" @click="TokenTrade()">
               Trade Quote
-            </b-button>
-            <!--<b-button>Button 2</b-button>-->
-            <b-button class="right-group-btn my-3 px-3 py-3" variant="info" @click="swapTokens()">
-              Make Trade
-            </b-button>
-          </b-button-group>
+            </b-button>-->
+          <!--<b-button>Button 2</b-button>-->
+          <b-button pill block class="my-1 px-3 py-3" variant="info" @click="swapTokens()">
+            Make Trade
+          </b-button>
         </div>
         <!--<b-button
           pill
@@ -597,13 +595,13 @@ export default {
   border-radius: 4rem;
 }
 .trade-container {
-  padding: 2rem;
+  padding: 1rem;
   margin-bottom: auto;
   vertical-align: middle;
 }
 .trade-btn {
   padding: .25rem;
-  margin-top: 2rem;
+  margin-top: 0rem;
   font-size: 1.6rem;
   font-family: 'Arimo', sans-serif;
   font-variant: all-small-caps;
@@ -620,8 +618,8 @@ export default {
   font-size: 1.8rem;
 }
 .trade-symbol-container {
-  margin-top: 3rem;
-  margin-bottom:2rem;
+  margin-top: 1rem;
+  margin-bottom:1rem;
 }
 .animate__animated.animate__rotatIn {
   --animate-duration: 2s;

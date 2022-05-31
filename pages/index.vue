@@ -61,6 +61,8 @@ export default {
   font-family: 'Fredoka One', sans-serif;
   color: #17a2b8;
   font-size: 0.94rem;
+  /*-webkit-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+  clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);*/
   /* background-image: url(~/assets/img/page-graphics/SlopSwap-Home-Page.png);
   background-size: 100%;
   background-position: bottom center;

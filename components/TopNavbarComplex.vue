@@ -153,7 +153,7 @@ export default {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .slopswap-topbar-logo {
-  max-height: 25px;
+  max-height: 20px;
 }
 .topbar-nav {
   border-bottom: 1px solid #FFFFFF;
@@ -161,7 +161,7 @@ export default {
 .topbar-nav a {
   font-variant-caps: all-small-caps;
   font-family: 'Fredoka One', sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 800;
 }
 .brand-main-text {
