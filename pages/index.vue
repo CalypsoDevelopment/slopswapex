@@ -20,11 +20,12 @@
         </b-nav-item>
       </b-nav>-->
     </div>
+    <BSCSpotPriceTicker />
     <b-container>
       <b-row>
         <b-col cols="12" class="text-center">
           <div class="app-container">
-            <SlopSwapTrader />
+            <SlopSwapTraderV2 />
           </div>
         </b-col>
       </b-row>
@@ -34,11 +35,12 @@
 
 <script>
 import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
-import SlopSwapTrader from '~/components/SlopSwapTrader.vue'
+import SlopSwapTraderV2 from '~/components/SlopSwapTraderV2.vue'
+import BSCSpotPriceTicker from '~/components/BSCSpotPriceTicker.vue'
 
 export default {
   name: 'IndexPage',
-  components: { SlopSwapTrader, TopNavbarComplex }
+  components: { SlopSwapTraderV2, TopNavbarComplex, BSCSpotPriceTicker }
 }
 </script>
 <style scoped>

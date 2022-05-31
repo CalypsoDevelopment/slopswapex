@@ -1,10 +1,10 @@
 <template>
   <b-container fluid class="bg px-0">
     <div>
-      <b-sidebar id="notification-sidebar" width="600px" shadow>
-        <div class="px-1 py-2">
+      <b-sidebar id="notification-sidebar" width="50%" shadow>
+        <div class="px-0 py-2">
           <h1 class="sidebar-title text-center dark-bg py-2">
-            <!--<i class="fa-solid fa-circle-info liquidity-title-info" />--> Liquidity Pair Specifications & Reserves<br>
+            <!--<i class="fa-solid fa-circle-info liquidity-title-info" />--> Liquidity Pair Token Removal Specifications & Reserves<br>
           </h1>
           <div v-if="LiquidityPoolData">
             <b-list-group class="liquidity-spec-list text-center">
@@ -26,19 +26,6 @@
                 />
                 {{ LPTokenBSymbol }}
                 <span class="pair-data">{{ LPTokenAReserve }}</span>
-                <br>
-                <hr>
-                SLOP-LPs Balance for
-                <br>
-                {{ LPTokenASymbol }} | {{ LPTokenBSymbol }}
-                <br>
-                <b-img
-                  :src="require(`@/assets/img/tokens/SLOP-LPs.png`)"
-                  fluid
-                  alt="SLOP-LPs is the native Liquidity Pool Token of SlopSwap Exchange"
-                  class="small-pair-token-img"
-                />
-                <span class="pair-data">{{ LPTokenBalance }}</span> SLOP-LPs
               </b-list-group-item>
               <b-list-group-item>
                 <b-row>
@@ -54,6 +41,56 @@
                 </b-row>
               </b-list-group-item>
               <b-list-group-item>
+                <b-row class="px-4 py-4">
+                  <b-col cols="12" class="py-4">
+                    <b-img
+                      :src="require(`@/assets/img/tokens/SLOP-LPs.png`)"
+                      fluid
+                      alt="SLOP-LPs is the native Liquidity Pool Token of SlopSwap Exchange"
+                      class="small-pair-token-img"
+                    />
+                    {{ LPTokenASymbol }} | {{ LPTokenBSymbol }} Liquidity Pool Balance: <span class="pair-data">{{ LPTokenBalance }} SLOP-LPs</span>
+                    <b-form-input v-model="AmountLiquidityOut" class="text-left" placeholder="0.0" />
+                    Liquidity: {{ liquidity }}
+                  </b-col>
+                  <b-col cols="6" class="py-2">
+                    <div class="mt-2 ml-3 text-left">
+                      <b-img
+                        :src="require(`@/assets/img/tokens/${LPTokenAContract}.png`)"
+                        fluid
+                        alt="Selected token that user wants to receive"
+                        class="small-pair-token-img"
+                      />
+                      Pooled {{ LPTokenASymbol }}:
+                      <span class="pair-data">{{ LPTokenBReserve }} {{ LPTokenASymbol }}</span>
+                    </div>
+                    <b-form-input v-model="Bout" disabled placeholder="0.0" />
+                  </b-col>
+                  <b-col cols="6" class="py-2">
+                    <div class="mt-2 mr-3 text-right">
+                      <b-img
+                        :src="require(`@/assets/img/tokens/${LPTokenBContract}.png`)"
+                        fluid
+                        alt="Selected token that user wants to receive"
+                        class="small-pair-token-img"
+                      />
+                      Pooled {{ LPTokenBSymbol }}:
+                      <span class="pair-data">{{ LPTokenAReserve }} {{ LPTokenBSymbol }}</span>
+                    </div>
+                    <b-form-input v-model="Aout" disabled class="text-right" placeholder="0.0" />
+                  </b-col>
+                  <b-col cols="12">
+                    <!--<b-button class="my-3 px-3 py-3 btn-left" @click="quoteRemoveLiquidityV2()">
+                      <i class="fa-solid fa-bullseye-arrow" /> Remove Liquidity Quote
+                    </b-button>-->
+
+                    <b-button pill block class="my-3 px-5 py-3" @click="removeLiquidity()">
+                      <i class="fa-solid fa-hexagon-check" /> Remove Liquidity
+                    </b-button>
+                  </b-col>
+                </b-row>
+              </b-list-group-item>
+              <b-list-group-item>
                 LP Token Pair Address<br>
                 <span class="token-address">
                   <b-link :href="`https://bscscan.com/token/${LPPairAddress}`" :title="`${LPTokenASymbol} | ${LPTokenBSymbol} SlopSwap Liquidity Pool Pair Address is ${LPPairAddress} can be explored further on the official BSC Scan website.`" target="_blank">
@@ -61,28 +98,6 @@
                   </b-link>
                 </span>
               </b-list-group-item>
-              <h2 class="secondary-title dark-bg py-2">
-                Remove Tokens From Liquidity Pool
-              </h2>
-              <b-row class="py-4">
-                <b-col cols="6">
-                  <b-form-input v-model="LPTokenBReserve" placeholder="0.0" />
-                  <div class="mt-2">
-                    Value: {{ text }}
-                  </div>
-                </b-col>
-                <b-col cols="6">
-                  <b-form-input v-model="LPTokenAReserve" placeholder="0.0" />
-                  <div class="mt-2">
-                    Value: {{ text }}
-                  </div>
-                </b-col>
-                <b-col cols="12">
-                  <b-button pill block class="my-2">
-                    Remove Liquidity
-                  </b-button>
-                </b-col>
-              </b-row>
               <b-list-group-item>
                 <p class="liquidity-info">
                   By adding liquidity you'll earn 0.17% of all trades on this pair proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.
@@ -127,9 +142,16 @@
 </template>
 
 <script>
+// import { Console } from 'console'
 import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
 import SlopSwapLiquidity from '~/components/SlopSwapLiquidity.vue'
 const ethers = require('ethers')
+const Console = require('Console')
+const BEP20 = require('~/static/artifacts/IERC20.json')
+const PAIR = require('~/static/artifacts/SlopSwapPair.json')
+const ROUTER = require('~/static/artifacts/SlopSwapRouter.json')
+const FACTORY = require('~/static/artifacts/SlopSwapFactory.json')
+Console.log('Console.log is now available!')
 
 export default {
   name: 'LiquidityPage',
@@ -140,11 +162,29 @@ export default {
       LPTokenAName: null,
       LPTokenAContract: null,
       LPTokenASymbol: null,
+      LPTokenADecimal: null,
       LPTokenBName: null,
       LPTokenBContract: null,
       LPTokenBSymbol: null,
+      LPTokenBDecimal: null,
       LPPairAddress: null,
-      LPTokenBalance: null
+      LPTokenBalance: null,
+      UserAccount: null,
+      MainnetFactory: '0x0533B75362E3Be13E78f245e50674c9a6dd9c17A',
+      MainnetRouter: '0x42A77DEdD13520141aaF1720EF88086B5Cae95f5',
+      Aout: null,
+      Bout: null,
+      Amount1min: null,
+      Amount2min: null,
+      account: null,
+      liquidityForRemoval: null,
+      AmountLiquidityOut: null
+    }
+  },
+  watch: {
+    AmountLiquidityOut (value) {
+      this.quoteRemoveLiquidityV2()
+      this.fetchReserves()
     }
   },
   methods: {
@@ -160,11 +200,226 @@ export default {
       this.LPTokenBContract = this.LiquidityPoolData.LPTokenB.TokenContract
       this.LPTokenASymbol = this.LiquidityPoolData.LPTokenA.TokenSymbol
       this.LPTokenBSymbol = this.LiquidityPoolData.LPTokenB.TokenSymbol
+      this.LPTokenADecimal = this.LiquidityPoolData.LPTokenA.TokenDecimal
+      this.LPTokenBDecimal = this.LiquidityPoolData.LPTokenB.TokenDecimal
       this.LPTokenAReserve = ethers.utils.formatEther(this.LiquidityPoolData.LPTokenAReserves)
       this.LPTokenBReserve = ethers.utils.formatEther(this.LiquidityPoolData.LPTokenBReserves)
       this.LPTokenBalance = ethers.utils.formatEther(this.LiquidityPoolData.LPTokenBalance)
-    }
-  }
+    },
+    // Function used to remove Liquidity from any pair of tokens or token-AUT
+    // To work correctly, there needs to be 9 arguments:
+    //    `address1` - An Ethereum address of the coin to recieve (either a token or AUT)
+    //    `address2` - An Ethereum address of the coin to recieve (either a token or AUT)
+    //    `liquidity_tokens` - A float or similar number representing the value of liquidity tokens you will burn to get tokens back
+    //    `amount1Min` - A float or similar number representing the minimum of address1's coin to recieve
+    //    `amount2Min` - A float or similar number representing the minimum of address2's coin to recieve
+    //    `routerContract` - The router contract to carry out this trade
+    //    `accountAddress` - An Ethereum address of the current user's account
+    //    `provider` - The current provider
+    //    `signer` - The current signer
+    async removeLiquidity () {
+      const provider = new ethers.providers.Web3Provider(window.ethereum)
+      await provider.send('eth_requestAccounts', [])
+      const signer = provider.getSigner()
+      const accounts = await provider.send('eth_requestAccounts', [])
+      this.account = accounts[0]
+
+      const address1 = this.LPTokenAContract
+      const address2 = this.LPTokenBContract
+
+      const token1 = new ethers.Contract(address1, BEP20.abi, signer)
+      Console.log('Token1 from inside removeLiquidity() Function: ' + token1)
+      const token2 = new ethers.Contract(address2, BEP20.abi, signer)
+      Console.log('Token2 from inside removeLiquidity() Function: ' + token2)
+
+      const token1Decimals = this.LPTokenADecimal
+      const token2Decimals = this.LPTokenBDecimal
+
+      const LiquidityTokens = this.LPTokenBalance
+
+      const Getliquidity = () => {
+        if (LiquidityTokens < 0.001) {
+          return ethers.BigNumber.from(LiquidityTokens * 10 ** 18)
+        }
+        return ethers.utils.parseUnits(String(LiquidityTokens), 18)
+      }
+
+      const router = await new ethers.Contract(String(this.MainnetRouter), ROUTER.abi, signer)
+      const factory = await new ethers.Contract(String(this.MainnetFactory), FACTORY.abi, signer)
+
+      const liquidity = Getliquidity(LiquidityTokens)
+      alert('liquidity: ', liquidity)
+
+      // this is where we need to calculate slippage on amount1min & amount2min, which would be derived
+      // from the input
+      const amount1min = this.Aout
+      const amount2min = this.Bout
+
+      const amount1Min = ethers.utils.parseUnits(String(amount1min), token1Decimals)
+      const amount2Min = ethers.utils.parseUnits(String(amount2min), token2Decimals)
+
+      const time = Math.floor(Date.now() / 1000) + 200000
+      const deadline = ethers.BigNumber.from(time)
+
+      const wethAddress = await router.WETH()
+      const pairAddress = await factory.getPair(address1, address2)
+      const pair = new ethers.Contract(pairAddress, PAIR.abi, signer)
+
+      await pair.approve(router.address, liquidity)
+
+      alert([
+        address1,
+        address2,
+        Number(liquidity),
+        Number(amount1Min),
+        Number(amount2Min),
+        String(this.account),
+        deadline
+      ])
+
+      if (address1 === wethAddress) {
+        // Eth + Token
+        await router.removeLiquidityETH(
+          address2,
+          liquidity,
+          amount2Min,
+          amount1Min,
+          String(this.account),
+          deadline
+        )
+      } else if (address2 === wethAddress) {
+        // Token + Eth
+        await router.removeLiquidityETH(
+          address1,
+          liquidity,
+          amount1Min,
+          amount2Min,
+          String(this.account),
+          deadline
+        )
+      } else {
+        // Token + Token
+        await router.removeLiquidity(
+          address1,
+          address2,
+          liquidity,
+          amount1Min,
+          amount2Min,
+          String(this.account),
+          deadline
+        )
+      }
+    },
+    quote (amount1, reserve1, reserve2) {
+      const amount2 = amount1 * (reserve2 / reserve1)
+      return [amount2]
+    },
+    // This function calls the pair contract to fetch the reserves stored in a the liquidity pool between the token of address1 and the token
+    // of address2. Some extra logic was needed to make sure that the results were returned in the correct order, as
+    // `pair.getReserves()` would always return the reserves in the same order regardless of which order the addresses were.
+    //    `address1` - An Ethereum address of the token to trade from (either a ERC20 token or AUT)
+    //    `address2` - An Ethereum address of the token to trade to (either a ERC20 token or AUT)
+    //    `pair` - The pair contract for the two tokens
+    async fetchReserves () {
+      try {
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        await provider.send('eth_requestAccounts', [])
+        const signer = provider.getSigner()
+        const accounts = await provider.send('eth_requestAccounts', [])
+        this.account = accounts[0]
+        const address1 = this.LPTokenAContract
+        const address2 = this.LPTokenBContract
+
+        // Get decimals for each coin
+        const coin1 = new ethers.Contract(address1, BEP20.abi, signer)
+        Console.log('Coin1: ' + coin1)
+        const coin2 = new ethers.Contract(address2, BEP20.abi, signer)
+        Console.log('Coin2: ' + coin2)
+
+        const coin1Decimals = this.LPTokenADecimal
+        const coin2Decimals = this.LPTokenBDecimal
+
+        const pair = await new ethers.Contract(String(this.LPPairAddress), PAIR.abi, signer)
+
+        // Get reserves
+        const reservesRaw = await pair.getReserves()
+
+        // Put the results in the right order
+        const results = [
+          (await pair.token0()) === address1 ? reservesRaw[0] : reservesRaw[1],
+          (await pair.token1()) === address2 ? reservesRaw[1] : reservesRaw[0]
+        ]
+
+        // Scale each to the right decimal place
+        return [
+          (results[0] * 10 ** (-coin1Decimals)),
+          (results[1] * 10 ** (-coin2Decimals))
+        ]
+      } catch (err) {
+        // alert('error!')
+        alert(err)
+        return [0, 0]
+      }
+    },
+    // Function used to get a quote of the liquidity removal
+    //    `address1` - An Ethereum address of the coin to recieve (either a token or AUT)
+    //    `address2` - An Ethereum address of the coin to recieve (either a token or AUT)
+    //    `liquidity` - The amount of liquidity tokens the user will burn to get their tokens back
+    //    `factory` - The current factory
+    //    `signer` - The current signer
+    async quoteRemoveLiquidityV2 () {
+      const provider = new ethers.providers.Web3Provider(window.ethereum)
+
+      await provider.send('eth_requestAccounts', [])
+
+      const signer = provider.getSigner()
+
+      const accounts = await provider.send('eth_requestAccounts', [])
+      this.account = accounts[0]
+
+      const liquidity = this.AmountLiquidityOut
+
+      const pair = new ethers.Contract(String(this.LPPairAddress), PAIR.abi, signer)
+      const factory = new ethers.Contract(String(this.MainnetFactory), FACTORY.abi, signer)
+      // alert('Line 316')
+      const reservesRaw = await pair.getReserves() // Returns the reserves already formated as ethers
+      const reserveA = reservesRaw[0]
+      // alert('Reserve A ' + reserveA)
+      const reserveB = reservesRaw[1]
+      // alert('Reserve B ' + reserveB)
+
+      const feeOn =
+        (await factory.feeTo()) !== 0x0000000000000000000000000000000000000000
+      const feeGoesToAddress = await factory.feeTo()
+      Console.log('Fee to Address: ' + feeGoesToAddress)
+      // alert('Transaction Fee will go to address: ' + feeGoesToAddress)
+
+      const _kLast = await pair.kLast()
+      const kLast = Number(ethers.utils.formatEther(_kLast))
+
+      // alert('_kLast: ' + _kLast + ' ' + 'kLast: ' + kLast)
+
+      const _totalSupply = await pair.totalSupply()
+      let totalSupply = Number(ethers.utils.formatEther(_totalSupply))
+      // alert('Total Supply: ' + totalSupply)
+
+      if (feeOn && kLast > 0) {
+        const feeLiquidity =
+          (totalSupply * (Math.sqrt(reserveA * reserveB) - Math.sqrt(kLast))) /
+          (5 * Math.sqrt(reserveA * reserveB) + Math.sqrt(kLast))
+        totalSupply = totalSupply + feeLiquidity
+      }
+
+      const Aout = (reserveA * liquidity) / totalSupply
+      const Bout = (reserveB * liquidity) / totalSupply
+
+      this.Aout = ethers.utils.formatEther(String(Aout))
+      this.Bout = ethers.utils.formatEther(String(Bout))
+      this.liquidityForRemoval = liquidity
+      // return [liquidity, Aout, Bout]
+    } // END OF QUOTE REMOVE LIQUIDITY
+
+  } // END OF METHODS
 }
 </script>
 <style scoped>
@@ -190,6 +445,19 @@ export default {
 }
 .liquidity-title-info {
   max-height: 22px;
+}
+.btn-group .btn-left {
+    border-top-left-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    border-color: #FFFFFF;
+    font-variant-caps: all-small-caps;
+}
+.btn-group .btn-right {
+    border-top-right-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    background-color: #17a2b8;
+    border-color: #FFFFFF;
+    font-variant-caps: all-small-caps;
 }
 .liquidity-info {
   font-variant-caps: all-small-caps;
@@ -229,9 +497,9 @@ export default {
   color: #212529;
   font-size: 1.8rem;
 }
-.dark-bg {
+/* .dark-bg {
   background-color: #17a2b8;
-}
+} */
 .small-pair-token-img {
   max-height: 22px;
 }

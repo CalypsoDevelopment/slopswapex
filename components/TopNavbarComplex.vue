@@ -16,6 +16,9 @@
           <b-nav-item to="/liquidity">
             Liquidity
           </b-nav-item>
+          <b-nav-item to="/liquiditypairs">
+            Liquidity Pairs
+          </b-nav-item>
           <b-nav-item to="/">
             Yield Farming
           </b-nav-item>
@@ -64,13 +67,12 @@
           </b-nav-item-dropdown>-->
           <b-nav-item>
             <b-button pill variant="info" @click="ConnectWalletInit()">
-              <i v-if="loggedIn" class="fa-solid fa-signal" />
-              <i v-else class="fa-solid fa-signal" />
+              <i class="fa-solid fa-signal" />
               Connect Wallet
             </b-button>
           </b-nav-item>
           <b-nav-item>
-            <b-button v-b-toggle.notification-sidebar variant="info" pill>
+            <b-button v-b-toggle.notification-sidebar variant="info" class="connect-btn" pill>
               <i class="fa-solid fa-sidebar" />
             </b-button>
           </b-nav-item>
@@ -124,7 +126,32 @@ export default {
 }
 </script>
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.connect-btn {
+  font-variant-caps: all-small-caps;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.3rem;
+  font-variant-caps: all-small-caps;
+  font-weight: 400;
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #3e3d40;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 .slopswap-topbar-logo {
   max-height: 25px;
 }

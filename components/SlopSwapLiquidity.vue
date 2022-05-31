@@ -70,23 +70,23 @@
             >
               Create Pair
             </b-button>
-            <b-button
-              v-if="PairCheckResp != '0x0000000000000000000000000000000000000000'"
-              variant="primary"
-              pill
-              class="my-2 button-text"
-              @click="addLiquidity()"
-            >
-              <i class="fa-solid fa-plus" /> Add Liquidity
-            </b-button>
-            <b-button
-              v-b-toggle.notification-sidebar
-              variant="primary"
-              pill
-              class="my-2 button-text"
-            >
-              <i class="fa-solid fa-minus" /> Remove/Review LP
-            </b-button>
+            <b-button-group size="sm" center class="mx-1">
+              <b-button
+                v-if="PairCheckResp != '0x0000000000000000000000000000000000000000'"
+                variant="primary"
+                class="my-2 button-text btn-left my-3 px-3 py-3"
+                @click="addLiquidity()"
+              >
+                <i class="fa-solid fa-hexagon-plus" /> Add Liquidity
+              </b-button>
+              <b-button
+                v-b-toggle.notification-sidebar
+                variant="primary"
+                class="my-2 button-text btn-right my-3 px-3 py-3"
+              >
+                <i class="fa-solid fa-hexagon-minus" /> Remove | Review LP
+              </b-button>
+            </b-button-group>
             <!--<b-button
                 variant="primary"
                 pill
@@ -193,7 +193,7 @@ const BEP20 = require('~/static/artifacts/IERC20.json')
 const PAIR = require('~/static/artifacts/SlopSwapPair.json')
 const ROUTER = require('~/static/artifacts/SlopSwapRouter.json')
 const FACTORY = require('~/static/artifacts/SlopSwapFactory.json')
-
+const tokenList = require('~/node_modules/slopswapxlibs/tokenLists/BSCTokenList.json')
 // SlopSwap Pair Contract 0xD1eAbB3Bce6E50F000463589d137c182B39B179D
 // SlopSwap Factory 0x0533B75362E3Be13E78f245e50674c9a6dd9c17A
 // SlopSwap Router 0x42A77DEdD13520141aaF1720EF88086B5Cae95f5
@@ -305,17 +305,7 @@ export default {
       TokenB: { ChainID: 56, TokenName: 'PancakeSwap Token (Cake)', TokenSymbol: 'Cake', TokenContract: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82', TokenDecimal: 18, TokenType: 'ERC20', BrandPrimary: '#d1884f' },
       TokenAPairAmount: null,
       TokenBPairAmount: null,
-      PairTokenList: [
-        { ChainID: 56, TokenName: 'Wrapped BNB', TokenSymbol: 'WBNB', TokenContract: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', TokenDecimal: 18, TokenStandard: 'BEP-20' },
-        { ChainID: 56, TokenName: 'Binance-Peg Ethereum Token', TokenSymbol: 'WETH', TokenContract: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8', TokenDecimal: 18, TokenStandard: 'Binance-Peg' },
-        { ChainID: 56, TokenName: 'PancakeSwap Token (Cake)', TokenSymbol: 'Cake', TokenContract: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82', TokenDecimal: 18, TokenStandard: 'BEP-20' },
-        { ChainID: 56, TokenName: 'Binance-Peg SHIBA INU Token', TokenSymbol: 'SHIB', TokenContract: '0x2859e4544C4bB03966803b044A93563Bd2D0DD4D', TokenDecimal: 18, TokenStandard: 'Binance-Peg' },
-        { ChainID: 56, TokenName: 'Binance-Peg Dogecoin Token', TokenSymbol: 'DOGE', TokenContract: '0xbA2aE424d960c26247Dd6c32edC70B295c744C43', TokenDecimal: 8, TokenStandard: 'Binance-Peg' },
-        { ChainID: 56, TokenName: 'Binance-Peg Avalanche Token', TokenSymbol: 'AVAX', TokenContract: '0x1CE0c2827e2eF14D5C4f29a091d735A204794041', TokenDecimal: 18, TokenStandard: 'Binance-Peg' },
-        { ChainID: 56, TokenName: 'Binance-Peg Dai Token', TokenSymbol: 'DAI', TokenContract: '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3', TokenDecimal: 18, TokenStandard: 'Binance-Peg' },
-        { ChainID: 56, TokenName: 'Binance-Peg BUSD Token', TokenSymbol: 'BUSD', TokenContract: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', TokenDecimal: 18, TokenStandard: 'Binance-Peg' },
-        { ChainID: 56, TokenName: 'Akashic Protocol Project', TokenSymbol: 'AKPP', TokenContract: '0xF2eBD0bBFcfD4ea65eCed347Cb022932CA5c372e', TokenDecimal: 9, TokenStandard: 'Binance-Peg' }
-      ],
+      PairTokenList: tokenList,
       SlippageSelected: 0.03,
       SlippageOptions: [
         { value: null, text: 'Slippage' },
@@ -364,7 +354,7 @@ export default {
       UserAccount: null,
       LiquidityBalance: null,
       LiquidityPoolBalance: null,
-      LPAddress: null,
+      LPAddress: '0x0000000000000000000000000000000000000000',
       liquidity: null,
       Aout: null,
       Bout: null,
@@ -441,7 +431,15 @@ export default {
       const factory = new ethers.Contract(String(this.MainnetFactory), FACTORY.abi, signer)
       // const router = new ethers.Contract(String(this.MainnetRouter), this.MainnetRouterABI, this.signer)
       const pairAddress = await factory.getPair(String(address1), String(address2))
-      this.LPAddress = pairAddress
+      // alert('Pair Address Right After Blockchain Query: ' + pairAddress)
+      if (String(pairAddress) === '0x0000000000000000000000000000000000000000') {
+        // alert('Inside first check!')
+        this.LPAddress = '0x0000000000000000000000000000000000000000'
+      } else {
+        this.LPAddress = pairAddress
+      }
+      // alert(this.LPAddress)
+
       const BEP20LiquidityToken = new ethers.Contract(
         String(pairAddress), [
           'function name() view returns (string)',
@@ -450,12 +448,26 @@ export default {
         ],
         provider
       )
+      // alert('Line 451')
 
-      const LPTokenBbalance = await BEP20LiquidityToken.balanceOf(String(account))
-      // alert(TokenBbalance)
-      const ReturnTokenLPbalance = ethers.utils.formatUnits(String(LPTokenBbalance), this.LPTokenCon.TokenDecimal)
-      this.LiquidityPoolBalance = ReturnTokenLPbalance.substring(0, 8) + ' ' + this.LPTokenCon.TokenSymbol
-
+      if (this.LPAddress === '0x0000000000000000000000000000000000000000') {
+        // alert('Pair does not exist on SlopSwap Yet!')
+        this.LiquidityPoolPairObj = {
+          LPTokenA: this.TokenA,
+          LPTokenAReserves: 0,
+          LPTokenB: this.TokenB,
+          LPTokenBReserves: 0,
+          LiquidityPairAddress: this.LPAddress,
+          LPTokenBalance: 0
+        }
+        this.$emit('emitLP', this.LiquidityPoolPairObj)
+        return
+      }
+      const LPTokenbalance = await BEP20LiquidityToken.balanceOf(String(account))
+      // alert(LPTokenbalance)
+      const ReturnTokenLPbalance = ethers.utils.formatUnits(String(LPTokenbalance), this.LPTokenCon.TokenDecimal)
+      this.LiquidityPoolBalance = ReturnTokenLPbalance.substring(0, 8)
+      // alert('Line 456')
       Console.log('Pair Address: ' + pairAddress)
       const pair = new ethers.Contract(String(this.LPAddress), PAIR.abi, signer)
       // alert('After Creating Pair Contract Instance')
@@ -503,25 +515,39 @@ export default {
 
       const liquidity = this.LiquidityPoolBalance
       Console.log('Liquidity: ' + liquidity)
-      const Aout = (reserveA * liquidity) / totalSupply
-      const Bout = (reserveB * liquidity) / totalSupply
+      // alert('Before IF Check LP Address: ' + this.LPAddress)
+      if (this.LPAddress === '0x0000000000000000000000000000000000000000') {
+        // alert('Pair does not exist on SlopSwap Yet!')
+        this.LiquidityPoolPairObj = {
+          LPTokenA: this.TokenA,
+          LPTokenAReserves: 0,
+          LPTokenB: this.TokenB,
+          LPTokenBReserves: 0,
+          LiquidityPairAddress: this.LPAddress,
+          LPTokenBalance: 0
+        }
+        this.$emit('emitLP', this.LiquidityPoolPairObj)
+      } else {
+        const Aout = (reserveA * liquidity) / totalSupply
+        const Bout = (reserveB * liquidity) / totalSupply
 
-      Console.log('Aout: ' + Aout + ' ' + 'Bout: ' + Bout + ' ' + 'Liquidity: ' + liquidity)
-      // return [liquidity, Aout, Bout]
-      this.liquidity = liquidity
-      this.Aout = Aout
-      this.Bout = Bout
-      // Now we need to build the LiquidityPoolPairObj so that we can transfer the object to the sidebar to display the data.
-      // Displaying the data in the slide-out sidebar will make the the liquidity interface look much cleaner.
-      this.LiquidityPoolPairObj = {
-        LPTokenA: this.TokenA,
-        LPTokenAReserves: reservesRaw[0],
-        LPTokenB: this.TokenB,
-        LPTokenBReserves: reservesRaw[1],
-        LiquidityPairAddress: pairAddress,
-        LPTokenBalance: LPTokenBbalance
+        Console.log('Aout: ' + Aout + ' ' + 'Bout: ' + Bout + ' ' + 'Liquidity: ' + liquidity)
+        // return [liquidity, Aout, Bout]
+        this.liquidity = liquidity
+        this.Aout = Aout
+        this.Bout = Bout
+        // Now we need to build the LiquidityPoolPairObj so that we can transfer the object to the sidebar to display the data.
+        // Displaying the data in the slide-out sidebar will make the the liquidity interface look much cleaner.
+        this.LiquidityPoolPairObj = {
+          LPTokenA: this.TokenA,
+          LPTokenAReserves: reservesRaw[0],
+          LPTokenB: this.TokenB,
+          LPTokenBReserves: reservesRaw[1],
+          LiquidityPairAddress: pairAddress,
+          LPTokenBalance: LPTokenbalance
+        }
+        this.$emit('emitLP', this.LiquidityPoolPairObj)
       }
-      this.$emit('emitLP', this.LiquidityPoolPairObj)
     },
     async quoteRemoveLiquidity (
     ) {
@@ -1194,6 +1220,17 @@ export default {
 }
 .funfact-text {
   font-variant-caps: all-small-caps;
+}
+.btn-group .btn-left {
+    border-top-left-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    border-color: #FFFFFF;
+}
+.btn-group .btn-right {
+    border-top-right-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    background-color: #17a2b8;
+    border-color: #FFFFFF;
 }
 .block-inline-notification {
   background-color: #FFFFFF;

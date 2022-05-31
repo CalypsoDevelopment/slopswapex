@@ -30,7 +30,7 @@
       <b-col cols="5" class="text-center">
         <SlopSwapMakerTokenSelect @changeMakerToken="ChangeSellToken($event)" @changeMakerTokenBalance="MakerReCheckBalance($event)" />
         <div>
-          <b-form-input v-model="sellAmount" class="maker-token-amount" placeholder="0.0" @:input="MakerPriceCheck()" />
+          <b-form-input v-model="sellAmount" class="maker-token-amount" placeholder="0.0" @change="MakerPriceCheck()" />
           <!--<div class="mt-2 dollar-value">
             <i class="fa-solid fa-square-dollar" style="color: #6c757d;" />
             {{ MakerDollarAmount }}
@@ -68,11 +68,11 @@
       <b-col cols="12">
         <div class="trade-btn-container mt-2">
           <b-button-group size="lg">
-            <b-button class="left-group-btn" @click="TokenTrade()">
+            <b-button class="left-group-btn my-3 px-3 py-3" @click="TokenTrade()">
               Trade Quote
             </b-button>
             <!--<b-button>Button 2</b-button>-->
-            <b-button class="right-group-btn" variant="info" @click="buyAction(sellAmount)">
+            <b-button class="right-group-btn my-3 px-3 py-3" variant="info" @click="buyAction(sellAmount)">
               Make Trade
             </b-button>
           </b-button-group>
@@ -183,6 +183,11 @@ export default {
         GAS_LIMIT: 450000,
         BSC_NODE: 'https://bsc-dataseed.binance.org/'
       }
+    }
+  },
+  watch: {
+    sellAmount (value) {
+      this.MakerPriceCheck()
     }
   },
   beforeMount () {
@@ -502,12 +507,12 @@ export default {
     },
     async MakerPriceCheck () {
       const priceFormatter = ethers.utils.parseUnits(String(this.sellAmount), this.sellToken.TokenDecimal)
-      alert(priceFormatter)
-      const QuoteReview = `
+      // alert(priceFormatter)
+      /* const QuoteReview = `
       Buying ${this.buyToken.TokenSymbol} Contract: ${this.buyToken.TokenContract}  using ${this.sellToken.TokenSymbol} in the amount of
       ${priceFormatter}
       =================`
-      alert(QuoteReview)
+      alert(QuoteReview) */
 
       const params = {
         // Not all token symbols are supported. The address of the token can be used instead.
