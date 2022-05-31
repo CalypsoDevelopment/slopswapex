@@ -111,7 +111,7 @@ export default {
   border-radius: 4rem;
 }
 .taker-token-select-btn {
-  font-family: 'Fredoka One', cursive !important;
+  font-family: 'Fredoka One', sans-serif !important;
   color: #FFFFFF;
   font-variant: all-small-caps;
   font-weight: 500;

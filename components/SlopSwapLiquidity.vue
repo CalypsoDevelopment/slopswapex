@@ -1,7 +1,7 @@
 <template>
   <b-container fluid>
     <b-row class="trade-container">
-      <b-col cols="12">
+      <b-col sm="12" medium="12" lg="12">
         <div>
           <b-nav>
             <b-nav-item active>
@@ -18,14 +18,14 @@
           </b-nav>
         </div>
       </b-col>
-      <b-col cols="12">
+      <b-col sm="12" medium="12" lg="12">
         <div>
           <h1 class="main-title">
             <span class="blue-gray">Slop</span>Swap <span class="blue-gray">Liquidity</span>
           </h1>
         </div>
       </b-col>
-      <b-col cols="5" class="text-center">
+      <b-col sm="12" medium="12" lg="5" class="text-center">
         <SlopSwapLiquidityMakerTokenSelect @changeLiquidityMakerToken="ChangePairTokenA($event)" @changeLiquidityMakerBalance="ChangePairTokenABalance($event)" />
         <div>
           <b-form-input v-model="TokenAPairAmount" class="maker-liquidity-amount" placeholder="0.0" @change="PairQuoteCheck()" />
@@ -38,14 +38,14 @@
           <span class="label-title"><strong>Wallet Balance:</strong> {{ TokenAUserBalance }}</span>
         </div>
       </b-col>
-      <b-col cols="2" class="text-center">
+      <b-col sm="12" medium="12" lg="2" class="text-center">
         <div class="align-middle">
           <span class="label-title">Slippage <i class="fa-solid fa-arrow-up-arrow-down" /></span>
           <b-form-select v-model="SlippageSelected" class="slippage-selector mt-2" :options="SlippageOptions" />
           <!--<i class="fa-solid fa-repeat fa-2x animate__animated animate__rotatIn" style="color: #007bff" />-->
         </div>
       </b-col>
-      <b-col cols="5" class="text-center">
+      <b-col sm="12" medium="12" lg="5" class="text-center">
         <SlopSwapLiquidityTakerTokenSelect @changeLiquidityTakerToken="ChangePairTokenB($event)" @changeLiquidityTakerBalance="ChangePairTokenBBalance($event)" />
         <div>
           <b-form-input v-model="TokenBPairAmount" class="taker-liquidity-amount" placeholder="0.0" />
@@ -58,7 +58,7 @@
           <span class="label-title"><strong>Wallet Balance:</strong> {{ TokenBUserBalance }}</span>
         </div>
       </b-col>
-      <b-col cols="12" @change="WalletStatusCheck()">
+      <b-col sm="12" medium="12" lg="12" @change="WalletStatusCheck()">
         <div class="my-4">
           <div>
             <b-button

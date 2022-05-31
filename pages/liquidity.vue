@@ -29,7 +29,7 @@
               </b-list-group-item>
               <b-list-group-item>
                 <b-row>
-                  <b-col cols="12">
+                  <b-col sm="12" medium="12" lg="12">
                     LP Token Names
                   </b-col>
                   <b-col cols="6">
@@ -42,7 +42,7 @@
               </b-list-group-item>
               <b-list-group-item>
                 <b-row class="px-4 py-4">
-                  <b-col cols="12" class="py-4">
+                  <b-col sm="12" medium="12" lg="12" class="py-4">
                     <b-img
                       :src="require(`@/assets/img/tokens/SLOP-LPs.png`)"
                       fluid
@@ -53,7 +53,7 @@
                     <b-form-input v-model="AmountLiquidityOut" class="text-left" placeholder="0.0" />
                     Liquidity: {{ liquidity }}
                   </b-col>
-                  <b-col cols="6" class="py-2">
+                  <b-col lg="6" sm="12" class="py-2">
                     <div class="mt-2 ml-3 text-left">
                       <b-img
                         :src="require(`@/assets/img/tokens/${LPTokenAContract}.png`)"
@@ -66,7 +66,7 @@
                     </div>
                     <b-form-input v-model="Bout" disabled placeholder="0.0" />
                   </b-col>
-                  <b-col cols="6" class="py-2">
+                  <b-col lg="6" sm="12" class="py-2">
                     <div class="mt-2 mr-3 text-right">
                       <b-img
                         :src="require(`@/assets/img/tokens/${LPTokenBContract}.png`)"
@@ -79,7 +79,7 @@
                     </div>
                     <b-form-input v-model="Aout" disabled class="text-right" placeholder="0.0" />
                   </b-col>
-                  <b-col cols="12">
+                  <b-col cols="12" sm="12">
                     <!--<b-button class="my-3 px-3 py-3 btn-left" @click="quoteRemoveLiquidityV2()">
                       <i class="fa-solid fa-bullseye-arrow" /> Remove Liquidity Quote
                     </b-button>-->
@@ -114,6 +114,7 @@
     </div>
     <TopNavbarComplex />
     <div class="farm-bg">
+      <b-img src="~/assets/img/page-graphics/Wise-Old-Owl.png" fluid alt="Responsive image" />
       <!-- <b-nav tabs align="right">
         <b-nav-item active>
           <i class="fa-solid fa-circle-plus" /> Add Liquidity
@@ -131,7 +132,7 @@
     </div>
     <b-container>
       <b-row>
-        <b-col cols="12" class="text-center">
+        <b-col sm="12" medium="12" lg="12" class="text-center">
           <div class="app-container">
             <SlopSwapLiquidity @emitLP="CaptureLPData($event)" />
           </div> <!-- END OF .APP_CONTAINER -->
@@ -509,16 +510,16 @@ export default {
 .farm-bg {
   /*border-bottom: 1px solid #e0e0e0;*/
   background-color: #FFFFFF;
-  padding-top: 1rem;
-  min-height: 240px;
+  /* padding-top: 1rem; */
+  height: auto;
   font-variant-caps: all-small-caps;
   font-family: 'Fredoka One', sans-serif;
   color: #17a2b8;
   font-size: 0.94rem;
-  background-image: url(~/assets/img/page-graphics/Wise-Old-Owl.png);
+  /*background-image: url(~/assets/img/page-graphics/Wise-Old-Owl.png);
   background-size: 100%;
   background-position: bottom center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 }
 a {
     color:#17a2b8;

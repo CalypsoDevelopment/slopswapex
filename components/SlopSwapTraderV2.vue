@@ -3,7 +3,7 @@
     <b-row class="trade-container">
       <!--<b-col cols="12">
       </b-col>-->
-      <b-col cols="12">
+      <b-col sm="12" medium="12" lg="12">
         <div>
           <b-nav>
             <b-nav-item active>
@@ -20,14 +20,14 @@
           </b-nav>
         </div>
       </b-col>
-      <b-col cols="12">
+      <b-col sm="12" medium="12" lg="12">
         <div>
           <h1 class="main-title">
             <span class="blue-gray">Slop</span>Swap <span class="blue-gray">Trading</span>
           </h1>
         </div>
       </b-col>
-      <b-col cols="5" class="text-center">
+      <b-col sm="12" medium="12" lg="5" class="text-center">
         <SlopSwapMakerTokenSelect @changeMakerToken="ChangeSellToken($event)" @changeMakerTokenBalance="MakerReCheckBalance($event)" />
         <div>
           <b-form-input v-model="sellAmount" class="maker-token-amount" placeholder="0.0" @change="MakerPriceCheck()" />
@@ -43,13 +43,14 @@
           <b-form-input v-model="SellTokenUserBalance" placeholder="Wallet Balance" disabled class="hidden-field" />
         </div>
       </b-col>
-      <b-col cols="2" class="text-center">
+      <b-col sm="12" medium="12" lg="2" class="text-center">
         <div class="align-middle trade-symbol-container">
-          <i class="fa-solid fa-repeat fa-4x animate__animated animate__rotatIn" style="color: #17a2b8" />
+          <!--<i class="fa-solid fa-repeat fa-4x animate__animated animate__rotatIn" style="color: #17a2b8" />-->
+          <span class="slippage-title">Slippage</span>
           <b-form-select v-model="SlippageSelected" class="slippage-selector mt-2" :options="SlippageOptions" />
         </div>
       </b-col>
-      <b-col cols="5" class="text-center">
+      <b-col sm="12" medium="12" lg="12" class="text-center">
         <SlopSwapTakerTokenSelect @changeTakerToken="ChangeBuyToken($event)" @changeTakerTokenBalance="TakerReCheckBalance($event)" />
         <div>
           <b-form-input v-model="BuyTokenAmount" class="taker-token-amount" placeholder="0.0" />
@@ -65,7 +66,7 @@
           <b-form-input v-model="BuyTokenUserBalance" placeholder="Wallet Balance" disabled class="hidden-field" />
         </div>
       </b-col>
-      <b-col cols="12">
+      <b-col sm="12" medium="12" lg="12">
         <div class="trade-btn-container mt-2">
           <b-button-group size="lg">
             <b-button class="left-group-btn my-3 px-3 py-3" @click="TokenTrade()">
@@ -558,17 +559,23 @@ export default {
 .label-title {
   font-variant-caps: all-small-caps;
   font-size: 1.3rem;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', sans-serif;
   color: #505960;
 }
 .main-title {
   font-variant-caps: all-small-caps;
   font-weight: 600;
   font-size: 2.9rem;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', sans-serif;
 }
 .blue-gray {
   color: #17a2b8;
+}
+.slippage-title {
+  font-variant-caps: all-small-caps;
+  font-size: 1.3rem;
+  font-family: 'Fredoka One', sans-serif;
+  color: #505960;
 }
 .hidden-field {
   visibility: hidden;

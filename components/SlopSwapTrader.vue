@@ -558,14 +558,14 @@ export default {
 .label-title {
   font-variant-caps: all-small-caps;
   font-size: 1.3rem;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', sans-serif;
   color: #505960;
 }
 .main-title {
   font-variant-caps: all-small-caps;
   font-weight: 600;
   font-size: 2.9rem;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', sans-serif;
 }
 .blue-gray {
   color: #17a2b8;

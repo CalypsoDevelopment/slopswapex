@@ -2,6 +2,7 @@
   <b-container fluid class="bg px-0">
     <TopNavbarComplex />
     <div class="farm-bg">
+      <b-img src="~/assets/img/page-graphics/SlopSwap-Home-Page.png" fluid alt="Responsive image" />
       <!--<div>
         <b-img src="~/assets/img/SlopSwap-Rise-Of-The-Pigs.png" fluid alt="SlopSwap Crypto Currency Exchange & Blockchain Community Resource" class="slopswap-logo" />
       </div>-->
@@ -54,16 +55,16 @@ export default {
 .farm-bg {
   /*border-bottom: 1px solid #e0e0e0;*/
   background-color: #FFFFFF;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
   min-height: 240px;
   font-variant-caps: all-small-caps;
   font-family: 'Fredoka One', sans-serif;
   color: #17a2b8;
   font-size: 0.94rem;
-  background-image: url(~/assets/img/slopswap-crew.png);
+  /* background-image: url(~/assets/img/page-graphics/SlopSwap-Home-Page.png);
   background-size: 100%;
   background-position: bottom center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 .app-container {
   min-height: 600px;

@@ -129,7 +129,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .connect-btn {
   font-variant-caps: all-small-caps;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', sans-serif;
   font-size: 1.3rem;
   font-variant-caps: all-small-caps;
   font-weight: 400;
@@ -160,7 +160,7 @@ export default {
 }
 .topbar-nav a {
   font-variant-caps: all-small-caps;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', sans-serif;
   font-size: 1.4rem;
   font-weight: 800;
 }
@@ -174,7 +174,7 @@ export default {
   color: #6c757d;
 }
 .simple-top-nav a:hover {
-  font-family: 'Fredoka One', cursive !important;
+  font-family: 'Fredoka One', sans-serif !important;
   color: #007bff;
   font-weight: 800;
   text-decoration: none;
@@ -183,10 +183,10 @@ a {
   color: #505960;
   font-variant-caps: all-small-caps;
   font-size: 1.3rem;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', sans-serif;
 }
 .simple-top-nav {
-  font-family: 'Fredoka One', cursive !important;
+  font-family: 'Fredoka One', sans-serif !important;
   color: #505960;
   font-weight: 800;
 }

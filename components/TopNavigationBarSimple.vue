@@ -39,7 +39,7 @@ export default {
   color: #6c757d;
 }
 .simple-top-nav a:hover {
-  font-family: 'Fredoka One', cursive !important;
+  font-family: 'Fredoka One', sans-serif !important;
   color: #007bff;
   font-weight: 800;
   text-decoration: none;
@@ -48,10 +48,10 @@ a {
   color: #505960;
   font-variant-caps: all-small-caps;
   font-size: 1.3rem;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', sans-serif;
 }
 .simple-top-nav {
-  font-family: 'Fredoka One', cursive !important;
+  font-family: 'Fredoka One', sans-serif !important;
   color: #505960;
   font-weight: 800;
 }
