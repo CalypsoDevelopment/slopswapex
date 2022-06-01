@@ -66,6 +66,11 @@
             </b-dropdown-item>
           </b-nav-item-dropdown>-->
           <b-nav-item>
+            <b-link href="https://www.bscscan.com/tx/${account}`">
+              {{ account }}
+            </b-link>
+          </b-nav-item>
+          <b-nav-item>
             <b-button pill variant="info" @click="ConnectWalletInit()">
               <i class="fa-solid fa-signal" />
               Connect Wallet
@@ -98,7 +103,13 @@ export default {
   components: {},
   data () {
     return {
-      loggedIn: false
+      loggedIn: false,
+      account: null
+    }
+  },
+  watch: {
+    loggedIn (value) {
+      this.ConnectWalletInit()
     }
   },
   methods: {
@@ -120,6 +131,7 @@ export default {
       // alert('Before Account Request')
       const accounts = await provider.send('eth_requestAccounts', [])
       this.account = accounts[0]
+      alert(this.account.address)
       this.loggedIn = true
     }
   }
