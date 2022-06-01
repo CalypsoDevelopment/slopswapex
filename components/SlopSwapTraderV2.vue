@@ -623,7 +623,7 @@ export default {
 }
 .label-title {
   font-variant-caps: all-small-caps;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-family: 'Fredoka One', sans-serif;
   color: #505960;
 }
