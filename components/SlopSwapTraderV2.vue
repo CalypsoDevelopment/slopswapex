@@ -37,7 +37,7 @@
           </div>-->
         </div>
         <div>
-          <div class="mt-1 mb-1">
+          <div class="mt-0 mb-0">
             <span class="label-title"><strong>Wallet Balance: {{ SellTokenUserBalance }} </strong></span>
           </div>
           <b-form-input v-model="SellTokenUserBalance" placeholder="Wallet Balance" disabled class="hidden-field" />
@@ -46,8 +46,8 @@
       <b-col sm="12" medium="12" lg="2" class="text-center">
         <div class="align-middle trade-symbol-container">
           <!--<i class="fa-solid fa-repeat fa-4x animate__animated animate__rotatIn" style="color: #17a2b8" />-->
-          <span class="slippage-title">Slippage</span>
-          <b-form-select v-model="SlippageSelected" class="slippage-selector mt-2" :options="SlippageOptions" />
+          <!--<span class="slippage-title">Slippage</span>-->
+          <b-form-select v-model="SlippageSelected" class="slippage-selector slippage-title mt-2" :options="SlippageOptions" />
         </div>
       </b-col>
       <b-col sm="12" medium="12" lg="5" class="text-center">
@@ -60,7 +60,7 @@
           </div>-->
         </div>
         <div>
-          <div class="mt-1 mb-1">
+          <div class="mt-0 mb-0">
             <span class="label-title"><strong>Wallet Balance: {{ BuyTokenUserBalance }} </strong></span>
           </div>
           <b-form-input v-model="BuyTokenUserBalance" placeholder="Wallet Balance" disabled class="hidden-field" />
@@ -72,9 +72,13 @@
               Trade Quote
             </b-button>-->
           <!--<b-button>Button 2</b-button>-->
-          <b-button pill block class="my-1 px-3 py-3" variant="info" @click="swapTokens()">
+          <b-button pill block class="my-0 px-3 py-2" variant="info" @click="swapTokens()">
             Make Trade
           </b-button>
+          <!--<b-button v-b-toggle.TXsidebar1>
+            Toggle Sidebar
+          </b-button>-->
+          <SlopSwapTXReceiptSidebar :txreceipt="TXToDisplay" />
         </div>
         <!--<b-button
           pill
@@ -95,6 +99,7 @@
 <script>
 import SlopSwapMakerTokenSelect from '~/components/SlopSwapMakerTokenSelect.vue'
 import SlopSwapTakerTokenSelect from '~/components/SlopSwapTakerTokenSelect.vue'
+import SlopSwapTXReceiptSidebar from '~/components/SlopSwapTXReceiptSidebar.vue'
 const axios = require('axios')
 const ethers = require('ethers')
 const qs = require('qs')
@@ -112,7 +117,7 @@ const BEP20 = require('~/static/artifacts/IERC20.json')
 
 export default {
   name: 'SlopSwapTraderV2',
-  components: { SlopSwapMakerTokenSelect, SlopSwapTakerTokenSelect },
+  components: { SlopSwapMakerTokenSelect, SlopSwapTakerTokenSelect, SlopSwapTXReceiptSidebar },
   data () {
     return {
       MainnetFactory: '0x0533B75362E3Be13E78f245e50674c9a6dd9c17A',
@@ -133,36 +138,43 @@ export default {
       quote: null,
       SellTokenAmount: null,
       BuyTokenAmount: null,
+      TXToDisplay: {
+        message: null,
+        receipt: null,
+        lastSwapEvent: null,
+        swapInterface: null,
+        TotalReceivedTokens: null
+      },
       MakerDollarAmount: 0.00,
       TakerDollarAmount: 0.00,
-      SlippageSelected: 0.01,
+      SlippageSelected: 0,
       SlippageOptions: [
-        { value: null, text: 'Slippage' },
-        { value: 0.01, text: '1%' },
-        { value: 0.02, text: '2%' },
-        { value: 0.03, text: '3%' },
-        { value: 0.04, text: '4%' },
-        { value: 0.05, text: '5%' },
-        { value: 0.06, text: '6%' },
-        { value: 0.07, text: '7%' },
-        { value: 0.08, text: '8%' },
-        { value: 0.09, text: '9%' },
-        { value: 0.10, text: '10%' },
-        { value: 0.11, text: '11%' },
-        { value: 0.12, text: '12%' },
-        { value: 0.13, text: '13%' },
-        { value: 0.14, text: '14%' },
-        { value: 0.15, text: '15%' },
-        { value: 0.16, text: '16%' },
-        { value: 0.17, text: '17%' },
-        { value: 0.18, text: '18%' },
-        { value: 0.19, text: '19%' },
-        { value: 0.20, text: '20%' },
-        { value: 0.21, text: '21%' },
-        { value: 0.22, text: '22%' },
-        { value: 0.23, text: '23%' },
-        { value: 0.24, text: '24%' },
-        { value: 0.25, text: '25%' }
+        { value: 0, text: 'Slippage' },
+        { value: 1, text: '1%' },
+        { value: 2, text: '2%' },
+        { value: 3, text: '3%' },
+        { value: 4, text: '4%' },
+        { value: 5, text: '5%' },
+        { value: 6, text: '6%' },
+        { value: 7, text: '7%' },
+        { value: 8, text: '8%' },
+        { value: 9, text: '9%' },
+        { value: 10, text: '10%' },
+        { value: 11, text: '11%' },
+        { value: 12, text: '12%' },
+        { value: 13, text: '13%' },
+        { value: 14, text: '14%' },
+        { value: 15, text: '15%' },
+        { value: 16, text: '16%' },
+        { value: 17, text: '17%' },
+        { value: 18, text: '18%' },
+        { value: 19, text: '19%' },
+        { value: 20, text: '20%' },
+        { value: 21, text: '21%' },
+        { value: 22, text: '22%' },
+        { value: 23, text: '23%' },
+        { value: 24, text: '24%' },
+        { value: 25, text: '25%' }
       ],
       TradingConfig: null,
       BEP20: null,
@@ -181,7 +193,9 @@ export default {
         GWEI: 5,
         GAS_LIMIT: 450000,
         BSC_NODE: 'https://bsc-dataseed.binance.org/'
-      }
+      },
+      amountIn: null,
+      amountOut: null
     }
   },
   watch: {
@@ -223,40 +237,63 @@ export default {
       // establish router contract instance
       const router = new ethers.Contract(String(this.MainnetRouter), ROUTER.abi, signer)
 
-      alert('Line 227')
+      // alert('Line 227')
 
-      const amountIn = ethers.utils.parseUnits(String(this.sellAmount), tokenDecimals)
-      const amountOut = await router.getAmountsOut(
-        amountIn,
-        tokens
-      )
-      alert('AmountOut[0]: ' + amountOut[0] + ' AmountOut[1]: ' + amountOut[1])
-      await token1.approve(router.address, amountIn)
+      if (this.SlippageSelected !== 0) {
+        let amountOutMin = 0
+        alert('Its not 0 ' + this.SlippageSelected)
+        const amountIn = ethers.utils.parseUnits(String(this.sellAmount), tokenDecimals)
+        this.amountIn = amountIn
+
+        alert(this.amountIn)
+
+        const amountOut = await router.getAmountsOut(
+          this.amountIn,
+          tokens
+        )
+        alert('Line 242, Before Slippage Calculation and after transforming the slippage percentage into a decimal for calculating the amountOutMin: ' + this.SlippageSelected)
+        amountOutMin = amountOut[1].sub(amountOut[1].div(this.SlippageSelected))
+        this.amountOut = amountOutMin
+        alert('amountOut with the slippage percentage adjustment applied: ' + amountOutMin)
+        await token1.approve(router.address, this.amountOut)
+      } else {
+        const amountIn = ethers.utils.parseUnits(String(this.sellAmount), tokenDecimals)
+        this.amountIn = amountIn
+
+        const amountOut = await router.getAmountsOut(
+          this.amountIn,
+          tokens
+        )
+        this.amountOut = amountOut
+        alert('AmountOut[0]: ' + amountOut[0] + ' AmountOut[1]: ' + amountOut[1])
+        await token1.approve(router.address, amountIn)
+      }
+
       const wethAddress = await router.WETH()
 
       let tx
       if (address1 === wethAddress) {
         // Eth -> Token
         tx = await router.swapExactETHForTokens(
-          amountOut[1],
+          String(this.amountOut[1]),
           tokens,
           account,
           deadline,
-          { value: amountIn }
+          { value: String(this.amountIn) }
         )
       } else if (address2 === wethAddress) {
         // Token -> Eth
         tx = await router.swapExactTokensForETH(
-          amountIn,
-          amountOut[1],
+          String(this.amountIn),
+          String(this.amountOut[1]),
           tokens,
           account,
           deadline
         )
       } else {
         tx = await router.swapExactTokensForTokens(
-          amountIn,
-          amountOut[1],
+          String(this.amountIn),
+          String(this.amountOut[1]),
           tokens,
           account,
           deadline
@@ -264,14 +301,24 @@ export default {
       }
 
       const receipt = await tx.wait()
-      alert(`Transaction receipt : https://www.bscscan.com/tx/${receipt.transactionHash}`)
+      this.TXToDisplay.receipt = receipt
+
+      this.TXToDisplay.message = `Transaction receipt: https://www.bscscan.com/tx/${receipt.transactionHash}`
+
       const lastSwapEvent = receipt.logs.slice(-1)[0]
+      this.TXToDisplay.lastSwapEvent = lastSwapEvent
+
       const swapInterface = new ethers.utils.Interface(['event Swap (address indexed sender, uint256 amount0In, uint256 amount1In, uint256 amount0Out, uint256 amount1Out, address indexed to)'])
       const parsed = swapInterface.parseLog(lastSwapEvent)
+
+      this.TXToDisplay.swapInterface = parsed
+
       const receivedTokens = parsed.args.amount0Out.isZero() ? parsed.args.amount1Out : parsed.args.amount0Out
       const TotalReceivedTokens = ethers.utils.formatEther(receivedTokens)
-      alert(`Swapped for tokens: ${TotalReceivedTokens} ${this.buyToken.TokenSymbol}`)
-      return TotalReceivedTokens
+
+      this.TXToDisplay.TotalReceivedTokens = `Swapped for tokens: ${TotalReceivedTokens} ${this.buyToken.TokenSymbol}`
+
+      this.$root.$emit('bv::toggle::collapse', 'TXsidebar1')
     }, // END OF TOKENTRADE()
     async MakerReCheckBalance (sellTok) {
       // Define Token A & B
@@ -571,7 +618,7 @@ export default {
 }
 .slippage-title {
   font-variant-caps: all-small-caps;
-  font-size: 1.3rem;
+  font-size: 0.95rem;
   font-family: 'Fredoka One', sans-serif;
   color: #505960;
 }

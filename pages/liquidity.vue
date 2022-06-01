@@ -51,7 +51,12 @@
                     />
                     {{ LPTokenASymbol }} | {{ LPTokenBSymbol }} Liquidity Pool Balance: <span class="pair-data">{{ LPTokenBalance }} SLOP-LPs</span>
                     <b-form-input v-model="AmountLiquidityOut" class="text-left" placeholder="0.0" />
-                    Liquidity: {{ liquidity }}
+                    <div class="align-middle">
+                      <span class="label-title">Slippage <i class="fa-solid fa-arrow-up-arrow-down" /></span>
+                      <b-form-select v-model="SlippageRemSelected" class="slippage-selector mt-2" :options="SlippageOptions" />
+                      <!--<i class="fa-solid fa-repeat fa-2x animate__animated animate__rotatIn" style="color: #007bff" />-->
+                    </div>
+                    <!--Liquidity: {{ liquidity }}-->
                   </b-col>
                   <b-col lg="6" sm="12" class="py-2">
                     <div class="mt-2 ml-3 text-left">
@@ -179,7 +184,49 @@ export default {
       Amount2min: null,
       account: null,
       liquidityForRemoval: null,
-      AmountLiquidityOut: null
+      AmountLiquidityOut: null,
+      SlippageRemSelected: 3,
+      SlippageOptions: [
+        { value: null, text: 'Slippage' },
+        { value: 1, text: '1%' },
+        { value: 2, text: '2%' },
+        { value: 3, text: '3%' },
+        { value: 4, text: '4%' },
+        { value: 5, text: '5%' },
+        { value: 6, text: '6%' },
+        { value: 7, text: '7%' },
+        { value: 8, text: '8%' },
+        { value: 9, text: '9%' },
+        { value: 10, text: '10%' },
+        { value: 11, text: '11%' },
+        { value: 12, text: '12%' },
+        { value: 13, text: '13%' },
+        { value: 14, text: '14%' },
+        { value: 15, text: '15%' },
+        { value: 16, text: '16%' },
+        { value: 17, text: '17%' },
+        { value: 18, text: '18%' },
+        { value: 19, text: '19%' },
+        { value: 20, text: '20%' },
+        { value: 21, text: '21%' },
+        { value: 22, text: '22%' },
+        { value: 23, text: '23%' },
+        { value: 24, text: '24%' },
+        { value: 25, text: '25%' }
+      ],
+      config: {
+        START_COIN: 'WBNB',
+        START_AMOUNT: 0.001,
+        WALLET_MIN: 0,
+        TRADE_INTERVAL: 300,
+        SLIPPAGE: 5,
+        GWEI: 5,
+        GAS_LIMIT: 450000,
+        BSC_NODE: 'https://bsc-dataseed.binance.org/'
+      },
+      TradingConfig: null,
+      amount0MinSlip: null,
+      amount1MinSlip: null
     }
   },
   watch: {
@@ -249,7 +296,7 @@ export default {
       const factory = await new ethers.Contract(String(this.MainnetFactory), FACTORY.abi, signer)
 
       const liquidity = Getliquidity(LiquidityTokens)
-      alert('liquidity: ', liquidity)
+      alert('liquidity: ' + liquidity)
 
       // this is where we need to calculate slippage on amount1min & amount2min, which would be derived
       // from the input
@@ -266,49 +313,157 @@ export default {
       const pairAddress = await factory.getPair(address1, address2)
       const pair = new ethers.Contract(pairAddress, PAIR.abi, signer)
 
+      alert('Line 316, Before Amount Approve. Liquidity is: ' + liquidity)
       await pair.approve(router.address, liquidity)
 
-      alert([
-        address1,
-        address2,
-        Number(liquidity),
-        Number(amount1Min),
-        Number(amount2Min),
-        String(this.account),
-        deadline
-      ])
+      const TradeConfig = {
+        startCoin: this.config.START_COIN,
+        startAmount: this.config.START_AMOUNT,
+        slippage: this.SlippageSelected,
+        gasPrice: ethers.utils.parseUnits(String(this.config.GWEI), 'gwei'),
+        gasLimit: this.config.GAS_LIMIT,
+        tradeInterval: this.config.TRADE_INTERVAL,
+        walletMin: this.config.WALLET_MIN
+      }
+      this.TradingConfig = TradeConfig
 
-      if (address1 === wethAddress) {
+      alert('Right Before Slippage Percentage Check, Slippage is: ' + this.SlippageRemSelected)
+      if (this.SlippageRemSelected !== 0) {
+        /* const amountOut = await router.getAmountsOut(
+          String(this.amountIn),
+          [address1, address2]
+        ) */
+        alert('Before Slippage Applied - amountOut[0] ' + amount1Min + ' ' + 'amountOut[1] ' + amount2Min)
+
+        const amount0MinSlip = amount1Min.sub(amount1Min.div(this.SlippageRemSelected))
+        const amount1MinSlip = amount2Min.sub(amount2Min.div(this.SlippageRemSelected))
+
+        alert('Before Slippage Applied - amount0MinSlip ' + amount0MinSlip + ' ' + 'amount1MinSlip ' + amount1MinSlip)
+
+        this.amount0MinSlip = amount0MinSlip
+        this.amount1MinSlip = amount1MinSlip
+
+        alert([
+          address1,
+          address2,
+          Number(liquidity),
+          Number(this.amount0MinSlip),
+          Number(this.amount1MinSlip),
+          String(this.account),
+          deadline
+        ])
+
+        if (address1 === wethAddress) {
         // Eth + Token
-        await router.removeLiquidityETH(
-          address2,
-          liquidity,
-          amount2Min,
-          amount1Min,
-          String(this.account),
-          deadline
-        )
-      } else if (address2 === wethAddress) {
+          await router.removeLiquidityETH(
+            address2,
+            String(liquidity),
+            String(this.amount0MinSlip),
+            String(this.amount1MinSlip),
+            String(this.account),
+            deadline,
+            {
+              gasLimit: this.TradingConfig.gasLimit,
+              gasPrice: this.TradingConfig.gasPrice,
+              nonce: null
+            /* value: amountIn */
+            }
+          )
+        } else if (address2 === wethAddress) {
         // Token + Eth
-        await router.removeLiquidityETH(
-          address1,
-          liquidity,
-          amount1Min,
-          amount2Min,
-          String(this.account),
-          deadline
-        )
-      } else {
+          await router.removeLiquidityETH(
+            address1,
+            liquidity,
+            this.amount0MinSlip,
+            this.amount1MinSlip,
+            String(this.account),
+            deadline,
+            {
+              gasLimit: this.TradingConfig.gasLimit,
+              gasPrice: this.TradingConfig.gasPrice,
+              nonce: null
+            /* value: amountIn */
+            }
+          )
+        } else {
         // Token + Token
-        await router.removeLiquidity(
+          await router.removeLiquidity(
+            address1,
+            address2,
+            liquidity,
+            this.amount0MinSlip,
+            this.amount1MinSlip,
+            String(this.account),
+            deadline,
+            {
+              gasLimit: this.TradingConfig.gasLimit,
+              gasPrice: this.TradingConfig.gasPrice,
+              nonce: null
+            /* value: amountIn */
+            }
+          )
+        }
+      } else {
+        alert([
           address1,
           address2,
-          liquidity,
-          amount1Min,
-          amount2Min,
+          Number(liquidity),
+          Number(amount1Min),
+          Number(amount2Min),
           String(this.account),
           deadline
-        )
+        ])
+
+        if (address1 === wethAddress) {
+          // Eth + Token
+          await router.removeLiquidityETH(
+            address2,
+            liquidity,
+            amount2Min,
+            amount1Min,
+            String(this.account),
+            deadline,
+            {
+              gasLimit: this.TradingConfig.gasLimit,
+              gasPrice: this.TradingConfig.gasPrice,
+              nonce: null
+              /* value: amountIn */
+            }
+          )
+        } else if (address2 === wethAddress) {
+          // Token + Eth
+          await router.removeLiquidityETH(
+            address1,
+            liquidity,
+            amount1Min,
+            amount2Min,
+            String(this.account),
+            deadline,
+            {
+              gasLimit: this.TradingConfig.gasLimit,
+              gasPrice: this.TradingConfig.gasPrice,
+              nonce: null
+              /* value: amountIn */
+            }
+          )
+        } else {
+          // Token + Token
+          await router.removeLiquidity(
+            address1,
+            address2,
+            liquidity,
+            amount1Min,
+            amount2Min,
+            String(this.account),
+            deadline,
+            {
+              gasLimit: this.TradingConfig.gasLimit,
+              gasPrice: this.TradingConfig.gasPrice,
+              nonce: null
+              /* value: amountIn */
+            }
+          )
+        }
       }
     },
     quote (amount1, reserve1, reserve2) {
@@ -428,6 +583,10 @@ export default {
 .bg {
   background-color: #e0e0e0;
   min-height: 100vh;
+}
+.slippage-selector {
+  background-color: #17a2b8;
+  border-radius: 4rem;
 }
 .form-control {
     display: block;
