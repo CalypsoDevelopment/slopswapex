@@ -87,6 +87,7 @@
   </div>
 </template>
 <script>
+import { useUserProfileStore } from '@/src/store/UserProfileStore.js'
 // import axios from 'axios'
 // import SlopSwapLiquidityMakerTokenSelect from '~/components/SlopSwapLiquidityMakerTokenSelect.vue'
 // import SlopSwapLiquidityTakerTokenSelect from '~/components/SlopSwapLiquidityTakerTokenSelect.vue'
@@ -103,6 +104,7 @@ export default {
   components: {},
   data () {
     return {
+      store: useUserProfileStore(),
       loggedIn: false,
       account: null
     }
