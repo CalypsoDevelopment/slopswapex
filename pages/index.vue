@@ -3,23 +3,6 @@
     <TopNavbarComplex />
     <div class="farm-bg">
       <b-img src="~/assets/img/page-graphics/SlopSwap-Home-Page.png" fluid alt="Responsive image" />
-      <!--<div>
-        <b-img src="~/assets/img/SlopSwap-Rise-Of-The-Pigs.png" fluid alt="SlopSwap Crypto Currency Exchange & Blockchain Community Resource" class="slopswap-logo" />
-      </div>-->
-      <!-- <b-nav tabs align="right">
-        <b-nav-item active>
-          <i class="fa-solid fa-circle-plus" /> Add Liquidity
-        </b-nav-item>
-        <b-nav-item>
-          <i class="fa-solid fa-calculator" /> Calculator
-        </b-nav-item>
-        <b-nav-item>
-          <i class="fa-solid fa-bell-on" /> Notifications
-        </b-nav-item>
-        <b-nav-item>
-          <i class="fa-solid fa-message" /> Community
-        </b-nav-item>
-      </b-nav>-->
     </div>
     <BSCSpotPriceTicker />
     <b-container>

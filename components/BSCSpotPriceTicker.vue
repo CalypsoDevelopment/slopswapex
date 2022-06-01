@@ -4,14 +4,13 @@
 </template>
 <script>
 // import CryptoAniTicker from '~/components/CryptoAniTicker.vue'
+// import { Carousel, Slide } from 'vue-carousel'
 
 export default {
   name: 'BSCSpotPriceTicker',
-  components: {
-  },
+  components: { },
   data () {
     return {
-      active: 4,
       TickerData: false
     }
   },
@@ -21,11 +20,10 @@ export default {
   methods: {
     async fetchTickerData () {
       const TickerDataRequest = await this.$axios.$get('https://api.covalenthq.com/v1/pricing/tickers/?quote-currency=USD&format=JSON&key=ckey_58f88ae689904d67bb81f4d84d4')
-      this.TickerData = TickerDataRequest
+      this.TickerData = TickerDataRequest.data.items
     }
   }
 }
 </script>
-<style scoped>
 
 </style>

@@ -365,6 +365,9 @@ export default {
     }
   },
   watch: {
+    TokenAPairAmount (value) {
+      this.PairQuoteCheck()
+    }
   },
   mounted () {
     // URL connection

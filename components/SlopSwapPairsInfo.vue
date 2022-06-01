@@ -19,6 +19,7 @@
 </template>
 <script>
 const ethers = require('ethers')
+const Console = require('Console')
 const PAIR = require('~/static/artifacts/SlopSwapPair.json')
 const ROUTER = require('~/static/artifacts/SlopSwapRouter.json')
 // const FACTORY = require('~/static/artifacts/SlopSwapFactory.json')
@@ -74,11 +75,11 @@ export default {
 
       try {
         const token1 = new ethers.Contract(address1, BEP20.abi, signer)
-        alert('Token 1: ' + token1)
+        Console.log('Token 1: ' + token1)
         const token1Decimals = this.sellToken.TokenDecimal
 
         const token2 = new ethers.Contract(address2, BEP20.abi, signer)
-        alert('Token 2: ' + token2)
+        Console.log('Token 2: ' + token2)
         const token2Decimals = this.buyToken.TokenDecimal
 
         const ValuesOut = await router.getAmountsOut(
@@ -86,7 +87,7 @@ export default {
           [address1, address2]
         )
         const AmountOut = ValuesOut[1] * 10 ** (-token2Decimals)
-        alert('amount out: ', AmountOut)
+        Console.log('amount out: ', AmountOut)
         return Number(AmountOut)
       } catch {
         return false
@@ -111,9 +112,9 @@ export default {
 
         // Get decimals for each coin
         const coin1 = new ethers.Contract(address1, BEP20.abi, signer)
-        alert('Coin1: ' + coin1)
+        Console.log('Coin1: ' + coin1)
         const coin2 = new ethers.Contract(address2, BEP20.abi, signer)
-        alert('Coin2: ' + coin2)
+        Console.log('Coin2: ' + coin2)
 
         const coin1Decimals = this.sellToken.TokenDecimal
         const coin2Decimals = this.buyToken.TokenDecimal
@@ -135,8 +136,8 @@ export default {
           (results[1] * 10 ** (-coin2Decimals))
         ]
       } catch (err) {
-        alert('error!')
-        alert(err)
+        Console.log('error!')
+        Console.log(err)
         return [0, 0]
       }
     },
@@ -176,12 +177,12 @@ export default {
             liquidityTokens
           ]
         } else {
-          alert('no reserves yet')
+          Console.log('no reserves yet')
           return [0, 0, 0]
         }
       } catch (err) {
-        alert('error!')
-        alert(err)
+        Console.log('error!')
+        Console.log(err)
         return [0, 0, 0]
       }
     },
@@ -232,7 +233,7 @@ export default {
 
       const EthertoWei = ethers.utils.parseEther(String(inputAmount))
 
-      alert(EthertoWei)
+      Console.log(EthertoWei)
 
       const getAmountValue0 = await router.quote(String(EthertoWei), '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82', '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c')
 

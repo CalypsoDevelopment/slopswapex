@@ -38,6 +38,14 @@
                   <b-col cols="6">
                     <span class="pair-data">{{ LPTokenBName }}</span>
                   </b-col>
+                  <b-col sm="12" medium="12" lg="12">
+                    LP Token Pair Address<br>
+                    <span class="token-address">
+                      <b-link :href="`https://bscscan.com/token/${LPPairAddress}`" :title="`${LPTokenASymbol} | ${LPTokenBSymbol} SlopSwap Liquidity Pool Pair Address is ${LPPairAddress} can be explored further on the official BSC Scan website.`" target="_blank">
+                        {{ LPPairAddress }}
+                      </b-link>
+                    </span>
+                  </b-col>
                 </b-row>
               </b-list-group-item>
               <b-list-group-item>
@@ -52,7 +60,7 @@
                     {{ LPTokenASymbol }} | {{ LPTokenBSymbol }} Liquidity Pool Balance: <span class="pair-data">{{ LPTokenBalance }} SLOP-LPs</span>
                     <b-form-input v-model="AmountLiquidityOut" class="text-left" placeholder="0.0" />
                     <div class="align-middle">
-                      <span class="label-title">Slippage <i class="fa-solid fa-arrow-up-arrow-down" /></span>
+                      <!--<span class="label-title">Slippage <i class="fa-solid fa-arrow-up-arrow-down" /></span>-->
                       <b-form-select v-model="SlippageRemSelected" class="slippage-selector mt-2" :options="SlippageOptions" />
                       <!--<i class="fa-solid fa-repeat fa-2x animate__animated animate__rotatIn" style="color: #007bff" />-->
                     </div>
@@ -95,18 +103,11 @@
                   </b-col>
                 </b-row>
               </b-list-group-item>
+              <b-list-group-item />
               <b-list-group-item>
-                LP Token Pair Address<br>
-                <span class="token-address">
-                  <b-link :href="`https://bscscan.com/token/${LPPairAddress}`" :title="`${LPTokenASymbol} | ${LPTokenBSymbol} SlopSwap Liquidity Pool Pair Address is ${LPPairAddress} can be explored further on the official BSC Scan website.`" target="_blank">
-                    {{ LPPairAddress }}
-                  </b-link>
-                </span>
-              </b-list-group-item>
-              <b-list-group-item>
-                <p class="liquidity-info">
+                <!--<p class="liquidity-info">
                   By adding liquidity you'll earn 0.17% of all trades on this pair proportional to your share of the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing your liquidity.
-                </p>
+                </p>-->
               </b-list-group-item>
               <!--<b-list-group-item></b-list-group-item>-->
             </b-list-group>
@@ -185,9 +186,9 @@ export default {
       account: null,
       liquidityForRemoval: null,
       AmountLiquidityOut: null,
-      SlippageRemSelected: 3,
+      SlippageRemSelected: 0,
       SlippageOptions: [
-        { value: null, text: 'Slippage' },
+        { value: 0, text: 'Slippage' },
         { value: 1, text: '1%' },
         { value: 2, text: '2%' },
         { value: 3, text: '3%' },

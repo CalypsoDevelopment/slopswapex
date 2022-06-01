@@ -5,15 +5,22 @@
       </b-col>-->
       <b-col sm="12" medium="12" lg="12">
         <div>
-          <b-nav>
+          <b-nav class="config-btns">
             <b-nav-item active>
-              <i class="fa-solid fa-gears" style="color: #6c757d;" />
+              <b-button v-b-toggle.TXSettingsConfig pill>
+                <i class="fa-solid fa-gears" style="color: #17a2b8;" />
+              </b-button>
+              <SlopSwapTradeConfiguration />
             </b-nav-item>
             <b-nav-item>
-              <i class="fa-solid fa-clock-rotate-left" style="color: #6c757d;" />
+              <b-button v-b-toggle.TXSettingsConfig pill>
+                <i class="fa-solid fa-clock-rotate-left" style="color: #17a2b8;" />
+              </b-button>
             </b-nav-item>
             <b-nav-item>
-              <i class="fa-solid fa-chart-area" style="color: #6c757d;" />
+              <b-button v-b-toggle.TXSettingsConfig pill>
+                <i class="fa-solid fa-chart-area" style="color: #17a2b8;" />
+              </b-button>
             </b-nav-item>
             <!--<b-nav-item>
             </b-nav-item>-->
@@ -100,6 +107,7 @@
 import SlopSwapMakerTokenSelect from '~/components/SlopSwapMakerTokenSelect.vue'
 import SlopSwapTakerTokenSelect from '~/components/SlopSwapTakerTokenSelect.vue'
 import SlopSwapTXReceiptSidebar from '~/components/SlopSwapTXReceiptSidebar.vue'
+import SlopSwapTradeConfiguration from '~/components/SlopSwapTradeConfiguration.vue'
 const axios = require('axios')
 const ethers = require('ethers')
 const qs = require('qs')
@@ -117,7 +125,7 @@ const BEP20 = require('~/static/artifacts/IERC20.json')
 
 export default {
   name: 'SlopSwapTraderV2',
-  components: { SlopSwapMakerTokenSelect, SlopSwapTakerTokenSelect, SlopSwapTXReceiptSidebar },
+  components: { SlopSwapMakerTokenSelect, SlopSwapTakerTokenSelect, SlopSwapTXReceiptSidebar, SlopSwapTradeConfiguration },
   data () {
     return {
       MainnetFactory: '0x0533B75362E3Be13E78f245e50674c9a6dd9c17A',
@@ -245,16 +253,16 @@ export default {
         const amountIn = ethers.utils.parseUnits(String(this.sellAmount), tokenDecimals)
         this.amountIn = amountIn
 
-        alert(this.amountIn)
+        Console.log(this.amountIn)
 
         const amountOut = await router.getAmountsOut(
           this.amountIn,
           tokens
         )
-        alert('Line 242, Before Slippage Calculation and after transforming the slippage percentage into a decimal for calculating the amountOutMin: ' + this.SlippageSelected)
+        Console.log('Line 242, Before Slippage Calculation and after transforming the slippage percentage into a decimal for calculating the amountOutMin: ' + this.SlippageSelected)
         amountOutMin = amountOut[1].sub(amountOut[1].div(this.SlippageSelected))
         this.amountOut = amountOutMin
-        alert('amountOut with the slippage percentage adjustment applied: ' + amountOutMin)
+        Console.log('amountOut with the slippage percentage adjustment applied: ' + amountOutMin)
         await token1.approve(router.address, this.amountOut)
       } else {
         const amountIn = ethers.utils.parseUnits(String(this.sellAmount), tokenDecimals)
@@ -265,7 +273,7 @@ export default {
           tokens
         )
         this.amountOut = amountOut
-        alert('AmountOut[0]: ' + amountOut[0] + ' AmountOut[1]: ' + amountOut[1])
+        Console.log('AmountOut[0]: ' + amountOut[0] + ' AmountOut[1]: ' + amountOut[1])
         await token1.approve(router.address, amountIn)
       }
 
@@ -600,6 +608,18 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 .slopswap-logo {
   max-height: 140px;
+}
+.config-btns .btn {
+  background-color: transparent;
+  border-color: transparent;
+}
+.config-btns .btn:focus {
+  background-color: transparent;
+  border-color: transparent;
+}
+.btn:focus, .btn.focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 0%);
 }
 .label-title {
   font-variant-caps: all-small-caps;

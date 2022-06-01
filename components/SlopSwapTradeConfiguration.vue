@@ -1,34 +1,22 @@
 <template>
   <div>
     <b-sidebar
-      id="TXsidebar1"
+      id="TXSettingsConfig"
       width="50%"
       class="text-center"
       title=""
-      right
+      left
       shadow
     >
       <div class="px-3 py-2">
-        <b-img src="~/assets/img/page-graphics/SlopSwap-Brain-Character-Ledger.png" fluid alt="SlopSwap Brain Character Reading from the SlopSwap Xchange Ledger" />
+        <!--<b-img src="~/assets/img/page-graphics/SlopSwap-Brain-Character-Ledger.png" fluid alt="SlopSwap Brain Character Reading from the SlopSwap Xchange Ledger" />-->
         <h2 class="main-title">
-          Transaction Receipt
+          SlopSwap Configuration
         </h2>
         <b-list-group>
-          <b-list-group-item>
-            <span class="trade-data-dark">Transaction Response Message</span><br>
-            <span class="trade-data-light">{{ txreceipt.message }}</span>
-          </b-list-group-item>
-          <b-list-group-item>
-            <span class="trade-data-dark">Transaction Receipt</span><br>
-            {{ txreceipt.receipt }}
-          </b-list-group-item>
-          <!--<b-list-group-item>{{ txreceipt.lastSwapEvent }}</b-list-group-item>
-          <b-list-group-item>{{ txreceipt.swapInterface }}</b-list-group-item>-->
-          <b-list-group-item>
-            <span class="trade-data-dark">Total Received Tokens</span>
-            <br>
-            <span class="trade-data-light">{{ txreceipt.TotalReceivedTokens }}</span>
-          </b-list-group-item>
+          <b-list-group-item />
+          <b-list-group-item />
+          <b-list-group-item />
         </b-list-group>
 
         <!--<b-img src="https://picsum.photos/500/500/?image=54" fluid thumbnail />-->

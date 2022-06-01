@@ -153,7 +153,7 @@ export default {
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .slopswap-topbar-logo {
-  max-height: 20px;
+  max-height: 30px;
 }
 .topbar-nav {
   border-bottom: 1px solid #FFFFFF;
