@@ -2,7 +2,7 @@
   <b-container fluid class="bg px-0">
     <TopNavbarComplex />
     <div class="farm-bg">
-      <b-img src="~/assets/img/page-graphics/SlopSwap-Home-Page.png" fluid alt="Responsive image" />
+      <b-img src="~/assets/img/page-graphics/220-Sized-Header-Rise-Of-the-Pigs.png" fluid alt="Responsive image" />
     </div>
     <BSCSpotPriceTicker />
     <b-container>

@@ -586,7 +586,8 @@ export default {
   min-height: 100vh;
 }
 .slippage-selector {
-  background-color: #17a2b8;
+  background-color: #212529;
+  color: #FFFFFF;
   border-radius: 4rem;
 }
 .form-control {
@@ -607,16 +608,21 @@ export default {
 .liquidity-title-info {
   max-height: 22px;
 }
+.btn {
+    background-color: #212529;
+    border: 1px solid #FFFFFF;
+}
 .btn-group .btn-left {
     border-top-left-radius: 4rem;
     border-bottom-left-radius: 4rem;
     border-color: #FFFFFF;
+    background-color: #212529;
     font-variant-caps: all-small-caps;
 }
 .btn-group .btn-right {
     border-top-right-radius: 4rem;
     border-bottom-right-radius: 4rem;
-    background-color: #17a2b8;
+    background-color: #212529;
     border-color: #FFFFFF;
     font-variant-caps: all-small-caps;
 }
@@ -635,7 +641,7 @@ export default {
 }
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
     color: #495057;
-    background-color: #17a2b8;
+    background-color: #212529;
     border-radius: 8rem;
 }
 .liquidity-spec-list {

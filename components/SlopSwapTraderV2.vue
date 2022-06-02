@@ -79,7 +79,7 @@
               Trade Quote
             </b-button>-->
           <!--<b-button>Button 2</b-button>-->
-          <b-button pill block class="my-0 px-3 py-2" variant="info" @click="swapTokens()">
+          <b-button pill block class="my-0 px-3 py-2 trade-btn" variant="info" @click="swapTokens()">
             Make Trade
           </b-button>
           <!--<b-button v-b-toggle.TXsidebar1>
@@ -613,6 +613,13 @@ export default {
   background-color: transparent;
   border-color: transparent;
 }
+.sheep-bg {
+  background-image: url(~/assets/img/page-graphics/sheep-bg.png) !important;
+  background-size: 50%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding-top: 50px;
+}
 .config-btns .btn:focus {
   background-color: transparent;
   border-color: transparent;
@@ -667,11 +674,16 @@ export default {
   vertical-align: middle;
 }
 .trade-btn {
-  padding: .25rem;
+  padding: 0rem;
   margin-top: 0rem;
-  font-size: 1.6rem;
-  font-family: 'Arimo', sans-serif;
+  font-size: 1.7rem;
+  /* font-family: 'Arimo', sans-serif;*/
+  font-family: 'Fredoka One', sans-serif;
   font-variant: all-small-caps;
+  background-color: #212529;
+  background-image: url(~/assets/img/page-graphics/light-blue-splatter.png);
+  background-position: bottom right;
+  background-size: 60%;
 }
 .maker-token-amount {
   border-radius: 4rem;

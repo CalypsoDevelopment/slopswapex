@@ -118,6 +118,11 @@ export default {
   font-size: 2rem;
   padding: 0.45rem;
   border-radius: 4rem;
+   background-color: #5d3d42;
+  border-color: #FFFFFF;
+  background-image: url(~/assets/img/page-graphics/light-beige-splatter.png);
+  background-position: top left;
+  background-size: 90%;
 }
 .taker-token-img {
   max-height: 42px;

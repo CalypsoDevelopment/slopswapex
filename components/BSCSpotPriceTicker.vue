@@ -5,12 +5,15 @@
 <script>
 // import CryptoAniTicker from '~/components/CryptoAniTicker.vue'
 // import { Carousel, Slide } from 'vue-carousel'
+import { useBSCPriceTickerStore } from '@/src/store/BSCPriceTickerStore.js'
+// const Console = require('Console')
 
 export default {
   name: 'BSCSpotPriceTicker',
-  components: { },
+  components: {},
   data () {
     return {
+      store: useBSCPriceTickerStore(),
       TickerData: false
     }
   },

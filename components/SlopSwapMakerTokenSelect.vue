@@ -1,7 +1,7 @@
 <template>
   <b-container class="text-center">
     <b-row class="maker-token-container">
-      <b-col cols="12">
+      <b-col>
         <div class="mtoken-select-container">
           <b-button
             class="maker-token-select-btn"
@@ -144,6 +144,12 @@ export default {
   margin-right: 0rem;
   margin-left: 0rem;
   border-radius: 4rem;
+  border-color: #FFFFFF;
+  background-color: #c1272d;
+  background-image: url(~/assets/img/page-graphics/dark-gray-splatter.png);
+  background-position: top left;
+  background-size: 70%;
+
 }
 .maker-token-img {
   max-height: 42px;

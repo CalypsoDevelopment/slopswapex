@@ -1,7 +1,7 @@
 <template>
   <b-container class="text-center">
     <b-row class="taker-token-container">
-      <b-col cols="12">
+      <b-col>
         <div class="ttoken-select-container">
           <b-button
             class="taker-token-select-btn"
@@ -118,6 +118,11 @@ export default {
   font-size: 2rem;
   padding: 0.45rem;
   border-radius: 4rem;
+  border-color: #FFFFFF;
+  background-color: #c1272d;
+  background-image: url(~/assets/img/page-graphics/dark-gray-splatter.png);
+  background-position: bottom right;
+  background-size: 80%;
 }
 .taker-token-img {
   max-height: 42px;

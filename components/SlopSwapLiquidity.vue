@@ -1227,13 +1227,28 @@ export default {
 .btn-group .btn-left {
     border-top-left-radius: 4rem;
     border-bottom-left-radius: 4rem;
+    background-color: #212529;
     border-color: #FFFFFF;
+    font-size: 1.2rem;
+    background-image: url(~/assets/img/page-graphics/light-beige-large-splatter.png);
+    background-position: bottom 20px right 30px;
+    background-size: 160%;
+    background-repeat: no-repeat;
+    font-variant-caps: all-small-caps;
+    font-family: 'Fredoka One', cursive;
 }
 .btn-group .btn-right {
     border-top-right-radius: 4rem;
     border-bottom-right-radius: 4rem;
-    background-color: #17a2b8;
+    background-color: #212529;
     border-color: #FFFFFF;
+    font-size: 1.2rem;
+    background-image: url(~/assets/img/page-graphics/light-blue-splatter.png);
+    background-position: bottom left 20px;
+    background-size: 160%;
+    background-repeat: no-repeat;
+    font-variant-caps: all-small-caps;
+    font-family: 'Fredoka One', cursive;
 }
 .block-inline-notification {
   background-color: #FFFFFF;

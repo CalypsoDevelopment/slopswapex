@@ -65,8 +65,8 @@
               Sign Out
             </b-dropdown-item>
           </b-nav-item-dropdown>-->
-          <b-nav-item>
-            <b-link href="https://www.bscscan.com/tx/${account}`">
+          <b-nav-item class="pt-2">
+            <b-link :href="`https://www.bscscan.com/address/${account}`" :title="`User Crypto Wallet Address`" target="_blank">
               {{ account }}
             </b-link>
           </b-nav-item>
@@ -87,7 +87,9 @@
   </div>
 </template>
 <script>
+// import { mapWritableState } from 'pinia'
 import { useUserProfileStore } from '@/src/store/UserProfileStore.js'
+// const tokenPrices = useUserProfileStore()
 // import axios from 'axios'
 // import SlopSwapLiquidityMakerTokenSelect from '~/components/SlopSwapLiquidityMakerTokenSelect.vue'
 // import SlopSwapLiquidityTakerTokenSelect from '~/components/SlopSwapLiquidityTakerTokenSelect.vue'
@@ -106,15 +108,28 @@ export default {
     return {
       store: useUserProfileStore(),
       loggedIn: false,
-      account: null
+      account: null,
+      AddressURL: null
     }
+  },
+  computed: {
   },
   watch: {
     loggedIn (value) {
       this.ConnectWalletInit()
+    },
+    AddressURL (value) {
+      this.formatURL()
     }
   },
+  beforeMount () {
+    this.ConnectWalletInit()
+  },
   methods: {
+    formatURL () {
+      const addressLink = `https://www.bscscan.com/address/${this.account}`
+      this.AddressURL = addressLink
+    },
     async ConnectWalletInit () {
       // Establish the connection to the User wallet & query Token A (Primary Liquidity Token) balance within the wallet
       // A Web3Provider wraps a standard Web3 provider, which is
@@ -132,9 +147,10 @@ export default {
 
       // alert('Before Account Request')
       const accounts = await provider.send('eth_requestAccounts', [])
-      this.account = accounts[0]
-      alert(this.account.address)
+      const account = accounts[0]
+      this.account = account
       this.loggedIn = true
+      this.store.UserNameWalletAddress = this.account
     }
   }
 }
