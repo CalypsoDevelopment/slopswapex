@@ -682,8 +682,9 @@ export default {
   font-variant: all-small-caps;
   background-color: #212529;
   background-image: url(~/assets/img/page-graphics/light-blue-splatter.png);
-  background-position: bottom right;
-  background-size: 60%;
+  background-position: center right;
+  background-size: 50%;
+  background-repeat: no-repeat;
 }
 .maker-token-amount {
   border-radius: 4rem;

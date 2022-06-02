@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" class="topbar-nav mx-0" type="light" variant="">
+    <b-navbar toggleable="lg" class="topbar-nav mx-0" type="light">
       <b-navbar-brand href="https://slopswap.trade">
         <b-img src="~/assets/img/SlopSwap-Rise-Of-The-Pigs-Simple.png" fluid alt="SlopSwap Crypto Currency Exchange & Blockchain Community Resource" class="slopswap-topbar-logo" />
         <!--<span class="brand-main-text"><span class="blue-text">Slop</span>Swap</span>-->
@@ -76,11 +76,11 @@
               Connect Wallet
             </b-button>
           </b-nav-item>
-          <b-nav-item>
+          <!--<b-nav-item>
             <b-button v-b-toggle.notification-sidebar variant="info" class="connect-btn" pill>
               <i class="fa-solid fa-sidebar" />
             </b-button>
-          </b-nav-item>
+          </b-nav-item>-->
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -164,6 +164,9 @@ export default {
   font-variant-caps: all-small-caps;
   font-weight: 400;
 }
+.navbar-light .navbar-nav .nav-link {
+    color: #3e3d40;
+}
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -201,7 +204,7 @@ export default {
   color: #17a2b8;
 }
 .nav.a {
-  color: #6c757d;
+  color: #3e3d40;
 }
 .simple-top-nav a:hover {
   font-family: 'Fredoka One', sans-serif !important;

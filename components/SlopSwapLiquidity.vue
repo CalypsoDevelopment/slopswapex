@@ -944,27 +944,27 @@ export default {
 
       const account = await window.ethereum.request({ method: 'eth_requestAccounts' })
       this.account = account
-      alert(this.account)
+      Console.log(this.account)
       // const factory = new ethers.Contract(String(this.MainnetFactory), this.MainnetFactoryABI, signer)
 
       const address1 = this.TokenA.TokenContract
       const address2 = this.TokenB.TokenContract
-      alert('After Token Address Assign Line 618')
+      Console.log('After Token Address Assign Line 618')
       const RouterContract = new ethers.Contract(String(this.MainnetRouter), ROUTER.abi, this.signer)
-      alert('Line 620')
+      Console.log('Line 620')
       const TokenAContract = new ethers.Contract(String(address1), BEP20.abi, this.signer)
       const TokenBContract = new ethers.Contract(String(address2), BEP20.abi, this.signer)
-      alert('After Token Contact Instance Creation Line 261')
+      Console.log('After Token Contact Instance Creation Line 261')
 
       const TokenADecimals = this.TokenA.TokenDecimal
       const TokenBDecimals = this.TokenB.TokenDecimal
-      alert('TokenADecimals & TokenBDecimals ' + TokenADecimals + ' ' + TokenBDecimals + ' Line 627')
+      Console.log('TokenADecimals & TokenBDecimals ' + TokenADecimals + ' ' + TokenBDecimals + ' Line 627')
 
       const amount1 = this.TokenAPairAmount
       const amount2 = this.TokenBPairAmount
 
-      alert('Amount1 ' + amount1)
-      alert('Amount2 ' + amount2)
+      Console.log('Amount1 ' + amount1)
+      Console.log('Amount2 ' + amount2)
 
       const amountIn1 = ethers.utils.parseUnits(amount1, TokenADecimals)
       const amountIn2 = ethers.utils.parseUnits(amount2, TokenBDecimals)
@@ -979,22 +979,22 @@ export default {
       await TokenBContract.approve(String(this.MainnetRouter), String(amountIn2))
 
       const wethAddress = await RouterContract.WETH()
-      alert('WETH Address from Router Contract: ' + wethAddress)
+      Console.log('WETH Address from Router Contract: ' + wethAddress)
 
       const SubtractorA = amount1 * this.SlippageSelected
       const SubtractorANum = amount1 - SubtractorA
       const FinalMinA = ethers.utils.parseUnits(String(SubtractorANum), this.TokenA.TokenADecimals)
-      alert(FinalMinA)
+      Console.log(FinalMinA)
 
       const SubtractorB = amount2 * this.SlippageSelected
       const SubtractorBNum = amount2 - SubtractorB
       const FinalMinB = ethers.utils.parseUnits(String(SubtractorBNum), this.TokenA.TokenADecimals)
-      alert(FinalMinB)
+      Console.log(FinalMinB)
 
       // const factory = new ethers.Contract(String(this.MainnetFactory), this.MainnetFactoryABI, signer)
       // const pairAddress = await factory.getPair(address1, address2)
 
-      alert([
+      Console.log([
         'Address 1: ' + address1,
         'Address 2: ' + address2,
         'Amount In 1: ' + amountIn1,
