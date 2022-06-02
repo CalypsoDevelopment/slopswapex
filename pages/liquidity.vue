@@ -582,7 +582,8 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .bg {
-  background-color: #e0e0e0;
+  background: rgb(224,224,224);
+  background: linear-gradient(180deg, rgba(224,224,224,1) 0%, rgba(184,173,150,1) 58%, rgba(79,51,57,1) 100%);
   min-height: 100vh;
 }
 .slippage-selector {

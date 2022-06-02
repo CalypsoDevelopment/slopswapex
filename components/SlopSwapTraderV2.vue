@@ -8,19 +8,19 @@
           <b-nav class="config-btns">
             <b-nav-item active>
               <b-button v-b-toggle.TXSettingsConfig pill>
-                <i class="fa-solid fa-gears" style="color: #17a2b8;" />
+                <i class="fa-solid fa-gears" style="color: #3E3D40;" />
               </b-button>
               <SlopSwapTradeConfiguration />
             </b-nav-item>
             <b-nav-item>
               <b-button v-b-toggle.TXHistory pill>
-                <i class="fa-solid fa-clock-rotate-left" style="color: #17a2b8;" />
+                <i class="fa-solid fa-clock-rotate-left" style="color: #3E3D40;" />
               </b-button>
               <SlopSwapTXHistory />
             </b-nav-item>
             <b-nav-item>
               <b-button v-b-toggle.TradingPairGraph pill>
-                <i class="fa-solid fa-chart-area" style="color: #17a2b8;" />
+                <i class="fa-solid fa-chart-area" style="color: #3E3D40;" />
               </b-button>
               <SlopSwapPairGraphSidebar />
             </b-nav-item>

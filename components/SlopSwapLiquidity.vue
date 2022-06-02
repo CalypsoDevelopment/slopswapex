@@ -1230,10 +1230,10 @@ export default {
     background-color: #212529;
     border-color: #FFFFFF;
     font-size: 1.2rem;
-    background-image: url(~/assets/img/page-graphics/light-beige-large-splatter.png);
+    /*background-image: url(~/assets/img/page-graphics/light-beige-large-splatter.png);
     background-position: bottom 20px right 30px;
     background-size: 160%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     font-variant-caps: all-small-caps;
     font-family: 'Fredoka One', cursive;
 }
