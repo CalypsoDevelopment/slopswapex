@@ -146,9 +146,9 @@ export default {
   border-radius: 4rem;
   border-color: #FFFFFF;
   background-color: #c1272d;
-  background-image: url(~/assets/img/page-graphics/dark-gray-splatter.png);
+  /*background-image: url(~/assets/img/page-graphics/dark-gray-splatter.png);
   background-position: top left;
-  background-size: 70%;
+  background-size: 70%;*/
 
 }
 .maker-token-img {

@@ -1243,10 +1243,10 @@ export default {
     background-color: #212529;
     border-color: #FFFFFF;
     font-size: 1.2rem;
-    background-image: url(~/assets/img/page-graphics/light-blue-splatter.png);
+    /*background-image: url(~/assets/img/page-graphics/light-blue-splatter.png);
     background-position: bottom left 20px;
     background-size: 160%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     font-variant-caps: all-small-caps;
     font-family: 'Fredoka One', cursive;
 }

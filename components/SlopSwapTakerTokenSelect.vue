@@ -120,9 +120,9 @@ export default {
   border-radius: 4rem;
   border-color: #FFFFFF;
   background-color: #c1272d;
-  background-image: url(~/assets/img/page-graphics/dark-gray-splatter.png);
+  /*background-image: url(~/assets/img/page-graphics/dark-gray-splatter.png);
   background-position: bottom right;
-  background-size: 80%;
+  background-size: 80%;*/
 }
 .taker-token-img {
   max-height: 42px;

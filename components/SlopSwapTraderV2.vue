@@ -13,14 +13,16 @@
               <SlopSwapTradeConfiguration />
             </b-nav-item>
             <b-nav-item>
-              <b-button v-b-toggle.TXSettingsConfig pill>
+              <b-button v-b-toggle.TXHistory pill>
                 <i class="fa-solid fa-clock-rotate-left" style="color: #17a2b8;" />
               </b-button>
+              <SlopSwapTXHistory />
             </b-nav-item>
             <b-nav-item>
-              <b-button v-b-toggle.TXSettingsConfig pill>
+              <b-button v-b-toggle.TradingPairGraph pill>
                 <i class="fa-solid fa-chart-area" style="color: #17a2b8;" />
               </b-button>
+              <SlopSwapPairGraphSidebar />
             </b-nav-item>
             <!--<b-nav-item>
             </b-nav-item>-->
@@ -30,7 +32,7 @@
       <b-col sm="12" medium="12" lg="12">
         <div>
           <h1 class="main-title">
-            <span class="blue-gray">Slop</span>Swap <span class="blue-gray">Trading</span>
+            <span class="red">Slop</span>Swap <span class="red">Trading</span>
           </h1>
         </div>
       </b-col>
@@ -225,108 +227,112 @@ export default {
     //    `accountAddress` - An Ethereum address of the current user's account
     //    `signer` - The current signer
     async swapTokens () {
-      const provider = new ethers.providers.Web3Provider(window.ethereum)
-      await provider.send('eth_requestAccounts', [])
-      const signer = provider.getSigner()
-
-      const accounts = await provider.send('eth_requestAccounts', [])
-      const account = accounts[0]
-
-      const address1 = this.sellToken.TokenContract
-      const address2 = this.buyToken.TokenContract
-
-      const tokens = [String(address1), String(address2)]
-      const time = Math.floor(Date.now() / 1000) + 200000
-      const deadline = ethers.BigNumber.from(time)
-
-      const token1 = new ethers.Contract(String(address1), BEP20.abi, signer)
-      const tokenDecimals = this.sellToken.TokenDecimal
-
-      // establish router contract instance
-      const router = new ethers.Contract(String(this.MainnetRouter), ROUTER.abi, signer)
-
-      // alert('Line 227')
-
-      if (this.SlippageSelected !== 0) {
-        let amountOutMin = 0
-        alert('Its not 0 ' + this.SlippageSelected)
-        const amountIn = ethers.utils.parseUnits(String(this.sellAmount), tokenDecimals)
-        this.amountIn = amountIn
-
-        Console.log(this.amountIn)
-
-        const amountOut = await router.getAmountsOut(
-          this.amountIn,
-          tokens
-        )
-        Console.log('Line 242, Before Slippage Calculation and after transforming the slippage percentage into a decimal for calculating the amountOutMin: ' + this.SlippageSelected)
-        amountOutMin = amountOut[1].sub(amountOut[1].div(this.SlippageSelected))
-        this.amountOut = amountOutMin
-        Console.log('amountOut with the slippage percentage adjustment applied: ' + amountOutMin)
-        await token1.approve(router.address, this.amountOut)
+      if (this.sellAmount == null) {
+        alert('The sell amount is empty! Come on!')
       } else {
-        const amountIn = ethers.utils.parseUnits(String(this.sellAmount), tokenDecimals)
-        this.amountIn = amountIn
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        await provider.send('eth_requestAccounts', [])
+        const signer = provider.getSigner()
 
-        const amountOut = await router.getAmountsOut(
-          this.amountIn,
-          tokens
-        )
-        this.amountOut = amountOut
-        Console.log('AmountOut[0]: ' + amountOut[0] + ' AmountOut[1]: ' + amountOut[1])
-        await token1.approve(router.address, amountIn)
+        const accounts = await provider.send('eth_requestAccounts', [])
+        const account = accounts[0]
+
+        const address1 = this.sellToken.TokenContract
+        const address2 = this.buyToken.TokenContract
+
+        const tokens = [String(address1), String(address2)]
+        const time = Math.floor(Date.now() / 1000) + 200000
+        const deadline = ethers.BigNumber.from(time)
+
+        const token1 = new ethers.Contract(String(address1), BEP20.abi, signer)
+        const tokenDecimals = this.sellToken.TokenDecimal
+
+        // establish router contract instance
+        const router = new ethers.Contract(String(this.MainnetRouter), ROUTER.abi, signer)
+
+        // alert('Line 227')
+
+        if (this.SlippageSelected !== 0) {
+          let amountOutMin = 0
+          Console.log('Its not 0 ' + this.SlippageSelected)
+          const amountIn = ethers.utils.parseUnits(String(this.sellAmount), tokenDecimals)
+          this.amountIn = amountIn
+
+          Console.log(this.amountIn)
+
+          const amountOut = await router.getAmountsOut(
+            this.amountIn,
+            tokens
+          )
+          Console.log('Line 242, Before Slippage Calculation and after transforming the slippage percentage into a decimal for calculating the amountOutMin: ' + this.SlippageSelected)
+          amountOutMin = amountOut[1].sub(amountOut[1].div(this.SlippageSelected))
+          this.amountOut = amountOutMin
+          Console.log('amountOut with the slippage percentage adjustment applied: ' + amountOutMin)
+          await token1.approve(router.address, this.amountOut)
+        } else {
+          const amountIn = ethers.utils.parseUnits(String(this.sellAmount), tokenDecimals)
+          this.amountIn = amountIn
+
+          const amountOut = await router.getAmountsOut(
+            this.amountIn,
+            tokens
+          )
+          this.amountOut = amountOut
+          Console.log('AmountOut[0]: ' + amountOut[0] + ' AmountOut[1]: ' + amountOut[1])
+          await token1.approve(router.address, amountIn)
+        }
+
+        const wethAddress = await router.WETH()
+
+        let tx
+        if (address1 === wethAddress) {
+          // Eth -> Token
+          tx = await router.swapExactETHForTokens(
+            String(this.amountOut[1]),
+            tokens,
+            account,
+            deadline,
+            { value: String(this.amountIn) }
+          )
+        } else if (address2 === wethAddress) {
+          // Token -> Eth
+          tx = await router.swapExactTokensForETH(
+            String(this.amountIn),
+            String(this.amountOut[1]),
+            tokens,
+            account,
+            deadline
+          )
+        } else {
+          tx = await router.swapExactTokensForTokens(
+            String(this.amountIn),
+            String(this.amountOut[1]),
+            tokens,
+            account,
+            deadline
+          )
+        }
+
+        const receipt = await tx.wait()
+        this.TXToDisplay.receipt = receipt
+
+        this.TXToDisplay.message = `Transaction receipt: https://www.bscscan.com/tx/${receipt.transactionHash}`
+
+        const lastSwapEvent = receipt.logs.slice(-1)[0]
+        this.TXToDisplay.lastSwapEvent = lastSwapEvent
+
+        const swapInterface = new ethers.utils.Interface(['event Swap (address indexed sender, uint256 amount0In, uint256 amount1In, uint256 amount0Out, uint256 amount1Out, address indexed to)'])
+        const parsed = swapInterface.parseLog(lastSwapEvent)
+
+        this.TXToDisplay.swapInterface = parsed
+
+        const receivedTokens = parsed.args.amount0Out.isZero() ? parsed.args.amount1Out : parsed.args.amount0Out
+        const TotalReceivedTokens = ethers.utils.formatEther(receivedTokens)
+
+        this.TXToDisplay.TotalReceivedTokens = `Swapped for tokens: ${TotalReceivedTokens} ${this.buyToken.TokenSymbol}`
+
+        this.$root.$emit('bv::toggle::collapse', 'TXsidebar1')
       }
-
-      const wethAddress = await router.WETH()
-
-      let tx
-      if (address1 === wethAddress) {
-        // Eth -> Token
-        tx = await router.swapExactETHForTokens(
-          String(this.amountOut[1]),
-          tokens,
-          account,
-          deadline,
-          { value: String(this.amountIn) }
-        )
-      } else if (address2 === wethAddress) {
-        // Token -> Eth
-        tx = await router.swapExactTokensForETH(
-          String(this.amountIn),
-          String(this.amountOut[1]),
-          tokens,
-          account,
-          deadline
-        )
-      } else {
-        tx = await router.swapExactTokensForTokens(
-          String(this.amountIn),
-          String(this.amountOut[1]),
-          tokens,
-          account,
-          deadline
-        )
-      }
-
-      const receipt = await tx.wait()
-      this.TXToDisplay.receipt = receipt
-
-      this.TXToDisplay.message = `Transaction receipt: https://www.bscscan.com/tx/${receipt.transactionHash}`
-
-      const lastSwapEvent = receipt.logs.slice(-1)[0]
-      this.TXToDisplay.lastSwapEvent = lastSwapEvent
-
-      const swapInterface = new ethers.utils.Interface(['event Swap (address indexed sender, uint256 amount0In, uint256 amount1In, uint256 amount0Out, uint256 amount1Out, address indexed to)'])
-      const parsed = swapInterface.parseLog(lastSwapEvent)
-
-      this.TXToDisplay.swapInterface = parsed
-
-      const receivedTokens = parsed.args.amount0Out.isZero() ? parsed.args.amount1Out : parsed.args.amount0Out
-      const TotalReceivedTokens = ethers.utils.formatEther(receivedTokens)
-
-      this.TXToDisplay.TotalReceivedTokens = `Swapped for tokens: ${TotalReceivedTokens} ${this.buyToken.TokenSymbol}`
-
-      this.$root.$emit('bv::toggle::collapse', 'TXsidebar1')
     }, // END OF TOKENTRADE()
     async MakerReCheckBalance (sellTok) {
       // Define Token A & B
@@ -643,6 +649,9 @@ export default {
 .blue-gray {
   color: #17a2b8;
 }
+.red {
+  color: #c1272d;
+}
 .slippage-title {
   font-variant-caps: all-small-caps;
   font-size: 0.95rem;
@@ -681,10 +690,10 @@ export default {
   font-family: 'Fredoka One', sans-serif;
   font-variant: all-small-caps;
   background-color: #212529;
-  background-image: url(~/assets/img/page-graphics/light-blue-splatter.png);
+  /*background-image: url(~/assets/img/page-graphics/light-blue-splatter.png);
   background-position: center right;
   background-size: 50%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 }
 .maker-token-amount {
   border-radius: 4rem;
