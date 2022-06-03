@@ -76,7 +76,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .token-ticker-container {
   font-variant-caps: all-small-caps;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One', verdana;
   color: #3e3d40;
   font-size: 0.95rem;
   /* border-bottom: 1px solid #FFFFFF; */

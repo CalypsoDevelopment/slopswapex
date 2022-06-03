@@ -5,13 +5,34 @@
       <b-img src="~/assets/img/page-graphics/220-Sized-Header-Rise-Of-the-Pigs.png" fluid alt="Responsive image" />
     </div>
     <BSCSpotPriceTicker />
-    <b-container>
+    <b-container fluid>
       <b-row>
-        <b-col cols="12" class="text-center">
+        <b-col cols="2" class="text-center">
+          <div>
+            <b-card
+              title="Card Title"
+              img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 20rem;"
+              class="mb-2"
+            >
+              <b-card-text>
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </b-card-text>
+
+              <b-button href="#" variant="primary">Go somewhere</b-button>
+            </b-card>
+          </div>
+        </b-col>
+
+        <b-col cols="8" class="text-center">
           <div class="app-container">
             <SlopSwapTraderV2 />
           </div>
         </b-col>
+        <b-col cols="2" class="text-center"></b-col>
       </b-row>
     </b-container>
   </b-container>
