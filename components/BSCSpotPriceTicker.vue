@@ -80,12 +80,15 @@ export default {
   color: #3e3d40;
   font-size: 0.95rem;
   /* border-bottom: 1px solid #FFFFFF; */
+  background-color: #FFFFFF;
 }
 .indi-token-module {
   /* background-color: #c1272d;
   border-left: 1px solid #FFFFFF;*/
-  min-height: auto;
+  min-height: 100%;
+  background-color: #FFFFFF;
 }
+
 .token-ticker-logo {
   max-height: 22px;
   -webkit-clip-path: circle(50% at 50% 50%);
@@ -94,5 +97,6 @@ export default {
 }
 .carousel-wrapper {
   min-height: auto;
+  background-color: #FFFFFF;
 }
 </style>

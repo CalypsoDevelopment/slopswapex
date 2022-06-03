@@ -8,21 +8,38 @@
     <b-container fluid>
       <b-row>
         <b-col cols="2" class="text-center">
-          <div>
+          <div class="pt-2">
             <b-card
-              title="Card Title"
+              title="Life on the Farm News"
               img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
               img-alt="Image"
               img-top
               tag="article"
-              style="max-width: 20rem;"
-              class="mb-2"
+              style="max-width: 40rem;"
+              class="blog-panel my-4 mx-2 px-1 py-1"
             >
               <b-card-text>
                 Some quick example text to build on the card title and make up the bulk of the card's content.
               </b-card-text>
 
-              <b-button href="#" variant="primary">Go somewhere</b-button>
+              <b-button pill href="#" variant="primary">Go somewhere</b-button>
+            </b-card>
+          </div>
+          <div>
+            <b-card
+              title="Life on the Farm News"
+              img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 40rem;"
+              class="blog-panel my-2 mx-2 px-1 py-1"
+            >
+              <b-card-text>
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </b-card-text>
+
+              <b-button pill href="#" variant="primary">Go somewhere</b-button>
             </b-card>
           </div>
         </b-col>
@@ -32,7 +49,42 @@
             <SlopSwapTraderV2 />
           </div>
         </b-col>
-        <b-col cols="2" class="text-center"></b-col>
+        <b-col cols="2" class="text-center">
+          <div class="pt-2">
+            <b-card
+              title="Life on the Farm News"
+              img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 40rem;"
+              class="blog-panel my-4 mx-2 px-1 py-1"
+            >
+              <b-card-text>
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </b-card-text>
+
+              <b-button pill href="#" variant="primary">Go somewhere</b-button>
+            </b-card>
+          </div>
+          <div class="pt-2">
+            <b-card
+              title="Life on the Farm News"
+              img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 40rem;"
+              class="blog-panel my-4 mx-2 px-1 py-1"
+            >
+              <b-card-text>
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </b-card-text>
+
+              <b-button pill href="#" variant="primary">Go somewhere</b-button>
+            </b-card>
+          </div>
+        </b-col>
       </b-row>
     </b-container>
   </b-container>
@@ -49,6 +101,7 @@ export default {
 }
 </script>
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .bg {
   /*background: rgb(195,181,155);
   background: linear-gradient(90deg, rgba(195,181,155,1) 0%, rgba(255,255,255,1) 94%, rgba(255,255,255,1) 100%);
@@ -59,8 +112,23 @@ export default {
   background: rgb(255,255,255);
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(46,163,230,1) 48%, rgba(255,158,46,1) 100%);
 }
+p {
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-family: 'Nunito', sans-serif;
+}
+.blog-panel {
+  margin-top: 1rem;
+}
 .slopswap-logo {
   max-height: 100px;
+}
+.card-title {
+  margin-bottom: 0.45rem;
+  font-family: 'Fredoka One', sans-serif;
+  font-variant-caps: all-small-caps;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 .farm-bg {
   /*border-bottom: 1px solid #e0e0e0;*/
