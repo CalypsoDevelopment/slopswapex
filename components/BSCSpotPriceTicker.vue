@@ -2,8 +2,8 @@
   <div class="carousel-wrapper">
     <VueSlickCarousel v-if="store.TickerData" v-bind="slickOptions" ref="carousel">
       <b-row v-for="token in store.TickerData" :key="token" class="token-ticker-container mx-1">
-        <b-col class="indi-token-module my-3">
-          <img class="token-ticker-logo float-left" :src="`${token.logo_url}`">
+        <b-col v-if="token.contract_address !== '0xzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'" class="indi-token-module my-3">
+          <img v-if="token.contract_address !== '0xzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'" class="token-ticker-logo float-left" :src="`${token.logo_url}`">
           {{ token.contract_ticker_symbol }} {{ token.quote_rate }}
         </b-col>
         <!--<b-img :src="`${TickerData[0].logo_url}`" fluid alt="Responsive image" />-->
@@ -32,7 +32,7 @@ export default {
         autoplaySpeed: 5000,
         focusOnSelect: true,
         infinite: true,
-        slidesToShow: 4,
+        slidesToShow: 2,
         slidesToScroll: 1,
         speed: 5000,
         arrows: false,
@@ -45,14 +45,29 @@ export default {
       TickerData: false
     }
   },
+  watch: {
+    slidesToShow (value) {
+      this.FetchViewportSize()
+    }
+  },
   beforeMount () {
     this.fetchTickerData()
+    this.FetchViewportSize()
   },
   methods: {
     async fetchTickerData () {
       const TickerDataRequest = await this.$axios.$get('https://api.covalenthq.com/v1/pricing/tickers/?quote-currency=USD&format=JSON&key=ckey_58f88ae689904d67bb81f4d84d4')
       this.TickerData = TickerDataRequest.data.items
       this.store.TickerData = this.TickerData
+    },
+    FetchViewportSize () {
+      if (window.matchMedia('(max-width: 700px)').matches) {
+      // Viewport is less or equal to 700 pixels wide
+        this.slickOptions.slidesToShow = 3
+      } else {
+      // Viewport is greater than 700 pixels wide
+        this.slickOptions.slidesToShow = 6
+      }
     }
   }
 }
