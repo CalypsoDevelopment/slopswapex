@@ -1,24 +1,13 @@
 <template>
   <div class="carousel-wrapper">
     <VueSlickCarousel v-if="store.TickerData" v-bind="slickOptions" ref="carousel">
-      <div v-for="token in store.TickerData" :key="token" class="token-ticker-container mx-1">
-        <b-row>
-          <b-col class="indi-token-module">
-            <b-row>
-              <b-col cols="2" class="text-center">
-                <b-spinner v-if="token.logo_url === '0xzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'" label="Spinning" />
-                <img v-else class="token-ticker-logo my-3" :src="`${token.logo_url}`">
-              </b-col>
-              <b-col cols="10" class="text-left">
-                {{ token.contract_name }}<br>
-                {{ token.contract_ticker_symbol }}
-                {{ token.quote_rate }}
-              </b-col>
-            </b-row>
-          </b-col>
-        </b-row>
+      <b-row v-for="token in store.TickerData" :key="token" class="token-ticker-container mx-1">
+        <b-col class="indi-token-module my-3">
+          <img class="token-ticker-logo float-left" :src="`${token.logo_url}`">
+          {{ token.contract_ticker_symbol }} {{ token.quote_rate }}
+        </b-col>
         <!--<b-img :src="`${TickerData[0].logo_url}`" fluid alt="Responsive image" />-->
-      </div>
+      </b-row>
     </VueSlickCarousel>
   </div>
 </template>
@@ -40,12 +29,12 @@ export default {
       slickOptions: {
         swipe: true,
         dots: false,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 5000,
         focusOnSelect: true,
         infinite: true,
-        slidesToShow: 5,
+        slidesToShow: 4,
         slidesToScroll: 1,
-        speed: 1000,
+        speed: 5000,
         arrows: false,
         touchThreshold: 5,
         autoplay: true,
@@ -73,19 +62,20 @@ export default {
 .token-ticker-container {
   font-variant-caps: all-small-caps;
   font-family: 'Fredoka One', cursive;
-  color: #17a2b8;
-  color: #FFFFFF;
-  font-size: 1.4rem;
-  border-bottom: 1px solid #FFFFFF;
+  color: #3e3d40;
+  font-size: 0.95rem;
+  /* border-bottom: 1px solid #FFFFFF; */
 }
 .indi-token-module {
-  background-color: #c1272d;
-  border-left: 1px solid #FFFFFF;
+  /* background-color: #c1272d;
+  border-left: 1px solid #FFFFFF;*/
+  min-height: auto;
 }
 .token-ticker-logo {
-  max-height: 32px;
+  max-height: 22px;
   -webkit-clip-path: circle(50% at 50% 50%);
   clip-path: circle(50% at 50% 50%);
+  margin-right: 1rem;
 }
 .carousel-wrapper {
   min-height: auto;
