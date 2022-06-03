@@ -33,7 +33,7 @@
       <b-col sm="12" medium="12" lg="12">
         <div>
           <h1 class="main-title">
-            <span class="red">Slop</span>Swap <span class="red">Trading</span>
+            Slop<span class="red">Swap</span> Trading
           </h1>
         </div>
       </b-col>
@@ -52,6 +52,7 @@
       </b-col>
       <b-col sm="12" medium="12" lg="2" class="text-center py-2">
         <div class="align-middle trade-symbol-container">
+          <b-img src="~/assets/img/page-graphics/trade2.svg" class="center-trade-char" fluid alt="Responsive image" />
           <!--<i class="fa-solid fa-repeat fa-4x animate__animated animate__rotatIn" style="color: #17a2b8" />-->
           <!--<span class="slippage-title">Slippage</span>-->
         </div>
@@ -608,6 +609,9 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .slopswap-logo {
   max-height: 140px;
+}
+.center-trade-char {
+  max-width: 200px;
 }
 .config-btns .btn {
   background-color: transparent;
