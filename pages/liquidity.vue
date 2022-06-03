@@ -582,8 +582,10 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .bg {
-  background: rgb(224,224,224);
-  background: linear-gradient(180deg, rgba(224,224,224,1) 0%, rgba(184,173,150,1) 58%, rgba(79,51,57,1) 100%);
+  /*background: rgb(224,224,224);
+  background: linear-gradient(180deg, rgba(224,224,224,1) 0%, rgba(184,173,150,1) 58%, rgba(79,51,57,1) 100%);*/
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(46,163,230,1) 48%, rgba(255,158,46,1) 100%);
   min-height: 100vh;
 }
 .slippage-selector {
@@ -683,6 +685,8 @@ export default {
   font-family: 'Fredoka One', sans-serif;
   color: #17a2b8;
   font-size: 0.94rem;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
   /*background-image: url(~/assets/img/page-graphics/Wise-Old-Owl.png);
   background-size: 100%;
   background-position: bottom center;

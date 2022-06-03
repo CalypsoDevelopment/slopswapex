@@ -2,7 +2,7 @@
   <div>
     <b-navbar toggleable="lg" class="topbar-nav mx-0" type="light">
       <b-navbar-brand href="https://slopswap.trade">
-        <b-img src="~/assets/img/SlopSwap-Rise-Of-The-Pigs-Simple.png" fluid alt="SlopSwap Crypto Currency Exchange & Blockchain Community Resource" class="slopswap-topbar-logo" />
+        <b-img src="~/assets/img/page-graphics/slopswap-rise-of-pigs.svg" fluid alt="SlopSwap Crypto Currency Exchange & Blockchain Community Resource" class="slopswap-topbar-logo" />
         <!--<span class="brand-main-text"><span class="blue-text">Slop</span>Swap</span>-->
       </b-navbar-brand>
 
@@ -65,16 +65,16 @@
               Sign Out
             </b-dropdown-item>
           </b-nav-item-dropdown>-->
-          <b-nav-item class="pt-2">
-            <b-link :href="`https://www.bscscan.com/address/${account}`" :title="`User Crypto Wallet Address`" target="_blank">
+          <b-nav-item class="">
+            <b-link class="user-address" :href="`https://www.bscscan.com/address/${account}`" :title="`User Crypto Wallet Address`" target="_blank">
               {{ account }}
             </b-link>
           </b-nav-item>
           <b-nav-item>
-            <b-button pill variant="info" @click="ConnectWalletInit()">
-              <i class="fa-solid fa-signal" />
-              Connect Wallet
-            </b-button>
+            <b-link class="connect-btn" @click="ConnectWalletInit()">
+              <span v-if="loggedIn"><i class="fa-solid fa-signal" style="color: #8CC63F" /> Connected Wallet</span>
+              <span v-else><i class="fa-solid fa-signal" style="color: #c1272d" /> Connect Wallet</span>
+            </b-link>
           </b-nav-item>
           <!--<b-nav-item>
             <b-button v-b-toggle.notification-sidebar variant="info" class="connect-btn" pill>
@@ -160,12 +160,15 @@ export default {
 .connect-btn {
   font-variant-caps: all-small-caps;
   font-family: 'Fredoka One', sans-serif;
-  font-size: 1.3rem;
-  font-variant-caps: all-small-caps;
+  font-size: 0.85rem;
   font-weight: 400;
 }
 .navbar-light .navbar-nav .nav-link {
-    color: #3e3d40;
+  color: #3e3d40;
+  font-family: 'Fredoka One', sans-serif;
+}
+.user-address {
+  color: #2ea3e6;
 }
 .btn {
     display: inline-block;
@@ -183,13 +186,14 @@ export default {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: 0.25rem;
+    font-family: 'Fredoka One', sans-serif;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .slopswap-topbar-logo {
-  max-height: 30px;
+  height: 30px;
 }
 .topbar-nav {
-  border-bottom: 1px solid #FFFFFF;
+  /*border-bottom: 1px solid #FFFFFF;*/
 }
 .topbar-nav a {
   font-variant-caps: all-small-caps;

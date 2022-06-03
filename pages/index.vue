@@ -34,6 +34,7 @@ export default {
   background: rgb(255,185,0);
   background: linear-gradient(90deg, rgba(255,185,0,1) 0%, rgba(198,191,177,1) 50%, rgba(255,255,255,1) 100%);
   min-height: 100vh;*/
+  min-height: 100vh;
   background: rgb(255,255,255);
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(46,163,230,1) 48%, rgba(255,158,46,1) 100%);
 }
@@ -49,6 +50,8 @@ export default {
   font-family: 'Fredoka One', sans-serif;
   color: #17a2b8;
   font-size: 0.94rem;
+  border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF
   /*-webkit-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
   clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);*/
   /* background-image: url(~/assets/img/page-graphics/SlopSwap-Home-Page.png);

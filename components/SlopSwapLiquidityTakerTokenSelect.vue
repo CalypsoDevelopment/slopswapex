@@ -1,7 +1,7 @@
 <template>
   <b-container class="text-center">
     <b-row class="taker-token-container">
-      <b-col cols="12">
+      <b-col cols="12" class="px-0">
         <div class="ttoken-select-container">
           <b-button
             class="taker-token-select-btn"

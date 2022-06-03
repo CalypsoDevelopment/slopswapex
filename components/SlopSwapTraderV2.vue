@@ -24,8 +24,9 @@
               </b-button>
               <SlopSwapPairGraphSidebar />
             </b-nav-item>
-            <!--<b-nav-item>
-            </b-nav-item>-->
+            <b-nav-item>
+              <b-form-select v-model="SlippageSelected" class="slippage-selector slippage-title" :options="SlippageOptions" />
+            </b-nav-item>
           </b-nav>
         </div>
       </b-col>
@@ -38,39 +39,32 @@
       </b-col>
       <b-col sm="12" medium="12" lg="5" class="text-center">
         <SlopSwapMakerTokenSelect @changeMakerToken="ChangeSellToken($event)" @changeMakerTokenBalance="MakerReCheckBalance($event)" />
-        <div>
-          <b-form-input v-model="sellAmount" class="maker-token-amount" placeholder="0.0" @change="MakerPriceCheck()" />
-          <!--<div class="mt-2 dollar-value">
-            <i class="fa-solid fa-square-dollar" style="color: #6c757d;" />
-            {{ MakerDollarAmount }}
-          </div>-->
-        </div>
+        <b-form-input v-model="sellAmount" class="maker-token-amount" placeholder="0.0" @change="MakerPriceCheck()" />
         <div>
           <div class="mt-0 mb-0">
-            <span class="label-title"><strong>Wallet Balance: {{ SellTokenUserBalance }} </strong></span>
+            <span class="label-title">
+              <span class="red">Wallet Balance:</span> {{ SellTokenUserBalance }}
+              <!--<span class="red"><i class="fa-solid fa-square-dollar" style="color: #c1272d;" /></span> {{ MakerDollarAmount }-->
+            </span>
           </div>
           <b-form-input v-model="SellTokenUserBalance" placeholder="Wallet Balance" disabled class="hidden-field" />
         </div>
       </b-col>
-      <b-col sm="12" medium="12" lg="2" class="text-center">
+      <b-col sm="12" medium="12" lg="2" class="text-center py-2">
         <div class="align-middle trade-symbol-container">
           <!--<i class="fa-solid fa-repeat fa-4x animate__animated animate__rotatIn" style="color: #17a2b8" />-->
           <!--<span class="slippage-title">Slippage</span>-->
-          <b-form-select v-model="SlippageSelected" class="slippage-selector slippage-title mt-2" :options="SlippageOptions" />
         </div>
       </b-col>
       <b-col sm="12" medium="12" lg="5" class="text-center">
         <SlopSwapTakerTokenSelect @changeTakerToken="ChangeBuyToken($event)" @changeTakerTokenBalance="TakerReCheckBalance($event)" />
-        <div>
-          <b-form-input v-model="BuyTokenAmount" class="taker-token-amount" placeholder="0.0" />
-          <!--<div class="mt-2 dollar-value">
-            <i class="fa-solid fa-square-dollar" style="color: #6c757d;" />
-            {{ TakerDollarAmount }}
-          </div>-->
-        </div>
+        <b-form-input v-model="BuyTokenAmount" class="taker-token-amount" placeholder="0.0" />
         <div>
           <div class="mt-0 mb-0">
-            <span class="label-title"><strong>Wallet Balance: {{ BuyTokenUserBalance }} </strong></span>
+            <span class="label-title">
+              <span class="red">Wallet Balance:</span> {{ BuyTokenUserBalance }}
+              <!--<span class="red"><i class="fa-solid fa-square-dollar" style="color: #c1272d;" /></span> {{ TakerDollarAmount }-->
+            </span>
           </div>
           <b-form-input v-model="BuyTokenUserBalance" placeholder="Wallet Balance" disabled class="hidden-field" />
         </div>
@@ -636,9 +630,9 @@ export default {
 }
 .label-title {
   font-variant-caps: all-small-caps;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-family: 'Fredoka One', sans-serif;
-  color: #505960;
+  color: #212529;
 }
 .main-title {
   font-variant-caps: all-small-caps;
@@ -675,7 +669,7 @@ export default {
 }
 .slippage-selector {
   background-color: transparent;
-  border-radius: 4rem;
+  border-color: transparent;
 }
 .trade-container {
   padding: 1rem;
@@ -690,6 +684,7 @@ export default {
   font-family: 'Fredoka One', sans-serif;
   font-variant: all-small-caps;
   background-color: #212529;
+  border-color: #FFFFFF;
   /*background-image: url(~/assets/img/page-graphics/light-blue-splatter.png);
   background-position: center right;
   background-size: 50%;
@@ -697,11 +692,11 @@ export default {
 }
 .maker-token-amount {
   border-radius: 4rem;
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 .taker-token-amount {
   border-radius: 4rem;
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 .dollar-value {
   font-size: 1.8rem;

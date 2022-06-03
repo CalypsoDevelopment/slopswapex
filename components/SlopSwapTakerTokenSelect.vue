@@ -1,7 +1,7 @@
 <template>
   <b-container class="text-center">
     <b-row class="taker-token-container">
-      <b-col>
+      <b-col class="px-0">
         <div class="ttoken-select-container">
           <b-button
             class="taker-token-select-btn"
@@ -125,7 +125,7 @@ export default {
   background-size: 80%;*/
 }
 .taker-token-img {
-  max-height: 42px;
+  max-height: 32px;
 }
 .taker-link {
   width: 100%;

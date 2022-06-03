@@ -5,7 +5,7 @@
       width="50%"
       class="text-center"
       title=""
-      left
+      right
       shadow
     >
       <div class="px-3 py-2">

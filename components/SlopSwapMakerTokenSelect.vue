@@ -1,7 +1,7 @@
 <template>
   <b-container class="text-center">
     <b-row class="maker-token-container">
-      <b-col>
+      <b-col class="px-0">
         <div class="mtoken-select-container">
           <b-button
             class="maker-token-select-btn"
@@ -152,7 +152,7 @@ export default {
 
 }
 .maker-token-img {
-  max-height: 42px;
+  max-height: 32px;
 }
 .maker-link {
   width: 100%;
