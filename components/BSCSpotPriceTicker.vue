@@ -76,13 +76,14 @@ export default {
   color: #17a2b8;
   color: #FFFFFF;
   font-size: 1.4rem;
+  border-bottom: 1px solid #FFFFFF;
 }
 .indi-token-module {
-  background-color: #505960;
+  background-color: #c1272d;
   border-left: 1px solid #FFFFFF;
 }
 .token-ticker-logo {
-  max-height: 42px;
+  max-height: 32px;
   -webkit-clip-path: circle(50% at 50% 50%);
   clip-path: circle(50% at 50% 50%);
 }
