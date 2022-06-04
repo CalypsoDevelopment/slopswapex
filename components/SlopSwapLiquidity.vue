@@ -5,23 +5,26 @@
         <div>
           <b-nav>
             <b-nav-item active>
-              <i class="fa-solid fa-gears" style="color: #6c757d;" />
+              <i class="fa-solid fa-gears" style="color: #5d3d42;" />
             </b-nav-item>
             <b-nav-item>
-              <i class="fa-solid fa-clock-rotate-left" style="color: #6c757d;" />
+              <i class="fa-solid fa-clock-rotate-left" style="color: #5d3d42;" />
             </b-nav-item>
             <b-nav-item>
-              <i class="fa-solid fa-chart-area" style="color: #6c757d;" />
+              <i class="fa-solid fa-chart-area" style="color: #5d3d42;" />
             </b-nav-item>
-            <!--<b-nav-item>
-            </b-nav-item>-->
+            <b-nav-item>
+              <div class="my-0 py-0">
+                <b-form-select v-model="SlippageSelected" class="slippage-selector" :options="SlippageOptions" />
+              </div>
+            </b-nav-item>
           </b-nav>
         </div>
       </b-col>
       <b-col sm="12" medium="12" lg="12">
         <div>
           <h1 class="main-title">
-            <span class="blue-gray">Slop</span>Swap <span class="blue-gray">Liquidity</span>
+            <span class="purple">Slop</span>Swap <span class="purple">Liquidity</span>
           </h1>
         </div>
       </b-col>
@@ -40,8 +43,9 @@
       </b-col>
       <b-col sm="12" medium="12" lg="2" class="text-center">
         <div class="align-middle">
-          <span class="label-title">Slippage <i class="fa-solid fa-arrow-up-arrow-down" /></span>
-          <b-form-select v-model="SlippageSelected" class="slippage-selector mt-2" :options="SlippageOptions" />
+          <b-img src="~/assets/img/page-graphics/liquidity-graphic.svg" class="center-trade-char" fluid alt="Responsive image" />
+          <!--<span class="label-title">Slippage <i class="fa-solid fa-arrow-up-arrow-down" /></span>
+          <b-form-select v-model="SlippageSelected" class="slippage-selector mt-2" :options="SlippageOptions" />-->
           <!--<i class="fa-solid fa-repeat fa-2x animate__animated animate__rotatIn" style="color: #007bff" />-->
         </div>
       </b-col>
@@ -1328,6 +1332,12 @@ export default {
   background-color: transparent;
   border-radius: 4rem;
 }
+.purple {
+  color: #5d3d42;
+}
+.white {
+  color: #FFFFFF;
+}
 .main-title {
   font-variant-caps: all-small-caps;
   font-weight: 600;
@@ -1358,9 +1368,34 @@ export default {
   border-top-right-radius: 4rem;
   border-bottom-right-radius: 4rem;
 }
-.slippage-selector {
+.custom-select {
+    display: inline-block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0rem 0rem 0rem 0rem;
+    margin-top: 0rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    vertical-align: middle;
+    background: #fff url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e) right 0.75rem center/8px 10px no-repeat;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.slippage-selector.custom-select{
   background-color: transparent;
-  border-radius: 4rem;
+  border: transparent;
+  font-variant-caps: all-small-caps;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: 'Fredoka One', cursive;
+  height: 26px
+}
+a.nav-link {
 }
 .trade-container {
   margin-top: 2rem;

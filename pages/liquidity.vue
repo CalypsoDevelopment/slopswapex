@@ -120,7 +120,7 @@
     </div>
     <TopNavbarComplex />
     <div class="farm-bg">
-      <b-img src="~/assets/img/page-graphics/Wise-Old-Owl.png" fluid alt="Responsive image" />
+      <b-img src="~/assets/img/page-graphics/Wise-Old-OwlV2.png" fluid alt="Responsive image" />
       <!-- <b-nav tabs align="right">
         <b-nav-item active>
           <i class="fa-solid fa-circle-plus" /> Add Liquidity
@@ -136,13 +136,15 @@
         </b-nav-item>
       </b-nav>-->
     </div>
-    <b-container>
+    <b-container fluid>
       <b-row>
-        <b-col sm="12" medium="12" lg="12" class="text-center">
+        <b-col sm="12" medium="12" lg="2" class="text-center" />
+        <b-col sm="12" medium="12" lg="8" class="text-center">
           <div class="app-container">
             <SlopSwapLiquidity @emitLP="CaptureLPData($event)" />
           </div> <!-- END OF .APP_CONTAINER -->
         </b-col>
+        <b-col sm="12" medium="12" lg="2" class="text-center" />
       </b-row>
     </b-container>
   </b-container>

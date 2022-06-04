@@ -2,101 +2,114 @@
   <b-container fluid class="bg px-0">
     <TopNavbarComplex />
     <div class="farm-bg">
-      <b-img src="~/assets/img/page-graphics/220-Sized-Header-Rise-Of-the-Pigs.png" fluid alt="Responsive image" />
+      <b-img src="~/assets/img/page-graphics/220-Sized-Header-Rise-Of-the-PigsV2.png" fluid alt="Responsive image" class="mx-0" />
+      <b-input-group prepend="Search" class="mt-0">
+        <b-form-input :type="search" placeholder="" />
+        <b-input-group-append>
+          <b-button variant="outline-success"><i class="fa-solid fa-magnifying-glass" /></b-button>
+        </b-input-group-append>
+      </b-input-group>
     </div>
     <BSCSpotPriceTicker />
+
     <b-container fluid>
       <b-row>
-        <b-col sm="12" medium="12" lg="2" class="text-center">
-          <b-row>
-            <b-col sm="12" medium="4" lg="12">
-              <div class="py-1 mx-2">
-                <b-card
-                  title="Life on the Farm News"
-                  img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  class="blog-panel my-4 mx-2 px-1 py-1"
-                >
-                  <b-card-text>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </b-card-text>
+        <b-col sm="12" medium="4" lg="3">
+          <div class="py-1 mx-2">
+            <b-card
+              title="Life on the Farm News"
+              img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
+              img-alt="Image"
+              img-top
+              tag="article"
+              class="info-panel my-4 mx-2 px-1 py-1"
+            >
+              <b-card-text>
+                Life on the Farm News is where SlopSwap keeps our users informed of the latest news within blockchain technology.
+              </b-card-text>
 
-                  <b-button pill href="#" variant="primary">Learn About Blockchain</b-button>
-                </b-card>
-              </div>
-            </b-col>
-
-            <b-col sm="12" medium="4" lg="12">
-              <div class="py-1 mx-2">
-                <b-card
-                  title="Token Generation"
-                  img-src="~/assets/img/page-graphics/Crypto-Asset-Generation.jpg"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  class="blog-panel my-4 mx-2 px-1 py-1"
-                >
-                  <b-card-text>
-                    Need a Cryptocurrency Asset Token for your project? Generate Tokens, Token Presales, NFT's and other Smart Contracts to help you realize your blockchain concept.
-                  </b-card-text>
-
-                  <b-button pill href="#" variant="primary">
-                    Create Tokens
-                  </b-button>
-                </b-card>
-              </div>
-            </b-col>
-          </b-row>
+              <b-button pill href="#" variant="primary">
+                Learn About Blockchain
+              </b-button>
+            </b-card>
+          </div>
         </b-col>
 
+        <b-col sm="12" medium="4" lg="3">
+          <div class="py-1 mx-2">
+            <b-card
+              title="Token Generation"
+              img-src="~/assets/img/page-graphics/Crypto-Asset-Generation.jpg"
+              img-alt="Image"
+              img-top
+              tag="article"
+              class="info-panel my-4 mx-2 px-1 py-1"
+            >
+              <b-card-text>
+                Generate & create your project token from a range of custom features. We also have token themes from popular projects.
+              </b-card-text>
+
+              <b-button pill href="#" variant="primary">
+                Create Tokens
+              </b-button>
+            </b-card>
+          </div>
+        </b-col>
+
+        <b-col sm="12" medium="4" lg="3">
+          <div class="py-1 mx-1">
+            <b-card
+              title="Cryptocurrency Onboarding"
+              img-src="~/assets/img/page-graphics/Crypto-Educational-Onboarding.jpg"
+              img-alt="Image"
+              img-top
+              tag="article"
+              class="info-panel my-4 mx-2 px-1 py-1"
+            >
+              <b-card-text>
+                We understand that learning something new can be intimidating, but learning Web 3.0 technology is much easier than you think!
+              </b-card-text>
+
+              <b-button pill href="#" variant="primary">
+                Go somewhere
+              </b-button>
+            </b-card>
+          </div>
+        </b-col>
+
+        <b-col sm="12" medium="4" lg="3">
+          <div class="py-1 mx-1">
+            <b-card
+              title="Life on the Farm News"
+              img-src="~/assets/img/page-graphics/SlopSwap-Bridge.jpg"
+              img-alt="Image"
+              img-top
+              tag="article"
+              class="info-panel my-4 mx-2 px-1 py-1"
+            >
+              <b-card-text>
+                We're currently working on our cross-chain bridge. Soon you'll be able to trade between the popular blockchains.
+              </b-card-text>
+
+              <b-button pill href="#" variant="primary">
+                Go somewhere
+              </b-button>
+            </b-card>
+          </div>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col sm="12" medium="12" lg="2" class="text-center" />
         <b-col sm="12" medium="12" lg="8" class="text-center">
           <div class="app-container">
             <SlopSwapTraderV2 />
           </div>
         </b-col>
-        <b-col sm="12" medium="12" lg="2" class="text-center">
-          <b-row>
-            <b-col sm="12" medium="4" lg="12">
-              <div class="py-1 mx-2">
-                <b-card
-                  title="Life on the Farm News"
-                  img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  class="blog-panel my-4 mx-2 px-1 py-1"
-                >
-                  <b-card-text>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </b-card-text>
-
-                  <b-button pill href="#" variant="primary">Go somewhere</b-button>
-                </b-card>
-              </div>
-            </b-col>
-
-            <b-col sm="12" medium="4" lg="12">
-              <div class="py-1 mx-2">
-                <b-card
-                  title="Life on the Farm News"
-                  img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
-                  img-alt="Image"
-                  img-top
-                  tag="article"
-                  class="blog-panel my-4 mx-2 px-1 py-1"
-                >
-                  <b-card-text>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
-                  </b-card-text>
-
-                  <b-button pill href="#" variant="primary">Go somewhere</b-button>
-                </b-card>
-              </div>
-            </b-col>
-          </b-row>
-        </b-col>
+        <b-col sm="12" medium="12" lg="2" class="text-center" />
+        <b-col sm="12" medium="12" lg="3" class="text-center" />
+        <b-col sm="12" medium="12" lg="3" class="text-center" />
+        <b-col sm="12" medium="12" lg="3" class="text-center" />
+        <b-col sm="12" medium="12" lg="3" class="text-center" />
       </b-row>
     </b-container>
   </b-container>
@@ -129,7 +142,8 @@ p {
   font-size: 0.85rem;
   font-family: 'Nunito', sans-serif;
 }
-.blog-panel {
+.info-panel {
+  min-height: 50vh;
 }
 .slopswap-logo {
   max-height: 100px;
