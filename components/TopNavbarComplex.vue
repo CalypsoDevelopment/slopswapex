@@ -28,6 +28,9 @@
           <b-nav-item to="/">
             SlopSwapX
           </b-nav-item>
+          <b-nav-item to="/">
+            Crypto Wiki
+          </b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->

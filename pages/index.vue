@@ -7,83 +7,95 @@
     <BSCSpotPriceTicker />
     <b-container fluid>
       <b-row>
-        <b-col cols="2" class="text-center">
-          <div class="pt-2">
-            <b-card
-              title="Life on the Farm News"
-              img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
-              img-alt="Image"
-              img-top
-              tag="article"
-              style="max-width: 40rem;"
-              class="blog-panel my-4 mx-2 px-1 py-1"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
+        <b-col sm="12" medium="12" lg="2" class="text-center">
+          <b-row>
+            <b-col sm="12" medium="4" lg="12">
+              <div class="py-1 mx-2">
+                <b-card
+                  title="Life on the Farm News"
+                  img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
+                  img-alt="Image"
+                  img-top
+                  tag="article"
+                  class="blog-panel my-4 mx-2 px-1 py-1"
+                >
+                  <b-card-text>
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </b-card-text>
 
-              <b-button pill href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </div>
-          <div>
-            <b-card
-              title="Life on the Farm News"
-              img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
-              img-alt="Image"
-              img-top
-              tag="article"
-              style="max-width: 40rem;"
-              class="blog-panel my-2 mx-2 px-1 py-1"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
+                  <b-button pill href="#" variant="primary">Learn About Blockchain</b-button>
+                </b-card>
+              </div>
+            </b-col>
 
-              <b-button pill href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </div>
+            <b-col sm="12" medium="4" lg="12">
+              <div class="py-1 mx-2">
+                <b-card
+                  title="Token Generation"
+                  img-src="~/assets/img/page-graphics/Crypto-Asset-Generation.jpg"
+                  img-alt="Image"
+                  img-top
+                  tag="article"
+                  class="blog-panel my-4 mx-2 px-1 py-1"
+                >
+                  <b-card-text>
+                    Need a Cryptocurrency Asset Token for your project? Generate Tokens, Token Presales, NFT's and other Smart Contracts to help you realize your blockchain concept.
+                  </b-card-text>
+
+                  <b-button pill href="#" variant="primary">
+                    Create Tokens
+                  </b-button>
+                </b-card>
+              </div>
+            </b-col>
+          </b-row>
         </b-col>
 
-        <b-col cols="8" class="text-center">
+        <b-col sm="12" medium="12" lg="8" class="text-center">
           <div class="app-container">
             <SlopSwapTraderV2 />
           </div>
         </b-col>
-        <b-col cols="2" class="text-center">
-          <div class="pt-2">
-            <b-card
-              title="Life on the Farm News"
-              img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
-              img-alt="Image"
-              img-top
-              tag="article"
-              style="max-width: 40rem;"
-              class="blog-panel my-4 mx-2 px-1 py-1"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
+        <b-col sm="12" medium="12" lg="2" class="text-center">
+          <b-row>
+            <b-col sm="12" medium="4" lg="12">
+              <div class="py-1 mx-2">
+                <b-card
+                  title="Life on the Farm News"
+                  img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
+                  img-alt="Image"
+                  img-top
+                  tag="article"
+                  class="blog-panel my-4 mx-2 px-1 py-1"
+                >
+                  <b-card-text>
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </b-card-text>
 
-              <b-button pill href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </div>
-          <div class="pt-2">
-            <b-card
-              title="Life on the Farm News"
-              img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
-              img-alt="Image"
-              img-top
-              tag="article"
-              style="max-width: 40rem;"
-              class="blog-panel my-4 mx-2 px-1 py-1"
-            >
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
+                  <b-button pill href="#" variant="primary">Go somewhere</b-button>
+                </b-card>
+              </div>
+            </b-col>
 
-              <b-button pill href="#" variant="primary">Go somewhere</b-button>
-            </b-card>
-          </div>
+            <b-col sm="12" medium="4" lg="12">
+              <div class="py-1 mx-2">
+                <b-card
+                  title="Life on the Farm News"
+                  img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
+                  img-alt="Image"
+                  img-top
+                  tag="article"
+                  class="blog-panel my-4 mx-2 px-1 py-1"
+                >
+                  <b-card-text>
+                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                  </b-card-text>
+
+                  <b-button pill href="#" variant="primary">Go somewhere</b-button>
+                </b-card>
+              </div>
+            </b-col>
+          </b-row>
         </b-col>
       </b-row>
     </b-container>
@@ -118,10 +130,18 @@ p {
   font-family: 'Nunito', sans-serif;
 }
 .blog-panel {
-  margin-top: 1rem;
 }
 .slopswap-logo {
   max-height: 100px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #c1272d;
+  border-color: #FFFFFF;
+  font-family: 'Fredoka One', sans-serif;
+  font-variant-caps: all-small-caps;
+  font-size: 0.90rem;
+  font-weight: 400;
 }
 .card-title {
   margin-bottom: 0.45rem;
