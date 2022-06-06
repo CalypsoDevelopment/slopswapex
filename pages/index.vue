@@ -14,7 +14,7 @@
 
     <b-container fluid>
       <b-row>
-        <b-col sm="12" medium="4" lg="3">
+        <b-col sm="6" medium="6" lg="3">
           <div class="py-1 mx-2">
             <b-card
               title="Life on the Farm News"
@@ -35,7 +35,7 @@
           </div>
         </b-col>
 
-        <b-col sm="12" medium="4" lg="3">
+        <b-col sm="6" medium="6" lg="3">
           <div class="py-1 mx-2">
             <b-card
               title="Token Generation"
@@ -56,7 +56,7 @@
           </div>
         </b-col>
 
-        <b-col sm="12" medium="4" lg="3">
+        <b-col sm="6" medium="6" lg="3">
           <div class="py-1 mx-1">
             <b-card
               title="Cryptocurrency Onboarding"
@@ -77,7 +77,7 @@
           </div>
         </b-col>
 
-        <b-col sm="12" medium="4" lg="3">
+        <b-col sm="6" medium="6" lg="3">
           <div class="py-1 mx-1">
             <b-card
               title="Life on the Farm News"

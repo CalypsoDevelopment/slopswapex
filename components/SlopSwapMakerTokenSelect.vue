@@ -1,8 +1,8 @@
 <template>
   <b-container class="text-center">
-    <b-row class="maker-token-container">
+    <b-row class="maker-token-container px-0">
       <b-col class="px-0">
-        <div class="mtoken-select-container">
+        <div class="mtoken-select-container mx-0">
           <b-button
             class="maker-token-select-btn"
             block
