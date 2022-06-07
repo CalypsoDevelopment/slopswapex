@@ -1,14 +1,43 @@
 <template>
   <b-container fluid class="bg px-0">
     <TopNavbarComplex />
-    <div class="farm-bg">
-      <b-img src="~/assets/img/page-graphics/220-Sized-Header-Rise-Of-the-PigsV2.png" fluid alt="Responsive image" class="mx-0" />
-      <b-input-group prepend="Search" class="mt-0">
-        <b-form-input :type="search" placeholder="" />
-        <b-input-group-append>
-          <b-button variant="outline-success"><i class="fa-solid fa-magnifying-glass" /></b-button>
-        </b-input-group-append>
-      </b-input-group>
+    <div class="farm-bg mx-0">
+      <b-row>
+        <b-col sm="12" medium="12" lg="12">
+          <b-img src="~/assets/img/page-graphics/220-Sized-Header-Rise-Of-the-PigsV2.png" fluid alt="Responsive image" class="mx-0 full-page-img" />
+        </b-col>
+        <b-col sm="12" medium="12" lg="12">
+          <b-img src="~/assets/img/page-graphics/current-pre-launch.png" fluid alt="Currently Pre-Launching SlopSwap in the Wild!" class="mx-0 full-page-img" />
+        </b-col>
+        <b-col sm="6" medium="6" lg="6">
+          <div>
+            <b-nav>
+              <b-nav-item v-b-tooltip.hover to="/trading" title="Binance Smart Chain Crypto Exchange: Live">
+                <b-img src="~/assets/img/page-graphics/binance-logo.svg" fluid alt="Responsive image" class="chain-logos mx-0" />
+              </b-nav-item>
+              <b-nav-item title="Tron Crypto Exchange: Coming Soon">
+                <b-img src="~/assets/img/page-graphics/tron-logo-coming-soon.svg" fluid alt="Responsive image" class="chain-logos mx-0" />
+              </b-nav-item>
+              <b-nav-item title="Ethereum Smart Chain Crypto Exchange: Live">
+                <b-img src="~/assets/img/page-graphics/ethereum-logo-coming-soon.svg" fluid alt="Responsive image" class="chain-logos mx-0" />
+              </b-nav-item>
+              <b-nav-item>
+                <b-img src="~/assets/img/page-graphics/polygon-logo-coming-soon.svg" fluid alt="Responsive image" class="chain-logos mx-0" />
+              </b-nav-item>
+            </b-nav>
+          </div>
+        </b-col>
+        <b-col sm="6" medium="6" lg="6">
+          <b-input-group prepend="Search" class="mt-0">
+            <b-form-input :type="search" placeholder="" />
+            <b-input-group-append>
+              <b-button variant="outline-success">
+                <i class="fa-solid fa-magnifying-glass" />
+              </b-button>
+            </b-input-group-append>
+          </b-input-group>
+        </b-col>
+      </b-row>
     </div>
     <BSCSpotPriceTicker />
 
@@ -135,7 +164,13 @@ export default {
   min-height: 100vh;*/
   min-height: 100vh;
   background: rgb(255,255,255);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(46,163,230,1) 48%, rgba(255,158,46,1) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(46,163,230,1) 10%, rgba(255,158,46,1) 100%);
+}
+.chain-logos {
+  height: 32px;
+}
+.full-page-img {
+  border-top: 1px solid #FFFFFF;
 }
 p {
   margin-bottom: 1rem;
