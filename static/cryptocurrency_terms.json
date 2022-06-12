@@ -1,0 +1,1332 @@
+[
+  {
+    "Title": "51% Attack",
+    "Title_link": "https://www.coingecko.com/en/glossary/51-attack",
+    "Description": "An attack on blockchain by a group of miners controlling more than 50% of network hash rate"
+  },
+  {
+    "Title": "gm Good Morning",
+    "Title_link": "https://www.coingecko.com/en/glossary/gm-good-morning",
+    "Description": "gm is the short form writing for good morning. Used extensively within the crypto community where individuals greet each other casually. On the other hand, good night (gn) is used when people sign off for the day."
+  },
+  {
+    "Title": "Address Delegation",
+    "Title_link": "https://www.coingecko.com/en/glossary/address-delegation",
+    "Description": "Delegation of a wallet's stake to a Super Staker"
+  },
+  {
+    "Title": "Airdrop",
+    "Title_link": "https://www.coingecko.com/en/glossary/airdrop",
+    "Description": "A way to promote cryptocurrencies by sending some free tokens to traders"
+  },
+  {
+    "Title": "Algorithm",
+    "Title_link": "https://www.coingecko.com/en/glossary/algorithm",
+    "Description": "Algorithm is a set of rules to follow to solve a problem or conduct a task."
+  },
+  {
+    "Title": "Algorithmic Stablecoin",
+    "Title_link": "https://www.coingecko.com/en/glossary/algorithmic-stablecoin",
+    "Description": "Algorithmic stablecoins are tokens pegged to a fiat currency which is usually the US dollar, purely through software and specific conditions."
+  },
+  {
+    "Title": "All-Time-High (ATH)",
+    "Title_link": "https://www.coingecko.com/en/glossary/all-time-high-ath",
+    "Description": "The highest point (in price, in market capitalization) that a cryptocurrency has been in history."
+  },
+  {
+    "Title": "All-Time-Low (ATL)",
+    "Title_link": "https://www.coingecko.com/en/glossary/all-time-low-atl",
+    "Description": "The lowest point (in price, in market capitalization) that a cryptocurrency has been in history."
+  },
+  {
+    "Title": "Altcoin",
+    "Title_link": "https://www.coingecko.com/en/glossary/altcoin",
+    "Description": "Coins althernative to Bitcoin"
+  },
+  {
+    "Title": "Application Programming Interface (API)",
+    "Title_link": "https://www.coingecko.com/en/glossary/application-programming-interface",
+    "Description": "It is a software that acts like an intermediary or a bridge that lets two applications talk to each other. It is the one that lets applications, data and devices interact."
+  },
+  {
+    "Title": "Application-Specific Integrated Circuit (ASIC)",
+    "Title_link": "https://www.coingecko.com/en/glossary/application-specific-integrated-circuit-asic",
+    "Description": "Refers to specialized computers that are made to do a very specific task (eg. calculate hashes for Bitcoin's Proof-of-Work)"
+  },
+  {
+    "Title": "Arbitrage",
+    "Title_link": "https://www.coingecko.com/en/glossary/arbitrage",
+    "Description": "A strategy where investors buy a currency in a market and sell it at a higher price in another market to gain profit."
+  },
+  {
+    "Title": "ASIC Resistant",
+    "Title_link": "https://www.coingecko.com/en/glossary/asic-resistant",
+    "Description": "A term used to describe cryptocurrency proof-of-work protocols that are resistant to Application-Specific Integrated Circuit (ASIC), by packing in various parameters that make it difficult for ASICs to have a competitive edge against consumer hardwares."
+  },
+  {
+    "Title": "Ask Me Anything (AMA)",
+    "Title_link": "https://www.coingecko.com/en/glossary/ask-me-anything-ama",
+    "Description": "Ask me anything refers to actions where individuals of certain profession (eg. fireman, nurse, journalists) or company (eg. CEO of Tesla) conduct a session for users to ask them questions."
+  },
+  {
+    "Title": "Atomic SWAP",
+    "Title_link": "https://www.coingecko.com/en/glossary/atomic-swap",
+    "Description": "Atomic Swap refers to the exchange of cryptocurrencies that operate in different block chains without intermediaries."
+  },
+  {
+    "Title": "Automatic Replay Protection",
+    "Title_link": "https://www.coingecko.com/en/glossary/automatic-replay-protection",
+    "Description": "Automatic Replay Protection refers to the upgrade implemented by Bitcoin Cash to stop the loss of funds from exchanges through replay attacks."
+  },
+  {
+    "Title": "Bagholder",
+    "Title_link": "https://www.coingecko.com/en/glossary/bagholder",
+    "Description": "A person who is holding a large quantity of cryptocurrency which is declining in value or becoming worthless"
+  },
+  {
+    "Title": "Bakkt",
+    "Title_link": "https://www.coingecko.com/en/glossary/bakkt",
+    "Description": "Bakkt is a company developed by the Intercontinental Exchange (ICE), owner of the New York Stock Exchange. It specializes in Futures/Options contracts for cryptocurrencies."
+  },
+  {
+    "Title": "Batch Auction",
+    "Title_link": "https://www.coingecko.com/en/glossary/batch-auction",
+    "Description": "A Batch Auction distributes an amount of tokens to users that is proportional to their contribution to the pool."
+  },
+  {
+    "Title": "Bearish",
+    "Title_link": "https://www.coingecko.com/en/glossary/bearish",
+    "Description": "A term used to indicate negative sentiment towards the market or an asset, where investors believe that there will be downward price movement."
+  },
+  {
+    "Title": "Bear Market",
+    "Title_link": "https://www.coingecko.com/en/glossary/bear-market",
+    "Description": "Contrary to bull market, it indicates the direction of the market going for downward trend."
+  },
+  {
+    "Title": "Bitcoin ATM",
+    "Title_link": "https://www.coingecko.com/en/glossary/bitcoin-atm",
+    "Description": "A machine from which you can buy or sell Bitcoin. Typically also offers different types of cryptocurrencies."
+  },
+  {
+    "Title": "Bitcoin Evangelist",
+    "Title_link": "https://www.coingecko.com/en/glossary/bitcoin-evangelist",
+    "Description": "Individuals who are passionate about Bitcoin, and are dedicated in spreading knowlege about Bitcoin"
+  },
+  {
+    "Title": "Bitcoin Improvement Proposal (BIP)",
+    "Title_link": "https://www.coingecko.com/en/glossary/bitcoin-improvement-proposal-bip",
+    "Description": "Refers to improvement proposals for Bitcoin, used to introduce features or any updates on the Bitcoin network."
+  },
+  {
+    "Title": "BitLicense",
+    "Title_link": "https://www.coingecko.com/en/glossary/bitlicense",
+    "Description": "Refers to the business license issued by the New York State Department of Financial Services (NYSDFS) to companies dealing with Cryptocurrencies (subject to certain exceptions) in New York."
+  },
+  {
+    "Title": "Block",
+    "Title_link": "https://www.coingecko.com/en/glossary/block",
+    "Description": "In the context of blockchain, block refers to the collection of transactional data or information that are bundled together in a predetermined size."
+  },
+  {
+    "Title": "Blockchain",
+    "Title_link": "https://www.coingecko.com/en/glossary/blockchain",
+    "Description": "In Bitcoin's case, blockchain describes its decentralized, public ledger which contains transactional information."
+  },
+  {
+    "Title": "Block Confirmation",
+    "Title_link": "https://www.coingecko.com/en/glossary/block-confirmation",
+    "Description": "Refers to the number of confirmation a particular block has. Each block ahead of the referenced block adds one block confirmation to it."
+  },
+  {
+    "Title": "Block Explorer",
+    "Title_link": "https://www.coingecko.com/en/glossary/block-explorer",
+    "Description": "Application or websites which display information such as status of transactions or data contained in a block of a given public blockchain network."
+  },
+  {
+    "Title": "Block Height",
+    "Title_link": "https://www.coingecko.com/en/glossary/block-height",
+    "Description": "A number that is used to indicated the position of a particular block within a blockchain"
+  },
+  {
+    "Title": "Block Reward",
+    "Title_link": "https://www.coingecko.com/en/glossary/block-reward",
+    "Description": "One of the mechanisms built into a blockchain to incentivize validators"
+  },
+  {
+    "Title": "Bloodbath",
+    "Title_link": "https://www.coingecko.com/en/glossary/bloodbath",
+    "Description": "In context of trading, the term bloodbath is commonly used to describe a market which is on a downtrend with many assets suffering from value depreciation."
+  },
+  {
+    "Title": "Bots",
+    "Title_link": "https://www.coingecko.com/en/glossary/bots",
+    "Description": "Refers to software or programmes that automatically trade based on preset behaviours."
+  },
+  {
+    "Title": "Bounty",
+    "Title_link": "https://www.coingecko.com/en/glossary/bounty",
+    "Description": "Public tasks available for anyone for a reward"
+  },
+  {
+    "Title": "BUIDL",
+    "Title_link": "https://www.coingecko.com/en/glossary/buidl",
+    "Description": "An advice for investors to contribute new projects on blockchain rather than holding cryptocurrencies and waiting for the price to increase"
+  },
+  {
+    "Title": "Bullish",
+    "Title_link": "https://www.coingecko.com/en/glossary/bullish",
+    "Description": "A term used to indicate positive sentiment towards the market or an asset, where investors believe that there will be upward price movement."
+  },
+  {
+    "Title": "Bull Market",
+    "Title_link": "https://www.coingecko.com/en/glossary/bull-market",
+    "Description": "A bull market indicates the direction of the market going in an upward trend."
+  },
+  {
+    "Title": "Burned Tokens",
+    "Title_link": "https://www.coingecko.com/en/glossary/burned-tokens",
+    "Description": "Tokens which have been sent to addresses whose private key are not known, effectively becoming unusable."
+  },
+  {
+    "Title": "Buy/Sell Tax",
+    "Title_link": "https://www.coingecko.com/en/glossary/buy-sell-tax",
+    "Description": "On-chain buy or sell tax rate where a percentage of the tokens bought/sold will be transferred to a set address."
+  },
+  {
+    "Title": "Buy the F***in Dip (BTFD)",
+    "Title_link": "https://www.coingecko.com/en/glossary/buy-the-fuckin-dip-btfd",
+    "Description": "An encouraging rally by asset/cryptocurrency supporters to buy during a price decline"
+  },
+  {
+    "Title": "Buy Wall",
+    "Title_link": "https://www.coingecko.com/en/glossary/buy-wall",
+    "Description": "Anomalously large buy order(s) at a single price point that reflects as a \"wall\" in the order book."
+  },
+  {
+    "Title": "Byzantine Fault",
+    "Title_link": "https://www.coingecko.com/en/glossary/byzantine-fault",
+    "Description": "A byzantine fault is where an error has occured, yet a computer system does not know due which component/what failed to the lack of information and continues to iterate on a given instruction."
+  },
+  {
+    "Title": "Byzantine Generals� Problem",
+    "Title_link": "https://www.coingecko.com/en/glossary/byzantine-generals-problem",
+    "Description": "A term used to describe the situation a single strategy which requires consensus from all members within a group who cannot be trusted or verified"
+  },
+  {
+    "Title": "Central Bank Digital Currency (CBDC)",
+    "Title_link": "https://www.coingecko.com/en/glossary/central-bank-digital-currency",
+    "Description": "It is a digital fiat currency issued by the central banks, contrary to cryptocurrency that issued by non-legislative party."
+  },
+  {
+    "Title": "Centralized",
+    "Title_link": "https://www.coingecko.com/en/glossary/centralized",
+    "Description": "An organization structure wherein a small handful of actors have control over the entire network."
+  },
+  {
+    "Title": "Central Ledger",
+    "Title_link": "https://www.coingecko.com/en/glossary/central-ledger",
+    "Description": "Central data repository of a company or bank"
+  },
+  {
+    "Title": "Circulating Supply",
+    "Title_link": "https://www.coingecko.com/en/glossary/circulating-supply",
+    "Description": "An approximation of the number of coins or tokens that are currently not locked and available for public transactions."
+  },
+  {
+    "Title": "Cloud Mining",
+    "Title_link": "https://www.coingecko.com/en/glossary/cloud-mining",
+    "Description": "Mining on blockchains through rented processing power rented from companies that host the physical equipment."
+  },
+  {
+    "Title": "Cold Storage",
+    "Title_link": "https://www.coingecko.com/en/glossary/cold-storage",
+    "Description": "Offline storage of cryptocurrencies which is arguably safer as they also require physical access (eg. hardware wallet, paper wallets)"
+  },
+  {
+    "Title": "Cold Wallet",
+    "Title_link": "https://www.coingecko.com/en/glossary/cold-wallet",
+    "Description": "Wallets that are offline and require physical access to certain devices (eg. hardware wallet, paper wallets)"
+  },
+  {
+    "Title": "Collateralized Debt Obligation (CDO)",
+    "Title_link": "https://www.coingecko.com/en/glossary/collateralized-debt-obligation-cdo",
+    "Description": "A collateralized debt obligation (CDO) is a form of derivative in which the value is generated from another underlying asset, and is sold to institutional investors."
+  },
+  {
+    "Title": "Composability",
+    "Title_link": "https://www.coingecko.com/en/glossary/composability",
+    "Description": "Composability refers to the ability to combine different components of a software stack."
+  },
+  {
+    "Title": "Consensus",
+    "Title_link": "https://www.coingecko.com/en/glossary/consensus",
+    "Description": "Consensus is achieved in a blockchain system when all participants agree on the content of the next block that will be added onto the blockchain."
+  },
+  {
+    "Title": "Crowdsale",
+    "Title_link": "https://www.coingecko.com/en/glossary/crowdsale",
+    "Description": "This type of auction has a fixed price per token that is sold on a first-come-first-serve basis."
+  },
+  {
+    "Title": "Crypto Bubble",
+    "Title_link": "https://www.coingecko.com/en/glossary/crypto-bubble",
+    "Description": "It is a speculation in the cryptocurrencies and the price of cryptocurrencies would go extremely high before the bubble bursts."
+  },
+  {
+    "Title": "Cryptocurrency",
+    "Title_link": "https://www.coingecko.com/en/glossary/cryptocurrency",
+    "Description": "A form of digital currency that utilizes cryptographic protocols to record ownership and prevent counterfeiting"
+  },
+  {
+    "Title": "Cryptocurrency Act of 2020",
+    "Title_link": "https://www.coingecko.com/en/glossary/cryptocurrency-act-of-2020",
+    "Description": "The Cryptocurrency Act of 2020 is a bill which aims to clarify which federal agencies would regulate which type of crypto assets."
+  },
+  {
+    "Title": "Cryptography",
+    "Title_link": "https://www.coingecko.com/en/glossary/cryptography",
+    "Description": "A discipline or field of study which practices using cryptography to convert human-readable information that can only be deciphered by individuals who have the knowledge to."
+  },
+  {
+    "Title": "Custody",
+    "Title_link": "https://www.coingecko.com/en/glossary/custody",
+    "Description": "Protective care or guardianship of an asset."
+  },
+  {
+    "Title": "Daily Active Addresses (DAA)",
+    "Title_link": "https://www.coingecko.com/en/glossary/daily-active-addresses",
+    "Description": "On a blockchain, users interact with one another through their addresses, and daily active addresses (DAA) refers to the number of addresses which fulfills the defined activity parameter on a given blockchain."
+  },
+  {
+    "Title": "Dead Cat Bounce",
+    "Title_link": "https://www.coingecko.com/en/glossary/dead-cat-bounce",
+    "Description": "Price rally that is short lived after a prolonged decline. Price charts will show a recovery in anticipation of a market turnaround only to decline further."
+  },
+  {
+    "Title": "Decentralized",
+    "Title_link": "https://www.coingecko.com/en/glossary/decentralized",
+    "Description": "A system where there are no centralized points of failure or organization with no central authority figure."
+  },
+  {
+    "Title": "Decentralized Applications (dApps)",
+    "Title_link": "https://www.coingecko.com/en/glossary/decentralized-applications-dapps",
+    "Description": "Applications that run on decentralized peer-to-peer networks such as Ethereum."
+  },
+  {
+    "Title": "Decentralized Autonomous Organization (DAO)",
+    "Title_link": "https://www.coingecko.com/en/glossary/decentralized-autonomous-organization-dao",
+    "Description": "Open source and decentralized systems that do not require centralized operators or controllers."
+  },
+  {
+    "Title": "Decentralized Finance (DeFi)",
+    "Title_link": "https://www.coingecko.com/en/glossary/decentralized-finance-defi",
+    "Description": "Decentralized Finance (DeFi) refers to the movement of building decentralized financial applications that have no central authority and is censorship free."
+  },
+  {
+    "Title": "Decryption",
+    "Title_link": "https://www.coingecko.com/en/glossary/decryption",
+    "Description": "The process of decrypting data that was previously encrypted (made unreable) back to a readable form."
+  },
+  {
+    "Title": "Degen",
+    "Title_link": "https://www.coingecko.com/en/glossary/degen",
+    "Description": "Cryptotrading without Due Diligence and research - basically gambling"
+  },
+  {
+    "Title": "Delegated Proof-of-Stake (dPOS)",
+    "Title_link": "https://www.coingecko.com/en/glossary/delegated-proof-of-stake-dpos",
+    "Description": "A consensus mechanism where selected members of a network are voted as delegates to validate transactions and produce blocks on a blockchain."
+  },
+  {
+    "Title": "Derivatives",
+    "Title_link": "https://www.coingecko.com/en/glossary/derivatives",
+    "Description": "A financial instrument which derives its value from the performance of an underlying asset or index (eg. gold, crude oil)"
+  },
+  {
+    "Title": "Derivatives Market",
+    "Title_link": "https://www.coingecko.com/en/glossary/derivatives-market",
+    "Description": "A market for derivatives which are instruments such as futures or options whose value is derived from an underlying asset."
+  },
+  {
+    "Title": "Difficulty",
+    "Title_link": "https://www.coingecko.com/en/glossary/difficulty",
+    "Description": "A relative measure on how difficult it is to correctly guess a new block"
+  },
+  {
+    "Title": "Directed Acyclic Graph (DAG)",
+    "Title_link": "https://www.coingecko.com/en/glossary/directed-acyclic-graph-dag",
+    "Description": "Directed acyclic graphs refers to a data structure that is built in one single direction, yet branches out and never repeats."
+  },
+  {
+    "Title": "Distributed Denial of Service (DDoS) Attack",
+    "Title_link": "https://www.coingecko.com/en/glossary/distributed-denial-of-service-ddos-attack",
+    "Description": "A common cyber-attack tactic where a perpetrator diverts large amounts of traffic towards a particular network or service in an effort to disrupt normal services."
+  },
+  {
+    "Title": "Distributed Ledger",
+    "Title_link": "https://www.coingecko.com/en/glossary/distributed-ledger",
+    "Description": "Ledgers whose data is stored and synced across a network of nodes."
+  },
+  {
+    "Title": "Distributed Ledger Technology (DLT)",
+    "Title_link": "https://www.coingecko.com/en/glossary/distributed-ledger-technology-dlt",
+    "Description": "Describes the technology that enables distributed ledger."
+  },
+  {
+    "Title": "Dominance",
+    "Title_link": "https://www.coingecko.com/en/glossary/dominance",
+    "Description": "Typically refers to Bitcoins' market capitalization dominance."
+  },
+  {
+    "Title": "Double Spending",
+    "Title_link": "https://www.coingecko.com/en/glossary/double-spending",
+    "Description": "Double spending refers to the act of spending digital currencies twice. This is most commonly applied on crypto exchanges by unscrupulous actors."
+  },
+  {
+    "Title": "Do Your Own Research (DYOR)",
+    "Title_link": "https://www.coingecko.com/en/glossary/do-your-own-research-dyor",
+    "Description": "An advice for investors to do their own research on the coins they wanted to invest in"
+  },
+  {
+    "Title": "Dump",
+    "Title_link": "https://www.coingecko.com/en/glossary/dump",
+    "Description": "A common term used to describe downward market movement, or to describe the action of selling an individuals holdings."
+  },
+  {
+    "Title": "Dusting Attack",
+    "Title_link": "https://www.coingecko.com/en/glossary/dusting-attack",
+    "Description": "A new form of malicious activity in which hackers and scammers attempt to undermine the privacy of cryptocurrency users by sending little amounts of money to their wallets."
+  },
+  {
+    "Title": "Dutch Auction",
+    "Title_link": "https://www.coingecko.com/en/glossary/dutch-auction",
+    "Description": "A Dutch Auction, also know as an \"inverted\" auction, starts off with high asking price that decays over time until a pre-determined floor price."
+  },
+  {
+    "Title": "EIP (Ethereum Improvement Proposal)",
+    "Title_link": "https://www.coingecko.com/en/glossary/eip-ethereum-improvement-proposal",
+    "Description": "Refers to improvement proposals for Ethereum, used to introduce features or any updates on the Ethereum network."
+  },
+  {
+    "Title": "Emission",
+    "Title_link": "https://www.coingecko.com/en/glossary/emission",
+    "Description": "The speed/rate at which new coins are minted and released as dictated by the protocols written."
+  },
+  {
+    "Title": "Encryption",
+    "Title_link": "https://www.coingecko.com/en/glossary/encryption",
+    "Description": "In cryptography, encryption is a process of encoding information the original form of information called plaintext via an algorithm called cipher. The encrypted message is now called ciphertext. Only authorized parties can decipher the ciphertext and convert back it to the original plaintext."
+  },
+  {
+    "Title": "Enterprise Ethereum Alliance (EEA)",
+    "Title_link": "https://www.coingecko.com/en/glossary/enterprise-ethereum-alliance-eea",
+    "Description": "Enterprise Ethereum Alliance is made up for a group of Ethereum developers, corporations as well as startups who are collaborating to find ways to use Ethereum for business applications."
+  },
+  {
+    "Title": "ERC-1155",
+    "Title_link": "https://www.coingecko.com/en/glossary/erc-1155",
+    "Description": "ERC-1155 token standard allows each token ID to represent both non-fungible (NFTs) and fungible tokens which may have their metadata, token supply and other attributes."
+  },
+  {
+    "Title": "ERC-20",
+    "Title_link": "https://www.coingecko.com/en/glossary/erc-20",
+    "Description": "ERC-20 is one of the most widely used token standards in Ethereum to create fungible, exchangeable tokens."
+  },
+  {
+    "Title": "ERC-721",
+    "Title_link": "https://www.coingecko.com/en/glossary/erc-721",
+    "Description": "ERC-721 is one of the most widely used token standards in Ethereum to create non-fungible, exchangeable tokens."
+  },
+  {
+    "Title": "Ethereum Name Service (ENS)",
+    "Title_link": "https://www.coingecko.com/en/glossary/ethereum-name-service-ens",
+    "Description": "Ethereum Name Service (ENS) is a look-up service that allows Ethereum users to find websites or send and receive funds via simple names."
+  },
+  {
+    "Title": "Ethereum Virtual Machine (EVM)",
+    "Title_link": "https://www.coingecko.com/en/glossary/ethereum-virtual-machine-evm",
+    "Description": "Ethereum Virtual Machine (EVM) is the environment in which all smart contracts are executed."
+  },
+  {
+    "Title": "Exchange Traded Fund (ETF)",
+    "Title_link": "https://www.coingecko.com/en/glossary/exchange-traded-fund-etf",
+    "Description": "An exchange-traded fund (ETF) is a form of security that tracks a collection of securites such as stocks, bonds, index or cryptocurrency but tradeable like a single stock."
+  },
+  {
+    "Title": "Explain Like I'm Five (ELI5)",
+    "Title_link": "https://www.coingecko.com/en/glossary/explain-like-im-five-eli5",
+    "Description": "To explain in such simple terms that even a five-year-old would be able to understand it."
+  },
+  {
+    "Title": "Externally Owned Accounts (EOA)",
+    "Title_link": "https://www.coingecko.com/en/glossary/externally-owned-accounts-eoa",
+    "Description": "Externally owned accounts (EOAs) are accounts that are controlled by a private key and have no coding associated with them."
+  },
+  {
+    "Title": "Faucet",
+    "Title_link": "https://www.coingecko.com/en/glossary/faucet",
+    "Description": "A faucet usually represents a site or app where a user can navigate to for small rewards repeated over time."
+  },
+  {
+    "Title": "Fear of Missing Out (FOMO)",
+    "Title_link": "https://www.coingecko.com/en/glossary/fear-of-missing-out",
+    "Description": "Refers to the feeling of apprehension for missing out on a potentially profitable investment opportunity and regretting it later.\nGenerally an expression describing investors' fear of missing out the good timing of buying cryptocurrencies that could eventually be profitable"
+  },
+  {
+    "Title": "Fear, Uncertainty and Doubt (FUD)",
+    "Title_link": "https://www.coingecko.com/en/glossary/fear-uncertainty-and-doubt-fud",
+    "Description": "A strategy to dissuade people from buying a particular cryptocurrency by spreading false information"
+  },
+  {
+    "Title": "Fiat-Pegged Cryptocurrency",
+    "Title_link": "https://www.coingecko.com/en/glossary/fiat-pegged-cryptocurrency",
+    "Description": "Cryptocurrencies are pegged to an underlying asset."
+  },
+  {
+    "Title": "Flappening",
+    "Title_link": "https://www.coingecko.com/en/glossary/flappening",
+    "Description": "Flappening is a term used to describe Litecoin growing bigger and becoming more valuable than Bitcoin Cash (BCH). It is spawned from the term Flippening (used when another crypto overtakes Bitcoin)."
+  },
+  {
+    "Title": "Frontrun",
+    "Title_link": "https://www.coingecko.com/en/glossary/frontrun",
+    "Description": "To intercept a particularly large AMM buy order for the purpose of purchasing an reselling the assets back to the buyer before the order transaction is mind on the blockchain."
+  },
+  {
+    "Title": "Full Node",
+    "Title_link": "https://www.coingecko.com/en/glossary/full-node",
+    "Description": "Full Nodes are computers that verify the set of rules that are built into the protocols of a given cryptocurrency."
+  },
+  {
+    "Title": "Full Pay-Per-Share (FPPS)",
+    "Title_link": "https://www.coingecko.com/en/glossary/full-pay-per-share-fpps",
+    "Description": "FPPS is quite similar to PPS; the only difference is that the pool will additionally pay a transaction fee incentive if the block is identified. FPPS is the same as PPS+."
+  },
+  {
+    "Title": "Futures",
+    "Title_link": "https://www.coingecko.com/en/glossary/futures",
+    "Description": "An agreement between two counterparties that obligates them to transact in the future based on the contract terms set."
+  },
+  {
+    "Title": "Gas",
+    "Title_link": "https://www.coingecko.com/en/glossary/gas",
+    "Description": "A unit of measurement of the computational effort in conducting transactions or smart contracts on Ethereum blockchain."
+  },
+  {
+    "Title": "Gas Limit",
+    "Title_link": "https://www.coingecko.com/en/glossary/gas-limit",
+    "Description": "A term refers to the maximum amount of units of gas user's willingness to spend on a transaction on Ethereum blockchain."
+  },
+  {
+    "Title": "Gas Price",
+    "Title_link": "https://www.coingecko.com/en/glossary/gas-price",
+    "Description": "A term refers to the amount of price user is willing to pay for a transaction on Ethereum blockchain."
+  },
+  {
+    "Title": "Genesis Block",
+    "Title_link": "https://www.coingecko.com/en/glossary/genesis-block",
+    "Description": "It is the first block of data that is processed and validated to form a new blockchain, typically called as 'block 0' or 'block 1'."
+  },
+  {
+    "Title": "Goblin Town",
+    "Title_link": "https://www.coingecko.com/en/glossary/goblin-town",
+    "Description": "A term used to describe the market's persistent downtrend, synonymous with \"bear market\"."
+  },
+  {
+    "Title": "Golden Cross",
+    "Title_link": "https://www.coingecko.com/en/glossary/golden-cross",
+    "Description": "It is a bullish signal in technical candlestick pattern by comparing two lines of short-term moving average and long-term average. It is a golden cross when the short term moving average broke its long-term moving average."
+  },
+  {
+    "Title": "Graphical Processing Unit (GPU)",
+    "Title_link": "https://www.coingecko.com/en/glossary/graphical-processing-unit-gpu",
+    "Description": "They are chips dedicated to graphics processing or floating point operations, allowing to lighten the workload of the processors during applications usage such as video games."
+  },
+  {
+    "Title": "Gwei",
+    "Title_link": "https://www.coingecko.com/en/glossary/gwei",
+    "Description": "The monetary domination of gas, involving Ether"
+  },
+  {
+    "Title": "Halving",
+    "Title_link": "https://www.coingecko.com/en/glossary/halving",
+    "Description": "Event that serves to reduce in half the reward of the Proof-of-Work miners that operate in the blockchain network."
+  },
+  {
+    "Title": "Hard cap",
+    "Title_link": "https://www.coingecko.com/en/glossary/hard-cap",
+    "Description": "The maximum amount that an ICO will be raising."
+  },
+  {
+    "Title": "Hard Fork",
+    "Title_link": "https://www.coingecko.com/en/glossary/hard-fork",
+    "Description": "It is a permanent divergence of a blockchain into two blockhains. The original blockchain does not recognize the new version."
+  },
+  {
+    "Title": "Hash",
+    "Title_link": "https://www.coingecko.com/en/glossary/hash",
+    "Description": "A hash function is an output code (unique and alphanumeric) that we obtain from an input string,"
+  },
+  {
+    "Title": "Hashgraph",
+    "Title_link": "https://www.coingecko.com/en/glossary/hashgraph",
+    "Description": "Hashgraph is a distributed ledger system that has been compared to the blockchain idea as a continuation or successor."
+  },
+  {
+    "Title": "Hashrate",
+    "Title_link": "https://www.coingecko.com/en/glossary/hashrate",
+    "Description": "Total processing power of a blockchain or what is the same, are the amount of hash values that can be made in a period of time."
+  },
+  {
+    "Title": "Hey Hey Hey",
+    "Title_link": "https://www.coingecko.com/en/glossary/hey-hey-hey",
+    "Description": "A term made popular by Carlos Matos who was the spokesperson for the Bitconnect Ponzi. He used it frequently during Bitconnect events to rile up the crowd."
+  },
+  {
+    "Title": "HODL",
+    "Title_link": "https://www.coingecko.com/en/glossary/hodl",
+    "Description": "A crypto slang of saying holding the assets rather than selling it.\nA crypto slang encouraging investors to hold on to their assets rather than selling it."
+  },
+  {
+    "Title": "Hot Wallet",
+    "Title_link": "https://www.coingecko.com/en/glossary/hot-wallet",
+    "Description": "It is a tool that store your cryptocurrencies and always connected to internet"
+  },
+  {
+    "Title": "Hybrid PoW/PoS",
+    "Title_link": "https://www.coingecko.com/en/glossary/hybrid-pow%2Fpos",
+    "Description": "It is the allowance for both Proof-of-Stake and Proof-of-Work distribution consensus to work on the same network."
+  },
+  {
+    "Title": "Hyperledger (Hyperledger Foundation)",
+    "Title_link": "https://www.coingecko.com/en/glossary/hyperledger-hyperledger-foundation",
+    "Description": "Hyperledger is an open source collaborative effort to create blockchain technologies hosted by The Linux Foundation since 2016."
+  },
+  {
+    "Title": "IEO",
+    "Title_link": "https://www.coingecko.com/en/glossary/ieo",
+    "Description": "Initial Exchange Offering (IEO) is a spin-off of Initial Coin Offering (ICO), where the sale of tokens are conducted on an exchange rather than by the coin team themselves."
+  },
+  {
+    "Title": "Immutable",
+    "Title_link": "https://www.coingecko.com/en/glossary/immutable",
+    "Description": "A property characterized by inability to be change and stays unchanged over time."
+  },
+  {
+    "Title": "Impermanent Loss",
+    "Title_link": "https://www.coingecko.com/en/glossary/impermanent-loss",
+    "Description": "Temporary loss of funds due to volatility leading to divergence in price between token pairs provided by liquidity providers."
+  },
+  {
+    "Title": "Initial Coin Offering (ICO)",
+    "Title_link": "https://www.coingecko.com/en/glossary/initial-coin-offering-ico",
+    "Description": "Initial Coin Offering (ICO) is the equivalent of Initial Public Offering (IPO), where a company/cryptocurrency venture raises funds through crowd sales."
+  },
+  {
+    "Title": "Internet of Things (IoT)",
+    "Title_link": "https://www.coingecko.com/en/glossary/internet-of-things",
+    "Description": "It is a system that lets any devices that are connected to internet to comunicate with each other without human-to-human or human-to-devices interactions."
+  },
+  {
+    "Title": "Interoperability",
+    "Title_link": "https://www.coingecko.com/en/glossary/interopability",
+    "Description": "Interoperability refers to the property of product/systems that are able to work with products/systems that are different without any restrictions."
+  },
+  {
+    "Title": "InterPlanetary File System (IPFS)",
+    "Title_link": "https://www.coingecko.com/en/glossary/interplanetary-file-system-ipfs",
+    "Description": "The InterPlanetary File System (IPFS) is a peer-to-peer network and distributed file system protocol for storing and transferring data."
+  },
+  {
+    "Title": "IPO",
+    "Title_link": "https://www.coingecko.com/en/glossary/ipo",
+    "Description": "Initial Public Offering (IPO) refers to the process where a public company offers newly issued shares to the public and as a result raise capital from public investors."
+  },
+  {
+    "Title": "Kimchi Premium",
+    "Title_link": "https://www.coingecko.com/en/glossary/kimchi-premium",
+    "Description": "The kimchi premium is the price difference between South Korean exchanges and other global exchanges for bitcoin."
+  },
+  {
+    "Title": "KYC (Know Your Customer)",
+    "Title_link": "https://www.coingecko.com/en/glossary/kyc-know-your-customer",
+    "Description": "KYC stands for \"Know Your Customer\", a process for business entities are required to verify its clients and assessing them."
+  },
+  {
+    "Title": "Ledger",
+    "Title_link": "https://www.coingecko.com/en/glossary/ledger",
+    "Description": "A record of financial transactions that cannot be changed, only appended with new transactions."
+  },
+  {
+    "Title": "Leverage",
+    "Title_link": "https://www.coingecko.com/en/glossary/leverage",
+    "Description": "It is an investment strategy to gain potential return of the investment by borrowing the money"
+  },
+  {
+    "Title": "Lightning Network",
+    "Title_link": "https://www.coingecko.com/en/glossary/lightning-network",
+    "Description": "It is the \"second layer\" or an off-chain of payment protocol that operates on top of a blockchain. Payments on this network do not need block confirmation and it will be instant."
+  },
+  {
+    "Title": "Limit Order / Limit Buy / Limit Sell",
+    "Title_link": "https://www.coingecko.com/en/glossary/limit-order-%2F-limit-buy-%2F-limit-sell",
+    "Description": "Orders placed by traders to buy or sell a cryptocurrency when a certain price is reached"
+  },
+  {
+    "Title": "Liquidity",
+    "Title_link": "https://www.coingecko.com/en/glossary/liquidity",
+    "Description": "How easily a cryptocurrency can be bought and sold without impacting the overall market price."
+  },
+  {
+    "Title": "Liquid Proof of Stake (LPoS)",
+    "Title_link": "https://www.coingecko.com/en/glossary/liquid-proof-of-srake",
+    "Description": "A proof of stake consensus mechanism by Tezos that slightly differs from Delegated Proof of Stake."
+  },
+  {
+    "Title": "Mainnet",
+    "Title_link": "https://www.coingecko.com/en/glossary/mainnet",
+    "Description": "It is the main network of Bitcoin, where the transactions of this cryptocurrency are registered and take place."
+  },
+  {
+    "Title": "Margin Call",
+    "Title_link": "https://www.coingecko.com/en/glossary/margin-call",
+    "Description": "Margin call takes place when investor's margin account falls below the required amount to stay afloat."
+  },
+  {
+    "Title": "Margin Trading",
+    "Title_link": "https://www.coingecko.com/en/glossary/margin-trading",
+    "Description": "It is a way of investing by borrowing money from a broker (or in crypto, an exchange or platform) to trade"
+  },
+  {
+    "Title": "Market capitalization (market cap)",
+    "Title_link": "https://www.coingecko.com/en/glossary/market-capitalization-market-cap",
+    "Description": "In Crypto, market cap is measured by multiplication of the circulating supply of tokens or currency and its current price"
+  },
+  {
+    "Title": "Market Maker",
+    "Title_link": "https://www.coingecko.com/en/glossary/market-maker",
+    "Description": "Participant of the market who creates buy and orders"
+  },
+  {
+    "Title": "Market Order / Market Buy / Market Sell",
+    "Title_link": "https://www.coingecko.com/en/glossary/market-order-%2F-market-buy-%2F-market-sell",
+    "Description": "A market order is a buy or sell order of stocks or cryptocurrency at the best price available in the current market as soon as possible."
+  },
+  {
+    "Title": "Market Taker",
+    "Title_link": "https://www.coingecko.com/en/glossary/market-taker",
+    "Description": "Participant of the market who buys and sells from currently existing orders"
+  },
+  {
+    "Title": "Masternodes",
+    "Title_link": "https://www.coingecko.com/en/glossary/masternodes",
+    "Description": "Computers that are responsible for processing blockchain transactions and receive a reward when a block is mined."
+  },
+  {
+    "Title": "Mempool",
+    "Title_link": "https://www.coingecko.com/en/glossary/mempool",
+    "Description": "It is the abbreviation of Memory Pool. Set of unconfirmed transactions in a blockchain"
+  },
+  {
+    "Title": "Merkle Tree",
+    "Title_link": "https://www.coingecko.com/en/glossary/merkle-tree",
+    "Description": "A Merkle tree is also known as a hash tree in cryptography. It is a tree where every lead node is labelled with cryptographic hash of a data block, and every non-leaf node is labelled with the hash of the labels of its child nodes. It is used to verify of data stored within it and transferable in and between computers."
+  },
+  {
+    "Title": "Metaverse",
+    "Title_link": "https://www.coingecko.com/en/glossary/metaverse",
+    "Description": "The Metaverse is a virtual space where users are able to interact with each other in a computer generated environment."
+  },
+  {
+    "Title": "MicroBitcoin (uBTC)",
+    "Title_link": "https://www.coingecko.com/en/glossary/microbitcoin-ubtc",
+    "Description": "One millionth of a bitcoin or 0.000001 of a bitcoin. Microbitcoin is the abbreviation of uBTC and often misunderstood as the fork of Bitcoin."
+  },
+  {
+    "Title": "Microtransaction",
+    "Title_link": "https://www.coingecko.com/en/glossary/microtransaction",
+    "Description": "Microtransaction is a system that made very small payments possible in buying the common digital goods and services, such as purchasing items in a game."
+  },
+  {
+    "Title": "Mineable",
+    "Title_link": "https://www.coingecko.com/en/glossary/mineable",
+    "Description": "A cryptocurrency is said to be \"mineable\" when it has the system thrugh which miners can be rewarded with newly-created cryptocurrencies for creating blocks."
+  },
+  {
+    "Title": "Miners",
+    "Title_link": "https://www.coingecko.com/en/glossary/miners",
+    "Description": "Contributors to a blockchain taking part in the process of mining."
+  },
+  {
+    "Title": "Mining",
+    "Title_link": "https://www.coingecko.com/en/glossary/mining",
+    "Description": "It is the process of the miners verify and adding transaction recors into a block."
+  },
+  {
+    "Title": "Mining Contract",
+    "Title_link": "https://www.coingecko.com/en/glossary/mining-contract",
+    "Description": "Another term for cloud mining, where users can rent or invest in mining capacity online."
+  },
+  {
+    "Title": "Mining Pool",
+    "Title_link": "https://www.coingecko.com/en/glossary/mining-pool",
+    "Description": "Combination of resources of several miners to obtain a higher mining power and thus achieve greater rewards for the opening of blocks."
+  },
+  {
+    "Title": "Mining Reward",
+    "Title_link": "https://www.coingecko.com/en/glossary/mining-reward",
+    "Description": "The reward resulting from contributing computing resources to process transactions"
+  },
+  {
+    "Title": "Mining Rig",
+    "Title_link": "https://www.coingecko.com/en/glossary/mining-rig",
+    "Description": "A dedicated hardware to mine"
+  },
+  {
+    "Title": "Mnemonic Phrase",
+    "Title_link": "https://www.coingecko.com/en/glossary/mnemonic-phrase",
+    "Description": "A mnemonic phrase (also known as mnemonic seed, or seed phrase) is a list of words used in sequence to access or restore your cryptocurrency assets."
+  },
+  {
+    "Title": "Mnemonics",
+    "Title_link": "https://www.coingecko.com/en/glossary/mnemonics",
+    "Description": "Mnemonics are memory aids with a system such as letters or associations that help in recall. *see Mnemonic Phrase."
+  },
+  {
+    "Title": "Money Printer Go Brrr",
+    "Title_link": "https://www.coingecko.com/en/glossary/money-printer-go-brrr",
+    "Description": "A meme made to describe the US Fed printing excessive amount of money to support the traditional financial market to avert the stock market crash during the COVID-19 coronavirus pandemic."
+  },
+  {
+    "Title": "Moon",
+    "Title_link": "https://www.coingecko.com/en/glossary/moon",
+    "Description": "Moon\" or \"To the moon\" is a crypto slang that describes an exclamation when the cryptocurrencies prices are rising and when it hit the peak, the coin is said to be \"mooning\"."
+  },
+  {
+    "Title": "Mt. Gox",
+    "Title_link": "https://www.coingecko.com/en/glossary/mt-gox",
+    "Description": "Mtgox or Mt. Gox was one of the first websites where users could take part in fiat-to-bitcoin exchange (and vice versa)."
+  },
+  {
+    "Title": "Multisignal (multi-signature)",
+    "Title_link": "https://www.coingecko.com/en/glossary/multisignal-multi-signature",
+    "Description": "They are wallets that require more than one key for transactions to be authorized."
+  },
+  {
+    "Title": "Node",
+    "Title_link": "https://www.coingecko.com/en/glossary/node",
+    "Description": "Within the blockchain network, the nodes are computers that connect to the network and have an updated copy of the blockchain"
+  },
+  {
+    "Title": "Nonce",
+    "Title_link": "https://www.coingecko.com/en/glossary/nonce",
+    "Description": "Abbreviation for �number only used once� It is of vital importance next to the hash in the verification of data from the Bitcoin blockchain network."
+  },
+  {
+    "Title": "Non-custodial",
+    "Title_link": "https://www.coingecko.com/en/glossary/non-custodial",
+    "Description": "It is a decentralized type-of-wallet, where the users owns its private keys."
+  },
+  {
+    "Title": "Non-Fungible Tokens (NFT)",
+    "Title_link": "https://www.coingecko.com/en/glossary/non-fungible-tokens",
+    "Description": "They are collectible elements within the Ethereum blockchain under ERC-721, where each token refers to a single element with a certain value"
+  },
+  {
+    "Title": "Off-chain",
+    "Title_link": "https://www.coingecko.com/en/glossary/off-chain",
+    "Description": "It refers to transactions occuring outside the blockchain and executed instantly."
+  },
+  {
+    "Title": "Offline Staking",
+    "Title_link": "https://www.coingecko.com/en/glossary/offline-staking",
+    "Description": "Staking without needing to be connected to the blockchain"
+  },
+  {
+    "Title": "Open/Close",
+    "Title_link": "https://www.coingecko.com/en/glossary/open%2Fclose",
+    "Description": "The price at which a cryptocurrency opens at a time period, for example at the start of the day; the price at which a cryptocurrency closes at a time period, for example at the end of the day."
+  },
+  {
+    "Title": "Open Source",
+    "Title_link": "https://www.coingecko.com/en/glossary/open-source",
+    "Description": "Open-source software is a type of software released under a license in which the copyright holder grants users the rights to study, change, and distribute the software to anyone and for any purpose."
+  },
+  {
+    "Title": "Option",
+    "Title_link": "https://www.coingecko.com/en/glossary/option",
+    "Description": "It is a financial instruments that refers to a contract offers the buyer the right to buy or sell an underlying assets at a specified price and time."
+  },
+  {
+    "Title": "Oracles",
+    "Title_link": "https://www.coingecko.com/en/glossary/oracles",
+    "Description": "In the context of crypto, oracles refers to services which verify real-world and provide data to blockchains/smart contracts."
+  },
+  {
+    "Title": "Order Book",
+    "Title_link": "https://www.coingecko.com/en/glossary/order%20book",
+    "Description": "An electronic list of all buy and sell orders in an exchange"
+  },
+  {
+    "Title": "Over The Counter (OTC)",
+    "Title_link": "https://www.coingecko.com/en/glossary/over-the-counter-otc",
+    "Description": "It refers to the process that cryptocurrencies are being traded outside exchange and it is done directly between two parties"
+  },
+  {
+    "Title": "Pay-Per-Last N Shares (PPLNS)",
+    "Title_link": "https://www.coingecko.com/en/glossary/pay-per-last-n-shares-pplns",
+    "Description": "PPLNS system only pays miners after the pool has discovered the block. This means you'll only be compensated once the block has been discovered."
+  },
+  {
+    "Title": "Pay-Per-Share (PPS)",
+    "Title_link": "https://www.coingecko.com/en/glossary/pay-per-share-pps",
+    "Description": "You are compensated for each valid share that you contribute. Each share is worth a set amount of cryptocurrency that may be mined."
+  },
+  {
+    "Title": "Peer to Peer",
+    "Title_link": "https://www.coingecko.com/en/glossary/peer-to-peer",
+    "Description": "A communication protocol that does not require a central hub"
+  },
+  {
+    "Title": "Permissioned Blockchain",
+    "Title_link": "https://www.coingecko.com/en/glossary/permissioned-blockchain",
+    "Description": "It is a private blockchain where the nodes must be previously authorized by a central entity."
+  },
+  {
+    "Title": "Ponzi Scheme",
+    "Title_link": "https://www.coingecko.com/en/glossary/ponzi-scheme",
+    "Description": "A Ponzi scheme is also referred to as pyramid scheme, and typically takes the form of an investment scheme which pays existing investors with funds collected from new investors."
+  },
+  {
+    "Title": "Portfolio",
+    "Title_link": "https://www.coingecko.com/en/glossary/portfolio",
+    "Description": "A portfolio consists all of your current crypto holdings in one place."
+  },
+  {
+    "Title": "Pre-sale",
+    "Title_link": "https://www.coingecko.com/en/glossary/pre-sale",
+    "Description": "A typically exclusive token sale event preceding a public ICO"
+  },
+  {
+    "Title": "Privacy Coins",
+    "Title_link": "https://www.coingecko.com/en/glossary/privacy-coins",
+    "Description": "Cryptocurrencies that are designed with transaction anonimity and user privacy in mind."
+  },
+  {
+    "Title": "Private Keys",
+    "Title_link": "https://www.coingecko.com/en/glossary/private-keys",
+    "Description": "The alphanumeric string which allows transactions from the cryptocurrency address"
+  },
+  {
+    "Title": "Proof-of-Authority (PoA)",
+    "Title_link": "https://www.coingecko.com/en/glossary/proof-of-authority-poa",
+    "Description": "A consensus algorithm that asigns block validation queue based on identity and reputation."
+  },
+  {
+    "Title": "Proof-of-Burn (PoB)",
+    "Title_link": "https://www.coingecko.com/en/glossary/proof-of-burn-pob",
+    "Description": "A consensus algorthm that assigns block validation queue based on the coins/token burned by the validator."
+  },
+  {
+    "Title": "Proof-of-Developer (PoD)",
+    "Title_link": "https://www.coingecko.com/en/glossary/proof-of-developer-pod",
+    "Description": "A concept of identifying the developers of a project as a means of vouching reputation for a project"
+  },
+  {
+    "Title": "Proof of Stake (PoS)",
+    "Title_link": "https://www.coingecko.com/en/glossary/proof-of-stake-pos",
+    "Description": "A consensus algorthm that assigns block validation queue based on the coins/token locked in by the validator."
+  },
+  {
+    "Title": "Proof of Work (PoW)",
+    "Title_link": "https://www.coingecko.com/en/glossary/proof-of-work-pow",
+    "Description": "A consensus algorithm in which a block is validated via mathematical hashing"
+  },
+  {
+    "Title": "Protocol",
+    "Title_link": "https://www.coingecko.com/en/glossary/protocol",
+    "Description": "The set of rules in a network in which participating members comply to allow proper communication."
+  },
+  {
+    "Title": "Public Blockchain",
+    "Title_link": "https://www.coingecko.com/en/glossary/public-blockchain",
+    "Description": "An open sourced blockchain where participation is public and permissionless"
+  },
+  {
+    "Title": "Public Keys",
+    "Title_link": "https://www.coingecko.com/en/glossary/public-keys",
+    "Description": "The alphanumeric string which serves as a public receiving address in cryptocurrencies."
+  },
+  {
+    "Title": "Pump and Dump Scheme",
+    "Title_link": "https://www.coingecko.com/en/glossary/pump-and-dump-scheme",
+    "Description": "A market manipulation method to drive up the price of an asset before profiting by driving it back down."
+  },
+  {
+    "Title": "QR Code",
+    "Title_link": "https://www.coingecko.com/en/glossary/qr-code",
+    "Description": "Abbreviation \"Quick Response Code\", QR code is a machine readable optical label that stores up to 3Kb of data"
+  },
+  {
+    "Title": "Reddit r/CryptoCurrency Moon",
+    "Title_link": "https://www.coingecko.com/en/glossary/reddit-cryptocurrency-moon",
+    "Description": "Moons are a new way for people to be rewarded for their contributions to r/CryptoCurrency"
+  },
+  {
+    "Title": "REKT",
+    "Title_link": "https://www.coingecko.com/en/glossary/rekt",
+    "Description": "A shorthand slang for �wrecked�, typically describes bad trades that results in losses."
+  },
+  {
+    "Title": "Relative Strength Index (RSI)",
+    "Title_link": "https://www.coingecko.com/en/glossary/relative-strength-index",
+    "Description": "Relative Strength Index (RSI) is a popular technical indicator used to analyse financial markets. By charting the current and historical closing prices to evaluate overbought/oversold conditions, RSI oscillates between 0 - 100, with <30 indicating oversold and >70 indicating overbought."
+  },
+  {
+    "Title": "Replay Attack",
+    "Title_link": "https://www.coingecko.com/en/glossary/replay-attack",
+    "Description": "A replay attack is a form of network attack when valid data transmission is fraudulently intercepted, then delayed or resent to mislead the receiver into doing what the hacker wants."
+  },
+  {
+    "Title": "Ring Signature",
+    "Title_link": "https://www.coingecko.com/en/glossary/ring-signature",
+    "Description": "A type of digital signature performed in a group where it becomes impossible to determine which member's key in the group were used for the digital signature."
+  },
+  {
+    "Title": "ROI",
+    "Title_link": "https://www.coingecko.com/en/glossary/roi",
+    "Description": "Short for �Return on Investment�, the ratio between the net profit and cost of investing."
+  },
+  {
+    "Title": "Rug Pull",
+    "Title_link": "https://www.coingecko.com/en/glossary/rug-pulled",
+    "Description": "Sudden removal of liquidity which typically leads to asset prices crashing from the lack of liquidity to absorb buy/sells."
+  },
+  {
+    "Title": "Salt (cryptography)",
+    "Title_link": "https://www.coingecko.com/en/glossary/salt",
+    "Description": "In cryptography, a salt is the additional random input that is added to password or passphrase to make the password hash unique. It prevents from the hashed output password to be cracked so easily by the hacker."
+  },
+  {
+    "Title": "Satoshi",
+    "Title_link": "https://www.coingecko.com/en/glossary/satoshi",
+    "Description": "A unit measure for the smallest divisible unit of a bitcoin. 1 bitcoin is equal to 100 Million Satoshi."
+  },
+  {
+    "Title": "Satoshi Nakamoto",
+    "Title_link": "https://www.coingecko.com/en/glossary/satoshi-nakamoto",
+    "Description": "The pseudoym used in publishing the Bitcoin Whitepaper. Identity is unknown."
+  },
+  {
+    "Title": "Scrypt",
+    "Title_link": "https://www.coingecko.com/en/glossary/scrypt",
+    "Description": "one of the hashing algoritm used in proof-of-work protocol, scrypt requires more memory in order to performing mining functions"
+  },
+  {
+    "Title": "Second-Layer Solutions",
+    "Title_link": "https://www.coingecko.com/en/glossary/second-layer-solutions",
+    "Description": "Secondary network or framework built atop an existing blockchain to address transaction speed and scalability issues."
+  },
+  {
+    "Title": "Secure Asset Fund for Users (SAFU)",
+    "Title_link": "https://www.coingecko.com/en/glossary/secure-asset-fund-for-users-safu",
+    "Description": "A feature created by Binance which contains reserve funds that can be used to reimburse users in case of a catastrophic event (eg. exchange hack)"
+  },
+  {
+    "Title": "Securities and Exchange Commission (SEC)",
+    "Title_link": "https://www.coingecko.com/en/glossary/securities-and-exchange-commission-sec",
+    "Description": "U.S. Securities and Exchange Commission, an independant agency of the US Federal government which oversees federal securities laws, proposing securities rules, and regulating the securities industry."
+  },
+  {
+    "Title": "Seed",
+    "Title_link": "https://www.coingecko.com/en/glossary/seed",
+    "Description": "A value used to initiate generation of pseudorandom number, ususally a string of 12 commen English words."
+  },
+  {
+    "Title": "Segregated Witness (SegWit)",
+    "Title_link": "https://www.coingecko.com/en/glossary/segregated-witness-segwit",
+    "Description": "A soft fork implementation to change the Bitcoin Protocol's transaction format to address Bitcoin's scalability issues whilst introducing new features."
+  },
+  {
+    "Title": "Sell wall",
+    "Title_link": "https://www.coingecko.com/en/glossary/sell-wall",
+    "Description": "Anomalously large sell order(s) at a single price point that reflects as a \"wall\" in the order book."
+  },
+  {
+    "Title": "SHA-256",
+    "Title_link": "https://www.coingecko.com/en/glossary/sha-256",
+    "Description": "Abbreviation of \"Secure Hashing Algoritm - 256\", SHA-256 is part of the SHA2 that allows one-way hashing of any data into a 64 character string."
+  },
+  {
+    "Title": "Sharding",
+    "Title_link": "https://www.coingecko.com/en/glossary/sharding",
+    "Description": "A form of database partitioning which breaks up data into smaller segments."
+  },
+  {
+    "Title": "Shilling",
+    "Title_link": "https://www.coingecko.com/en/glossary/shilling",
+    "Description": "One who poses as a enthsiastic customer to swindle others as a form of covert advestising."
+  },
+  {
+    "Title": "Shitcoin",
+    "Title_link": "https://www.coingecko.com/en/glossary/shitcoin",
+    "Description": "A coin with no obvious potential value or usage."
+  },
+  {
+    "Title": "Side Chain",
+    "Title_link": "https://www.coingecko.com/en/glossary/side-chain",
+    "Description": "A separate blockchain ledger that runs parallel with the primary blockchain."
+  },
+  {
+    "Title": "Sim Swapping",
+    "Title_link": "https://www.coingecko.com/en/glossary/sim-swapping",
+    "Description": "It is a tactic where hacker overtake the mobile phone to exploit the two-factor authentication and two-step verification."
+  },
+  {
+    "Title": "Smart contracts",
+    "Title_link": "https://www.coingecko.com/en/glossary/smart-contracts",
+    "Description": "Self executing contracts on the blockchain without needing human executors or notary."
+  },
+  {
+    "Title": "Soft Cap",
+    "Title_link": "https://www.coingecko.com/en/glossary/soft-cap",
+    "Description": "Targeted fund raising limit of an ICO"
+  },
+  {
+    "Title": "Soft Fork",
+    "Title_link": "https://www.coingecko.com/en/glossary/soft-fork",
+    "Description": "A backward-compatible update to a decentralized blockchain protocol."
+  },
+  {
+    "Title": "Software Development Kit (SDK)",
+    "Title_link": "https://www.coingecko.com/en/glossary/software-developemnt-kit",
+    "Description": "It is a collection of software development tools in one package installation. It is designed to help developing applications for a specific device or operating system (OS)."
+  },
+  {
+    "Title": "Solidity",
+    "Title_link": "https://www.coingecko.com/en/glossary/solidity",
+    "Description": "Object oriented programming languaged used in various smart contract blockchains."
+  },
+  {
+    "Title": "Solo Staker",
+    "Title_link": "https://www.coingecko.com/en/glossary/solo-staker",
+    "Description": "A Qtum PoS miner using their own coins for staking. Qtum blockchain launched with Solo Stakers and will continue to have this available after offline staking launches."
+  },
+  {
+    "Title": "Stablecoin",
+    "Title_link": "https://www.coingecko.com/en/glossary/stablecoin",
+    "Description": "Cryptocurrency with a price peg to fiat currencies or commodity."
+  },
+  {
+    "Title": "Staking",
+    "Title_link": "https://www.coingecko.com/en/glossary/staking",
+    "Description": "The state of locking-in significant amount of token to participate as a validator of a Proof-of-Stake network."
+  },
+  {
+    "Title": "Stale Block",
+    "Title_link": "https://www.coingecko.com/en/glossary/stale-block",
+    "Description": "Double mined blocks that are not included in the blockchain."
+  },
+  {
+    "Title": "State Channel",
+    "Title_link": "https://www.coingecko.com/en/glossary/state-channel",
+    "Description": "Secondary payment channel occuring off-chain"
+  },
+  {
+    "Title": "STO",
+    "Title_link": "https://www.coingecko.com/en/glossary/sto",
+    "Description": "Security Token Offering (STO) refers to a public offering for tokenized digital securities, or in short security tokens traded in cryptocurrency exchanges."
+  },
+  {
+    "Title": "Stop-loss Order",
+    "Title_link": "https://www.coingecko.com/en/glossary/stop-loss",
+    "Description": "Conditional market order to sell at the next available price, excuted if the price of an asset falls below set-upon limit"
+  },
+  {
+    "Title": "Super Staker",
+    "Title_link": "https://www.coingecko.com/en/glossary/super-staker",
+    "Description": "A Qtum Core wallet (full node) providing Proof of Stake for delegated addresses, and keeping a small part of each block reward as their fee for providing the staking services."
+  },
+  {
+    "Title": "Tangle",
+    "Title_link": "https://www.coingecko.com/en/glossary/tangle",
+    "Description": "The name for IOTA's Directed acylic graph (DAG) based transaction settlement layer."
+  },
+  {
+    "Title": "Testnet",
+    "Title_link": "https://www.coingecko.com/en/glossary/testnet",
+    "Description": "Shorthand for \"Test Network\", testnets are staging areas for experimenting new blockchain features."
+  },
+  {
+    "Title": "Ticker",
+    "Title_link": "https://www.coingecko.com/en/glossary/ticker",
+    "Description": "A ticker is a stock or asset symbol that abbreviates the asset name and it can be used as an identifier of the asset."
+  },
+  {
+    "Title": "Token",
+    "Title_link": "https://www.coingecko.com/en/glossary/token",
+    "Description": "Blockchain based unit of value issued by an organization, which grants token holders a right to participate in a network."
+  },
+  {
+    "Title": "Token Burn",
+    "Title_link": "https://www.coingecko.com/en/glossary/token-burn",
+    "Description": "An event in which tokens are verifiably removed permanently removed from circulation."
+  },
+  {
+    "Title": "Token Generation Event (TGE)",
+    "Title_link": "https://www.coingecko.com/en/glossary/token-generation-event-tge",
+    "Description": "An event in which new tokens (ussually on a smart contract platform) are created and distributed to the public."
+  },
+  {
+    "Title": "Total Supply",
+    "Title_link": "https://www.coingecko.com/en/glossary/total-supply",
+    "Description": "All the tokens and coins that will exist in a cryptocurrency network."
+  },
+  {
+    "Title": "Total Value Locked",
+    "Title_link": "https://www.coingecko.com/en/glossary/total-value-locked",
+    "Description": "Total Value Locked (TVL) represents the number of assets that are currently staked in a protocol or the total quantity of underlying amount of funds that a DeFi protocol has secured."
+  },
+  {
+    "Title": "Trading Volume",
+    "Title_link": "https://www.coingecko.com/en/glossary/trading-volume",
+    "Description": "The amount of the cryptocurrency that has been traded in the last 24 hours."
+  },
+  {
+    "Title": "Transaction Fee",
+    "Title_link": "https://www.coingecko.com/en/glossary/transaction-fee",
+    "Description": "A payment to the network for performing a transaction to be recorded on the blockchain."
+  },
+  {
+    "Title": "Transactions Per Second (TPS)",
+    "Title_link": "https://www.coingecko.com/en/glossary/transactions-per-second",
+    "Description": "It is number of transactions done per second. For example, there are 10 transactions of Bitcoin done in 1-minute. The TPS would be 10 transactions/60 seconds = ~0.17 TPS."
+  },
+  {
+    "Title": "Trustless",
+    "Title_link": "https://www.coingecko.com/en/glossary/trustless",
+    "Description": "Entirely verifiable, without needing to trust or assume an action is done completely and in good faith."
+  },
+  {
+    "Title": "Turing-Complete",
+    "Title_link": "https://www.coingecko.com/en/glossary/turing-complete",
+    "Description": "A \"turing complete\" code or blockchain refers to the ability to read program-written codes."
+  },
+  {
+    "Title": "Unspent Transaction Output",
+    "Title_link": "https://www.coingecko.com/en/glossary/unspent-transaction-output",
+    "Description": "(abbv. \"UTXO\") Coins that are unspent in the wallet. UTXO virtually represents the cryptocurrency one own in the wallet."
+  },
+  {
+    "Title": "UTC Time",
+    "Title_link": "https://www.coingecko.com/en/glossary/utc-time",
+    "Description": "Universal Time Coordinated\", can be used interchangably with Greenwich Mean Time (GMT)."
+  },
+  {
+    "Title": "Utility Token",
+    "Title_link": "https://www.coingecko.com/en/glossary/utility-token",
+    "Description": "cryptocurrency tokens with specific utilities on a network besides being used as medium of exchange and investment vehicle."
+  },
+  {
+    "Title": "Validator",
+    "Title_link": "https://www.coingecko.com/en/glossary/validator",
+    "Description": "A block-signing participant of a Proof of Stake blockchain network, whom have significant tokens staked on the network."
+  },
+  {
+    "Title": "Variable Buy/Sell Tax",
+    "Title_link": "https://www.coingecko.com/en/glossary/variable-buy-sell-tax",
+    "Description": "On-chain buy sell tax rate that is not fixed, whereby it is possible for contract owners to change at will."
+  },
+  {
+    "Title": "Venture Capital",
+    "Title_link": "https://www.coingecko.com/en/glossary/venture-capital",
+    "Description": "capital (funds) that is invested in a company that needs a substantial pool of funds to initiate."
+  },
+  {
+    "Title": "Virtual AMM (vAMM)",
+    "Title_link": "https://www.coingecko.com/en/glossary/virtual-amm-vamm",
+    "Description": "The vAMM functions similarly like an AMM but does not contain an actual asset pool."
+  },
+  {
+    "Title": "Wallet",
+    "Title_link": "https://www.coingecko.com/en/glossary/wallet",
+    "Description": "Software client that handles storage of cryptocurrencies and allows users to send cryptocurrencies."
+  },
+  {
+    "Title": "Wallet Address",
+    "Title_link": "https://www.coingecko.com/en/glossary/wallet-address",
+    "Description": "The address in which cryptocurrency can be stored, sent to and receive."
+  },
+  {
+    "Title": "Wash Trade",
+    "Title_link": "https://www.coingecko.com/en/glossary/wash-trade",
+    "Description": "Meaningless back and forth trading between a single party with the aim of inflating trade volume."
+  },
+  {
+    "Title": "Watchlist",
+    "Title_link": "https://www.coingecko.com/en/glossary/watchlist",
+    "Description": "A personally defined list of values to watch over for activity or changes."
+  },
+  {
+    "Title": "Web3 Wallet",
+    "Title_link": "https://www.coingecko.com/en/glossary/web3-wallet",
+    "Description": "Web3 Wallet is the software that allows you to interact with web 3.0."
+  },
+  {
+    "Title": "Wei",
+    "Title_link": "https://www.coingecko.com/en/glossary/wei",
+    "Description": "The smallest fraction of an Ether, with each Ether to 1000000000000000000 Wei."
+  },
+  {
+    "Title": "Whale",
+    "Title_link": "https://www.coingecko.com/en/glossary/whale",
+    "Description": "Someone who holds an enormous amount of cryptocurrency and has the ability to wave the market"
+  },
+  {
+    "Title": "When Lambo",
+    "Title_link": "https://www.coingecko.com/en/glossary/when-lambo",
+    "Description": "An expression used by investors to ask when the value of their investment could buy them a Lamborghini"
+  },
+  {
+    "Title": "When Moon",
+    "Title_link": "https://www.coingecko.com/en/glossary/when-moon",
+    "Description": "An expression used by investors to ask when the price of a coin would hit a peak"
+  },
+  {
+    "Title": "Whitelist",
+    "Title_link": "https://www.coingecko.com/en/glossary/whitelist",
+    "Description": "List of approved participants that will be given access to a token sale (ICO, IEO, STO etc...)"
+  },
+  {
+    "Title": "Whitepaper",
+    "Title_link": "https://www.coingecko.com/en/glossary/whitepaper",
+    "Description": "An introductory paper to consicely explain an issue and a possible solution on the issue."
+  },
+  {
+    "Title": "Yield Farming",
+    "Title_link": "https://www.coingecko.com/en/glossary/yield-farming",
+    "Description": "Yield farming involves putting cryptocurrency into a DeFi protocol to collect interest on trading fees."
+  },
+  {
+    "Title": "YTD",
+    "Title_link": "https://www.coingecko.com/en/glossary/ytd",
+    "Description": "Acronym for Year-to-date"
+  },
+  {
+    "Title": "Zero Confirmation Transaction",
+    "Title_link": "https://www.coingecko.com/en/glossary/zero-confirmation-transaction",
+    "Description": "Another name for \"unconfirmed transaction"
+  },
+  {
+    "Title": "Zero Knowledge Proof",
+    "Title_link": "https://www.coingecko.com/en/glossary/zero-knowledge%20proof",
+    "Description": "Cryptographic proof for 2 parties to verify a value without revealing what the value is."
+  },
+  {
+    "Title": "Zero-Knowledge Succinct Non-Interactive Argument of Knowledge (Zk-Snarks)",
+    "Title_link": "https://www.coingecko.com/en/glossary/zk-snarks",
+    "Description": "An acronym for Zero-Knowledge Succinct Non-Interactive Argument of Knowledge, zk-SNARKs refers to a protocol where one can prove posession of a given piece of information (eg a string or hash) without revealing that information and also without any interaction between both the prover & verifier."
+  }
+]

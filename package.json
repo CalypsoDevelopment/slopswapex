@@ -12,6 +12,7 @@
     "start": "nuxt start"
   },
   "dependencies": {
+    "@metamask/onboarding": "^1.0.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/composition-api": "^0.32.0",
     "@pinia/nuxt": "^0.1.9",
@@ -20,11 +21,15 @@
     "bootstrap-vue": "^2.21.2",
     "Console": "^1.1.0",
     "core-js": "^3.19.3",
+    "doge-seed": "^1.0.0",
     "nuxt": "^2.15.8",
     "nuxt-edge": "^2.16.0-27358576.777a4b7f",
     "pinia": "^2.0.14",
+    "qr-code-styling": "^1.6.0-rc.1",
+    "random-number": "^0.0.9",
     "simple-pancakeswap-sdk": "^1.1.1",
     "slopswapxlibs": "^1.2.0",
+    "verte": "^0.0.12",
     "vue": "^2.6.14",
     "vue-carousel": "^0.18.0",
     "vue-server-renderer": "^2.6.14",

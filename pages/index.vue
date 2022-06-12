@@ -1,15 +1,13 @@
 <template>
   <b-container fluid class="bg px-0">
     <TopNavbarComplex />
-    <div class="farm-bg mx-0">
+    <div class="farm-bg">
+      <b-img src="~/assets/img/page-graphics/220-Sized-Header-Rise-Of-the-PigsV2.png" fluid alt="Responsive image" />
+      <b-img src="~/assets/img/page-graphics/current-pre-launch.png" fluid alt="Currently Pre-Launching SlopSwap in the Wild!" class="mx-0 full-page-img" />
+    </div>
+    <b-container fluid>
       <b-row>
-        <b-col sm="12" medium="12" lg="12">
-          <b-img src="~/assets/img/page-graphics/220-Sized-Header-Rise-Of-the-PigsV2.png" fluid alt="Responsive image" class="mx-0 full-page-img" />
-        </b-col>
-        <b-col sm="12" medium="12" lg="12">
-          <b-img src="~/assets/img/page-graphics/current-pre-launch.png" fluid alt="Currently Pre-Launching SlopSwap in the Wild!" class="mx-0 full-page-img" />
-        </b-col>
-        <b-col sm="6" medium="6" lg="6">
+        <b-col sm="6" medium="6" lg="6" class="my-2">
           <div>
             <b-nav>
               <b-nav-item v-b-tooltip.hover to="/trading" title="Binance Smart Chain Crypto Exchange: Live">
@@ -28,23 +26,17 @@
           </div>
         </b-col>
         <b-col sm="6" medium="6" lg="6">
-          <b-input-group prepend="Search" class="mt-0">
+          <b-input-group prepend="Search" class="my-2">
             <b-form-input :type="search" placeholder="" />
             <b-input-group-append>
-              <b-button variant="outline-success">
+              <b-button variant="secondary">
                 <i class="fa-solid fa-magnifying-glass" />
               </b-button>
             </b-input-group-append>
           </b-input-group>
         </b-col>
-      </b-row>
-    </div>
-    <BSCSpotPriceTicker />
-
-    <b-container fluid>
-      <b-row>
         <b-col sm="6" medium="6" lg="3">
-          <div class="py-1 mx-2">
+          <div class="mx-2">
             <b-card
               title="Life on the Farm News"
               img-src="~/assets/img/page-graphics/Life-On-the-Farm-Blog.jpg"
@@ -65,7 +57,7 @@
         </b-col>
 
         <b-col sm="6" medium="6" lg="3">
-          <div class="py-1 mx-2">
+          <div class="mx-2">
             <b-card
               title="Token Generation"
               img-src="~/assets/img/page-graphics/Crypto-Asset-Generation.jpg"
@@ -86,7 +78,7 @@
         </b-col>
 
         <b-col sm="6" medium="6" lg="3">
-          <div class="py-1 mx-1">
+          <div class="mx-1">
             <b-card
               title="Cryptocurrency Onboarding"
               img-src="~/assets/img/page-graphics/Crypto-Educational-Onboarding.jpg"
@@ -107,9 +99,9 @@
         </b-col>
 
         <b-col sm="6" medium="6" lg="3">
-          <div class="py-1 mx-1">
+          <div class="mx-1">
             <b-card
-              title="Life on the Farm News"
+              title="Cross-chain Bridge"
               img-src="~/assets/img/page-graphics/SlopSwap-Bridge.jpg"
               img-alt="Image"
               img-top
@@ -126,19 +118,18 @@
             </b-card>
           </div>
         </b-col>
-      </b-row>
-      <b-row>
-        <b-col sm="12" medium="12" lg="2" class="text-center" />
+
+        <b-col sm="12" medium="12" lg="2" class="text-center">
+
+        </b-col>
         <b-col sm="12" medium="12" lg="8" class="text-center">
           <div class="app-container">
             <SlopSwapTraderV2 />
           </div>
         </b-col>
-        <b-col sm="12" medium="12" lg="2" class="text-center" />
-        <b-col sm="12" medium="12" lg="3" class="text-center" />
-        <b-col sm="12" medium="12" lg="3" class="text-center" />
-        <b-col sm="12" medium="12" lg="3" class="text-center" />
-        <b-col sm="12" medium="12" lg="3" class="text-center" />
+        <b-col sm="12" medium="12" lg="2" class="text-center">
+
+        </b-col>
       </b-row>
     </b-container>
   </b-container>
@@ -146,12 +137,12 @@
 
 <script>
 import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
-import SlopSwapTraderV2 from '~/components/SlopSwapTraderV2.vue'
-import BSCSpotPriceTicker from '~/components/BSCSpotPriceTicker.vue'
+// import SlopSwapTraderV2 from '~/components/SlopSwapTraderV2.vue'
+// import BSCSpotPriceTicker from '~/components/BSCSpotPriceTicker.vue'
 
 export default {
   name: 'IndexPage',
-  components: { SlopSwapTraderV2, TopNavbarComplex, BSCSpotPriceTicker }
+  components: { TopNavbarComplex }
 }
 </script>
 <style scoped>
@@ -170,7 +161,9 @@ export default {
   height: 32px;
 }
 .full-page-img {
+  /*border-radius: 4rem;*/
   border-top: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
 }
 p {
   margin-bottom: 1rem;
@@ -200,7 +193,6 @@ p {
   font-weight: 400;
 }
 .farm-bg {
-  /*border-bottom: 1px solid #e0e0e0;*/
   background-color: #FFFFFF;
   /* padding-top: 1rem; */
   min-height: auto;
@@ -209,8 +201,8 @@ p {
   color: #17a2b8;
   font-size: 0.94rem;
   border-top: 1px solid #FFFFFF;
-  border-bottom: 1px solid #FFFFFF
-  /*-webkit-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+  border-bottom: 1px solid #FFFFFF;
+  /* -webkit-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
   clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);*/
   /* background-image: url(~/assets/img/page-graphics/SlopSwap-Home-Page.png);
   background-size: 100%;
