@@ -68,9 +68,9 @@
 
 <script>
 import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
-const cryptoJSON = require('~/static/cryptologobranding.json')
 // import SlopSwapTraderV2 from '~/components/SlopSwapTraderV2.vue'
 // import BSCSpotPriceTicker from '~/components/BSCSpotPriceTicker.vue'
+const cryptoJSON = require('~/static/cryptologobranding.json')
 
 export default {
   name: 'CryptoLogosPage',
@@ -78,7 +78,8 @@ export default {
   data () {
     return {
       cryptoSelected: null,
-      cryptoIndex: cryptoJSON
+      cryptoIndex: cryptoJSON,
+      search: null
     }
   },
   methods: {
