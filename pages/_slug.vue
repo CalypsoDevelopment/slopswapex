@@ -20,14 +20,17 @@
           </b-button>
         </b-col>
         <b-col sm="8" medium="8" lg="8" class="my-5 crypto-logo-container">
-          <h1 class="main-title">
-            {{ tok.Headline }}
-          </h1>
           <ul v-for="tok in BSCTokenList" :key="tok.Token" class="token-data-ul">
             <!--<li v-if="tok.Token_Short_Name === cryptoSelected.Title_link" class="token-data text-left">
               <span class="token-info-title"></span><br>
               <span class="token-text">{{  }}</span>
             </li>-->
+            <li v-if="tok.Token_Short_Name === cryptoSelected.Title_link" class="token-data">
+              <h1 class="main-title text-left">
+                <!--<span class="token-info-title">Name:</span><br>-->
+                {{ tok.Headline }}
+              </h1>
+            </li>
             <li v-if="tok.Token_Short_Name === cryptoSelected.Title_link" class="token-data text-left">
               <span class="token-info-title">Token Symbol:</span>
               <br>
@@ -121,15 +124,15 @@ export default {
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(46,163,230,1) 10%, rgba(255,158,46,1) 100%);
 }
 .main-title {
-  font-family: 'Fredoka One', sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-variant-caps: all-small-caps;
-  font-size: 2.2rem;
+  font-size: 2.6rem;
 }
 .white-btn {
   background-color: #FFFFFF;
   border-color: transparent;
   color: #c1272e;
-  font-family: 'Fredoka One', verdana;
+  font-family: 'Nunito', verdana;
   font-variant-caps: all-small-caps;
 }
 .token-data-ul {
