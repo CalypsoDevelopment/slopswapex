@@ -43,6 +43,9 @@
             <b-dropdown-item href="/cryptologos">
               Crypto Logo SVG's
             </b-dropdown-item>
+            <b-dropdown-item href="/CryptocurrencyTerms">
+              Crypto Dictionary Terms
+            </b-dropdown-item>
             <!--<b-dropdown-item href="/">
               CryptoWiki
             </b-dropdown-item>

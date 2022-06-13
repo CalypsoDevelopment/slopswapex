@@ -2,26 +2,26 @@
   <b-container fluid class="bg px-0">
     <TopNavbarComplex />
     <div class="farm-bg">
-      <b-img src="~/assets/img/page-graphics/180-Sized-Header-Rise-Of-the-PigsV2.png" fluid alt="Responsive image" />
+      <b-img src="~/assets/img/page-graphics/180-Page-Header-Crypto-Terms.png" fluid alt="SlopSwap's Cryptocurrency Trading Term Dictionary" />
     </div>
     <BSCSpotPriceTicker />
     <b-container>
       <b-row>
-        <b-col sm="4" medium="4" lg="4" class="my-5 text-center">
-          <b-img :src="require(`../assets/img/cryptologo/${cryptoSelected.Field2}`)" class="crypto-logo-thumb" fluid :alt="cryptoSelected.Title" />
-          <b-button pill class="my-4">Download</b-button>
-        </b-col>
-        <b-col sm="8" medium="8" lg="8" class="my-5 crypto-logo-container">
-          <div v-for="item in CryptoTerms" :key="item.Title">
+        <b-col sm="12" medium="8" lg="8" class="my-5 crypto-logo-container">
+          <div v-for="item in CryptoTerms" class="term-container" :key="item.Title">
             <h1 class="main-title">
               {{ item.Title }}
             </h1>
+            <div>
+              <p>
+                {{ item.Description }}
+              </p>
+            </div>
           </div>
         </b-col>
+        <b-col sm="12" medium="4" lg="4" class="my-2">
 
-        <b-col sm="6" medium="6" lg="6" class="my-2" />
-
-        <b-col sm="6" medium="6" lg="6" class="my-2" />
+        </b-col>
       </b-row>
     </b-container>
   </b-container>
@@ -32,7 +32,7 @@ import BSCSpotPriceTicker from '~/components/BSCSpotPriceTicker.vue'
 const cryptoTermsJSON = require('~/static/cryptocurrency_terms.json')
 
 export default {
-  name: 'CryptoLogosSinglePage',
+  name: 'CryptoTermsSinglePage',
   components: { TopNavbarComplex, BSCSpotPriceTicker },
   data () {
     return {
@@ -58,6 +58,14 @@ export default {
   min-height: 100vh;
   background: rgb(255,255,255);
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(46,163,230,1) 10%, rgba(255,158,46,1) 100%);
+}
+.term-container {
+  margin-top: 4rem;
+  margin-bottom: 4re,;
+  padding: 2rem;
+  border-radius: 4rem;
+  border: 1px solid #FFFFFF;
+  background-color: #FFFFFF;
 }
 .main-title {
   font-family: 'Fredoka One', sans-serif;

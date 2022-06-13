@@ -2,329 +2,11 @@
   <b-container fluid class="bg px-0">
     <TopNavbarComplex />
     <div class="farm-bg">
-      <b-img src="~/assets/img/page-graphics/180-sized-page-header-provably-fair-crypto-casino.png" fluid alt="Responsive image" />
+      <b-img src="~/assets/img/page-graphics/180-sized-page-header-provably-fair-crypto-casino.png" fluid alt="Lottery &amp; Keno Games at SlopSwap COming Soon!" />
     </div>
-    <b-container fluid>
-      <b-row class="keno-grid mt-4">
-        <b-col cols="5" class="text-left">
-          <div class="keno-ctrl-panel">
-            <div class="my-4">
-              <b-label class="label-title ml-2">
-                Current Game Status:
-                <span v-if="KenoStatus === false">
-                  <i class="fa-solid fa-dice" style="color: #e20000" /> Off
-                </span>
-                <span v-else>
-                  <i class="fa-solid fa-dice" style="color: #8CC63F" /> On
-                </span>
-              </b-label>
-            </div>
-            <div class="my-4">
-              <b-label class="label-title ml-2">
-                Bet Amount
-                <b-form-input v-model="BetAmount" placeholder="Enter Wager Amount" />
-              </b-label>
-              <!--<div class="mt-2">
-                Value: {{ text }}
-              </div>-->
-            </div>
-            <div>
-              <b-label class="label-title ml-2">
-                Risk Level
-                <b-form-select v-model="KenoRiskSelected" :options="KenoRiskOptions" />
-              </b-label>
-            </div>
-
-            <div class="keno-grid text-center mt-4">
-              <b-button-group>
-                <b-button pill class="bet-control-buttons px-4 mx-1 my-2">Auto Select</b-button>
-                <b-button pill class="bet-control-buttons px-4 mx-1 my-2">Clear Card</b-button>
-              </b-button-group>
-            </div>
-
-            <b-button pill block class="bet-control-buttons my-2">
-              Place Bet
-            </b-button>
-          </div>
-        </b-col>
-        <b-col cols="7">
-          <b-row>
-            <b-col sm="12" medium="12" lg="12" class="text-center keno-number my-1">
-              <b-button-group>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  1
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  2
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  3
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  4
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  5
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  6
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  7
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  8
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  9
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  10
-                </b-button>
-              </b-button-group>
-            </b-col>
-            <b-col sm="12" medium="12" lg="12" class="text-center keno-number my-1">
-              <b-button-group>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  11
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  12
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  13
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  14
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  15
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  16
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  17
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  18
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  19
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  20
-                </b-button>
-              </b-button-group>
-            </b-col>
-            <b-col sm="12" medium="12" lg="12" class="text-center keno-number my-1">
-              <b-button-group>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  21
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  22
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  23
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  24
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  25
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  26
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  27
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  28
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  29
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  30
-                </b-button>
-              </b-button-group>
-            </b-col>
-            <b-col sm="12" medium="12" lg="12" class="text-center keno-number mt-1 mb-4">
-              <b-button-group>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  31
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  32
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  33
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  34
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  35
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  36
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  37
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  38
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  39
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  40
-                </b-button>
-              </b-button-group>
-            </b-col>
-            <b-col sm="12" medium="12" lg="12" class="text-center keno-number my-1">
-              <b-button-group>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  41
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  42
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  43
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  44
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  45
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  46
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  47
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  48
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  49
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  50
-                </b-button>
-              </b-button-group>
-            </b-col>
-            <b-col sm="12" medium="12" lg="12" class="text-center keno-number my-1">
-              <b-button-group>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  51
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  52
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  53
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  54
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  55
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  56
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  57
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  58
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  59
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  60
-                </b-button>
-              </b-button-group>
-            </b-col>
-            <b-col sm="12" medium="12" lg="12" class="text-center keno-number my-1">
-              <b-button-group>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  61
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  62
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  63
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  64
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  65
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  66
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  67
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  68
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  69
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  70
-                </b-button>
-              </b-button-group>
-            </b-col>
-            <b-col sm="12" medium="12" lg="12" class="text-center keno-number my-1">
-              <b-button-group>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  71
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  72
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  73
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  74
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  75
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  76
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  77
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  78
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  79
-                </b-button>
-                <b-button class="text-center red keno-number mx-1 py-0 px-0 mb-0">
-                  80
-                </b-button>
-              </b-button-group>
-            </b-col>
-          </b-row>
-        </b-col>
-      </b-row>
-    </b-container>
+    <div class="text-center my-5">
+      <b-img src="~/assets/img/page-graphics/coming-soon.png" class="crypto-bunny" fluid alt="Coming Soon! Lottery & Keno Crypto Games" />
+    </div>
   </b-container>
 </template>
 
@@ -369,6 +51,14 @@ export default {
   font-family: 'Fredoka One', sans-serif;
   font-variant-caps: all-small-caps;
   color: #212529;
+}
+.ad-space-large {
+  background-color: #FFFFFF;
+  min-height: 200px;
+  width: 100%;
+}
+.crypto-bunny {
+  max-height: 300px;
 }
 .custom-select {
     display: inline-block;
@@ -418,11 +108,12 @@ export default {
   box-shadow: 5px 5px 15px -1px rgba(33,37,41,0.55);
 }
 .keno-ctrl-panel {
-  background-color: #FD9E30;
+  /*background-color: #FD9E30;*/
   border-radius: 2rem;
+  /* border: 1px solid #FFFFFF; */
   padding: 2rem;
-  -webkit-box-shadow: 5px 5px 15px -1px rgba(33,37,41,0.55);
-  box-shadow: 5px 5px 15px -1px rgba(33,37,41,0.55);
+  /* -webkit-box-shadow: 5px 5px 15px -1px rgba(33,37,41,0.55);
+  box-shadow: 5px 5px 15px -1px rgba(33,37,41,0.55);*/
 }
 .bet-control-buttons {
   font-size: 1.2rem;
