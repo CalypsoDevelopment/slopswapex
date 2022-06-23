@@ -2,7 +2,7 @@
   <b-container fluid class="bg px-0">
     <TopNavbarComplex />
     <div class="farm-bg">
-      <b-img src="~/assets/img/page-graphics/180-Sized-Header-Rise-Of-the-PigsV2.png" fluid alt="Responsive image" />
+      <b-img src="~/assets/img/page-graphics/wallet-generator-page-header.png" fluid alt="Responsive image" />
     </div>
     <b-container fluid>
       <b-row>

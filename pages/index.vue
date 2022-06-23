@@ -11,16 +11,19 @@
           <div>
             <b-nav>
               <b-nav-item v-b-tooltip.hover to="/trading" title="Binance Smart Chain Crypto Exchange: Live">
-                <b-img src="~/assets/img/page-graphics/binance-logo.svg" fluid alt="Responsive image" class="chain-logos mx-0" />
-              </b-nav-item>
-              <b-nav-item title="Tron Crypto Exchange: Coming Soon">
-                <b-img src="~/assets/img/page-graphics/tron-logo-coming-soon.svg" fluid alt="Responsive image" class="chain-logos mx-0" />
-              </b-nav-item>
-              <b-nav-item title="Ethereum Smart Chain Crypto Exchange: Live">
-                <b-img src="~/assets/img/page-graphics/ethereum-logo-coming-soon.svg" fluid alt="Responsive image" class="chain-logos mx-0" />
+                <b-img src="~/assets/img/page-graphics/binance-logo.svg" fluid alt="SlopSwap eXchange is Live on Binance Smart Chain!" class="chain-logos mx-0" />
               </b-nav-item>
               <b-nav-item>
-                <b-img src="~/assets/img/page-graphics/polygon-logo-coming-soon.svg" fluid alt="Responsive image" class="chain-logos mx-0" />
+                <b-img src="~/assets/img/avalanche.svg" fluid alt="SlopSwap eXchange on Avalanche Blockchain is Coming Soon!" class="chain-logos mx-0" />
+              </b-nav-item>
+              <b-nav-item title="Tron Crypto Exchange: Coming Soon">
+                <b-img src="~/assets/img/page-graphics/tron-logo-coming-soon.svg" fluid alt="SlopSwap eXchange on Tron Blockchain is Coming Soon!" class="chain-logos mx-0" />
+              </b-nav-item>
+              <b-nav-item title="Ethereum Smart Chain Crypto Exchange: Live">
+                <b-img src="~/assets/img/page-graphics/ethereum-logo-coming-soon.svg" fluid alt="SlopSwap eXchange on Ethereum Blockchain is Coming Soon!" class="chain-logos mx-0" />
+              </b-nav-item>
+              <b-nav-item>
+                <b-img src="~/assets/img/page-graphics/polygon-logo-coming-soon.svg" fluid alt="SlopSwap eXchange on Polygon Blockchain is Coming Soon!" class="chain-logos mx-0" />
               </b-nav-item>
             </b-nav>
           </div>

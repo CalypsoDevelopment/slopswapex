@@ -26,6 +26,7 @@
     "nuxt-edge": "^2.16.0-27358576.777a4b7f",
     "pinia": "^2.0.14",
     "qr-code-styling": "^1.6.0-rc.1",
+    "qs": "^6.10.5",
     "random-number": "^0.0.9",
     "simple-pancakeswap-sdk": "^1.1.1",
     "slopswapxlibs": "^1.2.0",

@@ -4,11 +4,22 @@
       <b-sidebar id="notification-sidebar" width="50%" shadow>
         <div class="px-0 py-2">
           <h1 class="sidebar-title text-center dark-bg py-2">
-            <!--<i class="fa-solid fa-circle-info liquidity-title-info" />--> Liquidity Pair Token Removal Specifications & Reserves<br>
+            <!--<i class="fa-solid fa-circle-info liquidity-title-info" />--> Liquidity Pair Reserve Specifications<br>
           </h1>
           <div v-if="LiquidityPoolData">
             <b-list-group class="liquidity-spec-list text-center">
               <b-list-group-item>
+                <h2 class="sidebar-title text-center dark-bg py-2">
+                  SlopSwap eXchange Reserves
+                </h2>
+                <b-row>
+                  <b-col cols="6" class="text-right">
+                    <span class="pair-data">{{ LPTokenAName }}</span>
+                  </b-col>
+                  <b-col cols="6" class="text-left">
+                    <span class="pair-data">{{ LPTokenBName }}</span>
+                  </b-col>
+                </b-row>
                 <span class="pair-data">{{ LPTokenBReserve }}</span>
                 {{ LPTokenASymbol }}
                 <b-img
@@ -30,13 +41,7 @@
               <b-list-group-item>
                 <b-row>
                   <b-col sm="12" medium="12" lg="12">
-                    LP Token Names
-                  </b-col>
-                  <b-col cols="6">
-                    <span class="pair-data">{{ LPTokenAName }}</span>
-                  </b-col>
-                  <b-col cols="6">
-                    <span class="pair-data">{{ LPTokenBName }}</span>
+                    <!--LP Token Names-->
                   </b-col>
                   <b-col sm="12" medium="12" lg="12">
                     LP Token Pair Address<br>
@@ -156,6 +161,7 @@ import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
 import SlopSwapLiquidity from '~/components/SlopSwapLiquidity.vue'
 const ethers = require('ethers')
 const Console = require('Console')
+// const slop = require('slopswapxlibs')
 const BEP20 = require('~/static/artifacts/IERC20.json')
 const PAIR = require('~/static/artifacts/SlopSwapPair.json')
 const ROUTER = require('~/static/artifacts/SlopSwapRouter.json')
