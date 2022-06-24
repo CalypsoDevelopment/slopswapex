@@ -5,7 +5,7 @@
       <b-row>
         <b-col cols="12" class="text-center">
           <div class="app-container">
-            <SlopSwapFactoryMonitor />
+            <SlopSwapLiquidityFunction />
           </div>
         </b-col>
       </b-row>
@@ -22,11 +22,11 @@
 <script>
 import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
 // import SlopSwapPairsInfo from '~/components/SlopSwapPairsInfo.vue'
-import SlopSwapFactoryMonitor from '~/components/SlopSwapFactoryMonitor.vue'
+import SlopSwapLiquidityFunction from '~/components/SlopSwapLiquidityFunction.vue'
 
 export default {
   name: 'LiquidityPairsPage',
-  components: { TopNavbarComplex, SlopSwapFactoryMonitor }
+  components: { TopNavbarComplex, SlopSwapLiquidityFunction }
 }
 </script>
 <style scoped>
