@@ -30,7 +30,7 @@
         </b-col>
         <b-col sm="6" medium="6" lg="6">
           <b-input-group prepend="Search" class="my-2">
-            <b-form-input :type="search" placeholder="" />
+            <b-form-input v-model="search" type="search" placeholder="" />
             <b-input-group-append>
               <b-button variant="secondary">
                 <i class="fa-solid fa-magnifying-glass" />
@@ -122,17 +122,13 @@
           </div>
         </b-col>
 
-        <b-col sm="12" medium="12" lg="2" class="text-center">
-
-        </b-col>
+        <b-col sm="12" medium="12" lg="2" class="text-center" />
         <b-col sm="12" medium="12" lg="8" class="text-center">
           <div class="app-container">
             <SlopSwapTraderV2 />
           </div>
         </b-col>
-        <b-col sm="12" medium="12" lg="2" class="text-center">
-
-        </b-col>
+        <b-col sm="12" medium="12" lg="2" class="text-center" />
       </b-row>
     </b-container>
   </b-container>
@@ -145,7 +141,12 @@ import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
 
 export default {
   name: 'IndexPage',
-  components: { TopNavbarComplex }
+  components: { TopNavbarComplex },
+  data () {
+    return {
+      search: null
+    }
+  }
 }
 </script>
 <style scoped>

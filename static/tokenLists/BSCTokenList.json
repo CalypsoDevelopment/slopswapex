@@ -29,13 +29,13 @@
 
   { "ChainID": 56, "TokenName": "NEAR Protocol", "TokenSymbol": "NEAR", "TokenContract": "0x1Fa4a73a3F0133f0025378af00236f3aBDEE5D63", "TokenDecimal": 18, "TokenType": "ERC20" },
 
-  { "ChainID": 56, "TokenName": "Bitcoin Cash Token", "TokenSymbol": "BCH", "TokenContract": "0x8ff795a6f4d97e7887c79bea79aba5cc76444adf", "TokenDecimal": 18, "TokenType": "ERC20" },
+  { "ChainID": 56, "TokenName": "Bitcoin Cash Token", "TokenSymbol": "BCH", "TokenContract": "0x8fF795a6F4D97E7887C79beA79aba5cc76444aDf", "TokenDecimal": 18, "TokenType": "ERC20" },
 
-  { "ChainID": 56, "TokenName": "Uniswap", "TokenSymbol": "UNI", "TokenContract": "0xbf5140a22578168fd562dccf235e5d43a02ce9b1", "TokenDecimal": 18, "TokenType": "ERC20" },
+  { "ChainID": 56, "TokenName": "Uniswap", "TokenSymbol": "UNI", "TokenContract": "0xBf5140A22578168FD562DCcF235E5D43A02ce9B1", "TokenDecimal": 18, "TokenType": "ERC20" },
 
-  { "ChainID": 56, "TokenName": "ChainLink Token", "TokenSymbol": "LINK", "TokenContract": "0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd", "TokenDecimal": 18, "TokenType": "ERC20" },
+  { "ChainID": 56, "TokenName": "ChainLink Token", "TokenSymbol": "LINK", "TokenContract": "0xF8A0BF9cF54Bb92F17374d9e9A321E6a111a51bD", "TokenDecimal": 18, "TokenType": "ERC20" },
 
-  { "ChainID": 56, "TokenName": "BTCB Token", "TokenSymbol": "BTCB", "TokenContract": "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c", "TokenDecimal": 18, "TokenType": "ERC20" },
+  { "ChainID": 56, "TokenName": "BTCB Token", "TokenSymbol": "BTCB", "TokenContract": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c", "TokenDecimal": 18, "TokenType": "ERC20" },
 
   { "ChainID": 56, "TokenName": "FLOW", "TokenSymbol": "FLOW", "TokenContract": "0xc943c5320b9c18c153d1e2d12cc3074bebfb31a2", "TokenDecimal": 18, "TokenType": "ERC20" }
 ]

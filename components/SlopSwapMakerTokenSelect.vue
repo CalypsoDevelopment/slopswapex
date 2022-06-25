@@ -51,7 +51,7 @@ const Console = require('Console')
 Console.log('Console.log is now available!')
 const slopswaplib = require('slopswapxlibs')
 const ethers = require('ethers')
-const tokenList = require('~/node_modules/slopswapxlibs/tokenLists/BSCTokenList.json')
+const tokenList = require('~/static/tokenLists/BSCTokenList.json')
 
 export default {
   name: 'SlopSwapMakerTokenSelect',

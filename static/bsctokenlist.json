@@ -2,8 +2,8 @@
    {
       "#": 1,
       "Token": "Binance-Peg Ethereum Token (ETH) Ethereum is a global, open-source platform for decentralized applications. Eth is fueling transactions on the Chain.Cross-Chain",
-      "BSC_Token_Link": "https://bscscan.com/token/0x2170ed0880ac9a755fd29b2688956bd959f933f8",
-      "Token_Contract": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+      "BSC_Token_Link": "https://bscscan.com/token/0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+      "Token_Contract": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
       "Token_Short_Name": "ethereum",
       "Token_Symbol": "ETH",
       "Price": "$1,323.15910.052942 BTC5.622738 BNB",
@@ -18,7 +18,6 @@
       "Total Supply": "1,404,999.999998 ETH (CSupply: 1,353,063.311002)",
       "Holders1": "1,301,784 addresses Created with Highcharts 6.1.4",
       "Transfers": "32,935,695",
-      "Contract": "0x2170ed0880ac9a755fd29b2688956bd959f933f80x2170Ed0880ac9A755fd29B2688956BD959F933F8",
       "Decimals": 18,
       "Official_Website": "https://ethereum.org"
    },
@@ -390,8 +389,8 @@
    {
       "#": 18,
       "Token": "Binance-Peg Bitcoin Cash Token (BCH)Bitcoin ABC is an electronic cash platform that allows peer-to-peer online cash payments. It is a fork (a copy in a way) of Bitcoin (BTC).Cross-Chain",
-      "BSC_Token_Link": "https://bscscan.com/token/0x8ff795a6f4d97e7887c79bea79aba5cc76444adf",
-      "Token_Contract": "",
+      "BSC_Token_Link": "https://bscscan.com/token/0x8fF795a6F4D97E7887C79beA79aba5cc76444aDf",
+      "Token_Contract": "0x8fF795a6F4D97E7887C79beA79aba5cc76444aDf",
       "Token_Short_Name": "",
       "Token_Symbol": "",
       "Price": "$138.50580.005542 BTC0.588578 BNB",
@@ -406,7 +405,7 @@
       "Total Supply": "160,000 BCH (CSupply: 150,320.348542)",
       "Holders1": "14,042 addresses Created with Highcharts 6.1.4",
       "Transfers": "351,831",
-      "Contract": "0x8ff795a6f4d97e7887c79bea79aba5cc76444adf0x8fF795a6F4D97E7887C79beA79aba5cc76444aDf",
+      "Contract": "0x8fF795a6F4D97E7887C79beA79aba5cc76444aDf",
       "Decimals": 18,
       "Official_Website": "https://bitcoincash.org/"
    },
@@ -425,7 +424,7 @@
       "Total Supply": "54,390,000,000 BTT",
       "Holders1": "82,360 addresses Created with Highcharts 6.1.4",
       "Transfers": "876,609",
-      "Contract": "0x8595f9da7b868b1822194faed312235e43007b490x8595F9dA7b868b1822194fAEd312235E43007b49",
+      "Contract": "0x8595f9da7b868b1822194faed312235e43007b49",
       "Decimals": 18,
       "Official_Website": "https://www.bittorrent.com"
    },
@@ -445,7 +444,7 @@
       "Total Supply": "6,000,000 NEAR (CSupply: 4,839,251.843334)",
       "Holders1": "24,601 addresses Created with Highcharts 6.1.4",
       "Transfers": "594,366",
-      "Contract": "0x1fa4a73a3f0133f0025378af00236f3abdee5d630x1Fa4a73a3F0133f0025378af00236f3aBDEE5D63",
+      "Contract": "0x1fa4a73a3f0133f0025378af00236f3abdee5d63",
       "Decimals": 18,
       "Official_Website": "https://near.org/"
    },
@@ -465,7 +464,7 @@
       "Total Supply": "1,000,000 ETC (CSupply: 804,402.741911)",
       "Holders1": "18,961 addresses Created with Highcharts 6.1.4",
       "Transfers": "237,318",
-      "Contract": "0x3d6545b08693dae087e957cb1180ee38b9e3c25e0x3d6545b08693daE087E957cb1180ee38B9e3c25E",
+      "Contract": "0x3d6545b08693dae087e957cb1180ee38b9e3c25e",
       "Decimals": 18,
       "Official_Website": "https://ethereumclassic.org/"
    },
@@ -485,14 +484,14 @@
       "Total Supply": "1,900,000 ATOM (CSupply: 1,875,397.499647)",
       "Holders1": "38,958 addresses Created with Highcharts 6.1.4",
       "Transfers": "719,205",
-      "Contract": "0x0eb3a705fc54725037cc9e008bdede697f62f3350x0Eb3a705fc54725037CC9e008bDede697f62F335",
+      "Contract": "0x0eb3a705fc54725037cc9e008bdede697f62f335",
       "Decimals": 18,
       "Official_Website": "https://cosmos.network/"
    },
    {
       "#": 23,
       "Token": "Binance-Peg FLOW Token (FLOW)Flow is a layer-1 blockchain that aims to be fast, decentralized, and developer-oriented. It is designed as the foundation to power games, apps, and the associated digital assets.Binance Peg",
-      "BSC_Token_Link": "https://bscscan.com/token/0xc943c5320b9c18c153d1e2d12cc3074bebfb31a2",
+      "BSC_Token_Link": "https://bscscan.com/token/0xC943c5320B9c18C153d1e2d12cC3074bebfb31A2",
       "Price": "$1.630.000065 BTC0.006927 BNB",
       "Change (%)": "-13.24%",
       "Volume (24H)": "$46,644,942.00",
@@ -504,7 +503,7 @@
       "Total Supply": "3,300,100 FLOW",
       "Holders1": "2,456 addresses Created with Highcharts 6.1.4",
       "Transfers": "78,017",
-      "Contract": "0xc943c5320b9c18c153d1e2d12cc3074bebfb31a20xC943c5320B9c18C153d1e2d12cC3074bebfb31A2",
+      "Contract": "0xC943c5320B9c18C153d1e2d12cC3074bebfb31A2",
       "Decimals": 18,
       "Official_Website": "https://www.onflow.org/"
    },

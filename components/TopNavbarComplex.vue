@@ -22,6 +22,9 @@
           <b-nav-item to="/walletinterface">
             Wallet
           </b-nav-item>
+          <b-nav-item to="/tokenexplorer">
+            Token Explorer
+          </b-nav-item>
           <b-nav-item to="/">
             News
           </b-nav-item>
