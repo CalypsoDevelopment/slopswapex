@@ -15,9 +15,9 @@
           <br>
           <b-img :src="require(`../assets/img/cryptologo/${cryptoSelected.Field2_link}`)" class="crypto-logo-thumb" fluid alt="cryptoSelected.Title" />
           <br>
-          <b-button pill class="my-4 white-btn">
+          <!-- <b-button pill class="my-4 white-btn" @click="downloadImg(`http://localhost:3000/_nuxt/assets/img/cryptologo/${cryptoSelected.Field2_link}` )">
             Download
-          </b-button>
+          </b-button>-->
         </b-col>
         <b-col sm="8" medium="8" lg="8" class="my-5 crypto-logo-container">
           <ul v-for="tok in BSCTokenList" :key="tok.Token" class="token-data-ul">
@@ -68,6 +68,7 @@
 <script>
 import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
 import BSCSpotPriceTicker from '~/components/BSCSpotPriceTicker.vue'
+// const axios = require('axios')
 const cryptoJSON = require('~/static/cryptologobranding.json')
 const BSCTokenList = require('~/static/bsctokenlist.json')
 
@@ -107,7 +108,6 @@ export default {
         }
       }
     }
-
   }
 }
 </script>

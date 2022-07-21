@@ -65,15 +65,6 @@
       <b-col sm="12" medium="12" lg="12" @change="WalletStatusCheck()">
         <div class="my-4">
           <div>
-            <b-button
-              v-if="PairCheckResp === '0x0000000000000000000000000000000000000000'"
-              variant="primary"
-              pill
-              class="my-2 button-text"
-              @click="CreateTradingPair()"
-            >
-              Create Pair
-            </b-button>
             <b-button-group size="sm" center class="mx-1">
               <b-button
                 v-if="PairCheckResp != '0x0000000000000000000000000000000000000000'"
@@ -82,6 +73,14 @@
                 @click="addLiquidity()"
               >
                 <i class="fa-solid fa-hexagon-plus" /> Add Liquidity
+              </b-button>
+              <b-button
+                v-if="PairCheckResp === '0x0000000000000000000000000000000000000000'"
+                variant="primary"
+                class="my-2 button-text btn-left my-3 px-3 py-3"
+                @click="CreateTradingPair()"
+              >
+                Create Pair
               </b-button>
               <b-button
                 v-b-toggle.notification-sidebar
@@ -209,7 +208,7 @@ export default {
   components: { SlopSwapLiquidityMakerTokenSelect, SlopSwapLiquidityTakerTokenSelect },
   data () {
     return {
-      MainnetFactory: '0x0533B75362E3Be13E78f245e50674c9a6dd9c17A',
+      MainnetFactory: '0x7914BfaC79d35B1b521268cE4C431F112f4608fb',
       MainnetFactoryABI: [
         'function getPair(address tokenA, address tokenB) external view returns (address pair)',
         'function allPairs(uint) external view returns (address pair)',
@@ -219,7 +218,7 @@ export default {
         'function feeToSetter() external view returns (address)',
         'event PairCreated(address indexed token0, address indexed token1, address pair, uint)'
       ],
-      MainnetPair: '0xD1eAbB3Bce6E50F000463589d137c182B39B179D',
+      MainnetPair: null,
       MainnetPairABI: [
         'event Approval(address indexed owner, address indexed spender, uint value)',
         'event Transfer(address indexed from, address indexed to, uint value)',
@@ -262,7 +261,7 @@ export default {
 
         'function initialize(address, address) external'
       ],
-      MainnetRouter: '0x42A77DEdD13520141aaF1720EF88086B5Cae95f5',
+      MainnetRouter: '0x613EBe638AF0D7F412A328933F60399e3c410328',
       MainnetRouterABI: [
         'function WETH() external pure returns (address)',
         'function factory() external pure returns (address)',

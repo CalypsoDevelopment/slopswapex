@@ -23,11 +23,14 @@
               >
                 <div class="token-address">
                   <b-input-group size="md">
-                    <b-form-input v-model="contractAddress" type="text" class="contract-input" :placeholder="token.address" value="Hello" />
+                    <b-form-input v-model="contractAddress" type="text" class="contract-input" :placeholder="token.address" />
                     <b-button
+                      id="copyAddress"
                       type="button"
                       variant="primary"
                       class="copy-contract"
+                      :value="contractAddress"
+                      @click="CopyCryptoAddress(token.address)"
                     >
                       <i class="fa-solid fa-copy" />
                     </b-button>
@@ -67,6 +70,13 @@ export default {
     getTokenImage (tokenLogoFile) {
       const imgURL = `/assets/img/tokens/${tokenLogoFile}`
       return imgURL
+    },
+    async CopyCryptoAddress (address) {
+      // const copyText = document.getElementById('copyAddress')
+      // copyText.value = address
+      const executeCmd = await navigator.clipboard.writeText(address)
+      alert('Copied the text: ' + address)
+      return executeCmd
     }
   }
 }

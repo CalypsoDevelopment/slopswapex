@@ -53,8 +53,8 @@
                   {{ item.Title }}
                 </h2>
                 <br>
-                <b-button pill size="sm" class="py-1" @click="$router.push(`/${item.Title_link}`)">
-                  Download SVG
+                <b-button pill size="sm" variant="success" class="py-1 my-1" @click="$router.push(`/${item.Title_link}`)">
+                  Token Info
                 </b-button>
               </div>
             </b-col>
@@ -70,6 +70,7 @@
 import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
 // import SlopSwapTraderV2 from '~/components/SlopSwapTraderV2.vue'
 // import BSCSpotPriceTicker from '~/components/BSCSpotPriceTicker.vue'
+// const axios = require('axios')
 const cryptoJSON = require('~/static/cryptologobranding.json')
 
 export default {

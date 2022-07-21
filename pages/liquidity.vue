@@ -9,7 +9,7 @@
           <div v-if="LiquidityPoolData">
             <b-list-group class="liquidity-spec-list text-center">
               <b-list-group-item>
-                <h2 class="sidebar-title text-center dark-bg py-2">
+                <h2 class="sec-title text-center dark-bg py-1">
                   SlopSwap eXchange Reserves
                 </h2>
                 <b-row>
@@ -28,7 +28,7 @@
                   alt="Selected token that user wants to receive"
                   class="small-pair-token-img"
                 />
-                <i class="fa-solid fa-arrows-retweet" />
+                <i class="fa-solid fa-scale-balanced" />
                 <b-img
                   :src="require(`@/assets/img/tokens/${LPTokenBContract}.png`)"
                   fluid
@@ -39,17 +39,48 @@
                 <span class="pair-data">{{ LPTokenAReserve }}</span>
               </b-list-group-item>
               <b-list-group-item>
+                <div class="mb-2">
+                  <h2 class="sec-title">
+                    LP Token Pair Address
+                  </h2>
+                  <span class="token-address">
+                    <b-link :href="`https://bscscan.com/token/${LPPairAddress}`" :title="`${LPTokenASymbol} | ${LPTokenBSymbol} SlopSwap Liquidity Pool Pair Address is ${LPPairAddress} can be explored further on the official BSC Scan website.`" target="_blank">
+                      {{ LPPairAddress }}
+                    </b-link>
+                  </span>
+                </div>
+              </b-list-group-item>
+              <b-list-group-item>
                 <b-row>
                   <b-col sm="12" medium="12" lg="12">
                     <!--LP Token Names-->
                   </b-col>
                   <b-col sm="12" medium="12" lg="12">
-                    LP Token Pair Address<br>
-                    <span class="token-address">
-                      <b-link :href="`https://bscscan.com/token/${LPPairAddress}`" :title="`${LPTokenASymbol} | ${LPTokenBSymbol} SlopSwap Liquidity Pool Pair Address is ${LPPairAddress} can be explored further on the official BSC Scan website.`" target="_blank">
-                        {{ LPPairAddress }}
-                      </b-link>
-                    </span>
+                    <h2 class="sec-title">
+                      Global Per Token Value
+                    </h2>
+                    1
+                    {{ LPTokenASymbol }}
+                    <b-img
+                      :src="require(`@/assets/img/tokens/${LPTokenAContract}.png`)"
+                      fluid
+                      alt="Selected token that user wants to receive"
+                      class="small-pair-token-img"
+                    />
+                    is Equal to
+                    <b-img
+                      :src="require(`@/assets/img/tokens/${LPTokenBContract}.png`)"
+                      fluid
+                      alt="Selected token that user wants to receive"
+                      class="small-pair-token-img"
+                      @load="PricePerToken()"
+                    />
+                    {{ LPTokenBSymbol }}
+                    {{ TrimCharacters(String(TokenBEqualityAmount)) }}
+                    <br>
+                    <!--<b-button pill @click="PricePerToken()">
+                      Check Price Per
+                    </b-button>-->
                   </b-col>
                 </b-row>
               </b-list-group-item>
@@ -62,7 +93,7 @@
                       alt="SLOP-LPs is the native Liquidity Pool Token of SlopSwap Exchange"
                       class="small-pair-token-img"
                     />
-                    {{ LPTokenASymbol }} | {{ LPTokenBSymbol }} Liquidity Pool Balance: <span class="pair-data">{{ LPTokenBalance }} SLOP-LPs</span>
+                    {{ LPTokenASymbol }} | {{ LPTokenBSymbol }} Liquidity Pool Balance: <span class="pair-data">{{ TrimCharacters(LPTokenBalance) }} SLOP-LPs</span>
                     <b-form-input v-model="AmountLiquidityOut" class="text-left" placeholder="0.0" />
                     <div class="align-middle">
                       <!--<span class="label-title">Slippage <i class="fa-solid fa-arrow-up-arrow-down" /></span>-->
@@ -80,7 +111,7 @@
                         class="small-pair-token-img"
                       />
                       Pooled {{ LPTokenASymbol }}:
-                      <span class="pair-data">{{ LPTokenBReserve }} {{ LPTokenASymbol }}</span>
+                      <span class="pair-data">{{ TrimCharacters(LPTokenBReserve) }} {{ LPTokenASymbol }}</span>
                     </div>
                     <b-form-input v-model="Bout" disabled placeholder="0.0" />
                   </b-col>
@@ -93,7 +124,7 @@
                         class="small-pair-token-img"
                       />
                       Pooled {{ LPTokenBSymbol }}:
-                      <span class="pair-data">{{ LPTokenAReserve }} {{ LPTokenBSymbol }}</span>
+                      <span class="pair-data">{{ TrimCharacters(LPTokenAReserve) }} {{ LPTokenBSymbol }}</span>
                     </div>
                     <b-form-input v-model="Aout" disabled class="text-right" placeholder="0.0" />
                   </b-col>
@@ -157,9 +188,11 @@
 
 <script>
 // import { Console } from 'console'
+import axios from 'axios'
 import TopNavbarComplex from '~/components/TopNavbarComplex.vue'
 import SlopSwapLiquidity from '~/components/SlopSwapLiquidity.vue'
 const ethers = require('ethers')
+const qs = require('qs')
 const Console = require('Console')
 // const slop = require('slopswapxlibs')
 const BEP20 = require('~/static/artifacts/IERC20.json')
@@ -235,16 +268,48 @@ export default {
       },
       TradingConfig: null,
       amount0MinSlip: null,
-      amount1MinSlip: null
+      amount1MinSlip: null,
+      PairPriceEquality: null,
+      TokenBEqualityAmount: null
     }
   },
   watch: {
+    TokenBEqualityAmount () {
+      this.PricePerToken()
+    },
     AmountLiquidityOut (value) {
       this.quoteRemoveLiquidityV2()
       this.fetchReserves()
     }
   },
+  beforeMount () {
+  },
+  mounted () {
+  },
   methods: {
+    async PricePerToken () {
+      // alert('Hello')
+      const params = {
+        // Not all token symbols are supported. The address of the token can be used instead.
+        sellToken: this.LPTokenAContract,
+        buyToken: this.LPTokenBContract,
+        // Note that the DAI token uses 18 decimal places, so `sellAmount` is `100 * 10^18`.
+        sellAmount: '1000000000000000000'
+      }
+
+      const response = await axios.get(
+      `https://bsc.api.0x.org/swap/v1/quote?${qs.stringify(params)}`
+      )
+      this.PairPriceEquality = response
+      // alert(this.PairQuote)
+      this.TokenBEqualityAmount = ethers.utils.formatUnits(String(this.PairPriceEquality.data.buyAmount), this.LPTokenBDecimal)
+
+      // Units.convert(String(this.quote.data.buyAmount), 'wei', 'ether')
+    },
+    TrimCharacters (value) {
+      const trimmed = value.substring(0, 10)
+      return trimmed
+    },
     CaptureLPData (LPData) {
       this.LiquidityPoolData = LPData
       this.$emit('emitTransferLP', this.LiquidityPoolPairObj)
@@ -618,6 +683,11 @@ export default {
 }
 .liquidity-title-info {
   max-height: 22px;
+}
+.sec-title {
+  font-family: 'Fredoka One', sans-serif;
+  color: #212529;
+  font-size: 1.4rem;
 }
 .btn {
     background-color: #212529;

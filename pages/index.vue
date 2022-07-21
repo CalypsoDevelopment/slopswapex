@@ -1,5 +1,5 @@
 <template>
-  <b-container fluid class="bg px-0">
+  <b-container fluid class="bg px-0 my-4">
     <TopNavbarComplex />
     <div class="farm-bg">
       <b-img src="~/assets/img/page-graphics/220-Sized-Header-Rise-Of-the-PigsV2.png" fluid alt="Responsive image" />
